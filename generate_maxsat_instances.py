@@ -84,7 +84,7 @@ for dataset_name, get_dataset, weights_filename in problems:
     chainer.serializers.load_npz(weights_filename, model)
 
     orig_image_scaled = test._datasets[0]
-    orig_image = (orig_image_scaled * 255).astype(np.int)
+    orig_image = np.round(orig_image_scaled * 255).astype(np.uint8)
     with chainer.using_config("train", False), chainer.using_config("enable_backprop", False):
         orig_image_bin = bnn.bin(model.input_bn(orig_image_scaled)).array > 0
         orig_logits = model(orig_image_scaled).array

@@ -5,6 +5,7 @@ from typing import Counter, Dict, List, Optional, Sequence, Tuple, Union
 
 import chainer
 import numpy as np
+import PIL
 
 import bnn
 import datasets
@@ -110,6 +111,11 @@ for dataset_name, get_dataset, weights_filename in problems:
             if counter[true_label] >= instances_per_class:
                 continue
             counter[true_label] += 1
+
+            img = PIL.Image.fromarray(orig_image[instance_no].reshape(28, 28))
+            fname = result_dir / f"bnn_{dataset_name}_{instance_no}_label{true_label}.png"
+            if not fname.exists():
+                img.save(fname)
 
             with chainer.using_config("train", False), chainer.using_config("enable_backprop", True):
                 saliency_map = model.saliency_map(x, true_label)

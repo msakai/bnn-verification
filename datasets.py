@@ -79,8 +79,8 @@ def _make_npz(path, url, fname):
     zip_path = download.cached_download(url)
     with zipfile.ZipFile(zip_path) as z:
         with z.open(fname) as f:
-            mat = np.loadtxt(f, dtype=np.float32)
-            x = mat[:, :-1]
-            y = mat[:, -1].astype(np.int32)
+            mat = np.loadtxt(f, dtype=np.float64)
+            x = np.round(mat[:, :-1] * 255).astype(np.uint8)
+            y = mat[:, -1].astype(np.uint8)
     np.savez_compressed(path, x=x, y=y)
     return {'x': x, 'y': y}

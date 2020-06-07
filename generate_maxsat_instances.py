@@ -157,9 +157,9 @@ for dataset_name, get_dataset, weights_filename in problems:
                     for lit, w in mod:
                         enc2.add_clause([lit])
                     if ext == "wcnf":
-                        fname = result_dir / f"{dataset_name}_{instance_no}_label{true_label}_{target}_{counter_encoding}_debug.cnf"
+                        fname = result_dir / f"bnn_{dataset_name}_{instance_no}_label{true_label}_{target}_{counter_encoding}_debug.cnf"
                     elif ext == "wbo":
-                        fname = result_dir / f"{dataset_name}_{instance_no}_label{true_label}_{target}_debug.opb"
+                        fname = result_dir / f"bnn_{dataset_name}_{instance_no}_label{true_label}_{target}_debug.opb"
                     else:
                         raise RuntimeError("unknown ext: " + ext)
                     enc2.write_to_file(fname)
@@ -175,7 +175,7 @@ for dataset_name, get_dataset, weights_filename in problems:
                     norms: List[Union[int, str]] = [0, 1, 2, 'inf']
                     for norm in norms:
                         suffix = ''.join(["_" + s for s in (target, "norm_" + str(norm), ratio_str, counter_encoding) if len(s) > 0])
-                        fname = result_dir / f"{dataset_name}_{instance_no}_label{true_label}{suffix}.{ext}"
+                        fname = result_dir / f"bnn_{dataset_name}_{instance_no}_label{true_label}{suffix}.{ext}"
                         enc2 = copy.copy(enc)
                         add_norm(enc2, norm, mod2)
                         enc2.write_to_file_opt(fname)

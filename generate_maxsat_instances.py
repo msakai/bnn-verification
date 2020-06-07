@@ -105,10 +105,10 @@ for dataset_name, get_dataset, weights_filename in problems:
         counter = Counter[int]()
 
         for instance_no, (x, true_label) in enumerate(test):
+            if counter[true_label] >= instances_per_class:
+                continue
             print(f"dataset={dataset_name}; instance={instance_no}; true_label={true_label} predicted_label={predicated_label[instance_no]}")
             if predicated_label[instance_no] != true_label:
-                continue
-            if counter[true_label] >= instances_per_class:
                 continue
             counter[true_label] += 1
 

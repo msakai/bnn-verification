@@ -27,9 +27,9 @@ produce_wcnf = True
 instances_per_class = 10
 
 problems = [
-    ("mnist", chainer.datasets.get_mnist, "models/mnist.npz"),
-    ("mnist_back_image", datasets.get_mnist_back_image, "models/mnist_back_image.npz"),
-    ("mnist_rot", datasets.get_mnist_rot, "models/mnist_rot.npz"),
+    ("mnist", "models/mnist.npz"),
+    ("mnist_back_image", "models/mnist_back_image.npz"),
+    ("mnist_rot", "models/mnist_rot.npz"),
 ]
 
 
@@ -77,8 +77,8 @@ encodings = \
 # , ("wcnf", "sequential")
 
 
-for dataset_name, get_dataset, weights_filename in problems:
-    train, test = get_dataset()
+for dataset_name, weights_filename in problems:
+    train, test = datasets.get_dataset(dataset_name)
 
     neurons = [28 * 28, 200, 100, 100, 100, 10]
     model = bnn.BNN(neurons, stochastic_activation=True)

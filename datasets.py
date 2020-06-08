@@ -84,3 +84,14 @@ def _make_npz(path, url, fname):
             y = mat[:, -1].astype(np.uint8)
     np.savez_compressed(path, x=x, y=y)
     return {'x': x, 'y': y}
+
+
+def get_dataset(name: str, *args, **kwargs):
+    if name == "mnist":
+        return chainer.datasets.get_mnist(*args, **kwargs)
+    elif name == "mnist_back_image":
+        return get_mnist_back_image(*args, **kwargs)
+    elif name == "mnist_rot":
+        return get_mnist_rot(*args, **kwargs)
+    else:
+        raise RuntimeError("unknown dataset: " + name)

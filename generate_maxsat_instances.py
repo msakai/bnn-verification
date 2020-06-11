@@ -54,13 +54,13 @@ parser.add_argument('--dataset', type=str, choices=['mnist', 'mnist_back_image',
 parser.add_argument('--model', type=str, default=None, help='model file (*.npz)')
 parser.add_argument('-o', '--output-dir', type=str, default="instances/maxsat", help='output directory')
 parser.add_argument('--format', type=str, choices=["wbo", "wcnf"], help='file format')
-parser.add_argument('--norm', type=str, choices=['0', '1', '2', 'inf'], default='inf', help='encoding of cardinality constraints')
+parser.add_argument('--norm', type=str, choices=['0', '1', '2', 'inf'], nargs='*', default=['0', '1', '2', 'inf'], help='encoding of cardinality constraints')
 parser.add_argument('--card', type=str, choices=["sequential", "parallel", "totalizer"], default="parallel", help='encoding of cardinality constraints')
 parser.add_argument('--target', type=str, default="adversarial", choices=['adversarial', 'truelabel'], help='target label')
 parser.add_argument('--instance-no', type=int, default=None, help='specify instance number')
 parser.add_argument('--instances-per-class', type=int, default=None, help='number of instances to generate per class')
 parser.add_argument('--debug-sat', action='store_true', help='produce CNF or OPB for debug')
-parser.add_argument('--restrict', type=float, default=None, help='restrict search space to most salient pixels')
+parser.add_argument('--ratio', type=float, nargs='*', default=[1.0], help='restrict search space to most salient pixels')
 
 
 args = parser.parse_args()
@@ -165,19 +165,19 @@ for instance_no, (x, true_label) in enumerate(test):
             raise RuntimeError("unknown ext: " + args.format)
         enc2.write_to_file(fname)
 
-    if args.restrict is None:
-        mod2 = mod
-        ratio = 1.0
-        ratio_str = ""
-    else:
-        ratio = args.restrict
-        ratio_str = f"{int(args.restrict * 100)}p"
-        important_pixels = set(list(reversed(np.argsort(np.abs(saliency_map))))[:int(len(saliency_map) * ratio)])
-        important_variables = set(inputs[instance_no] for i in important_pixels)
-        mod2 = [(lit, w if abs(lit) in important_variables else None) for lit, w in mod]
+    for ratio in args.ratio:
+        if ratio == 1.0:
+            mod2 = mod
+            ratio_str = ""
+        else:
+            ratio_str = f"{int(ratio * 100)}p"
+            important_pixels = set(list(reversed(np.argsort(np.abs(saliency_map))))[:int(len(saliency_map) * ratio)])
+            important_variables = set(inputs[instance_no] for i in important_pixels)
+            mod2 = [(lit, w if abs(lit) in important_variables else None) for lit, w in mod]
 
-    suffix = ''.join(["_" + s for s in (args.target, "norm_" + str(args.norm), ratio_str, args.card) if len(s) > 0])
-    fname = result_dir / f"bnn_{args.dataset}_{instance_no}_label{true_label}{suffix}.{args.format}"
-    enc2 = copy.copy(enc)
-    add_norm(enc2, args.norm, mod2)
-    enc2.write_to_file_opt(fname)
+        for norm in args.norm:
+            suffix = ''.join(["_" + s for s in (args.target, "norm_" + str(norm), ratio_str, args.card) if len(s) > 0])
+            fname = result_dir / f"bnn_{args.dataset}_{instance_no}_label{true_label}{suffix}.{args.format}"
+            enc2 = copy.copy(enc)
+            add_norm(enc2, norm, mod2)
+            enc2.write_to_file_opt(fname)

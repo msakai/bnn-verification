@@ -374,7 +374,7 @@ class Encoder():
         else:
             lits = encode_sum(sorted(lhs))
             for i in range(len(lits)-1):
-                self.add_clause([-lits[i], lits[i+1]])  # l2→l1 or equivalently ¬l1→¬l2
+                self.add_clause([-lits[i+1], lits[i]])  # l2→l1 or equivalently ¬l1→¬l2
             return lits[rhs - 1]
 
     def encode_atleast(self, lhs: List[Lit], rhs: int, polarity: Polarity = Polarity(True, True)) -> Lit:

@@ -55,7 +55,7 @@ parser.add_argument('--model', type=str, default=None, help='model file (*.npz)'
 parser.add_argument('-o', '--output-dir', type=str, default="instances/maxsat", help='output directory')
 parser.add_argument('--format', type=str, choices=["wbo", "wcnf"], help='file format')
 parser.add_argument('--norm', type=str, choices=['0', '1', '2', 'inf'], default='inf', help='encoding of cardinality constraints')
-parser.add_argument('--card', type=str, choices=["sequential", "parallel"], default="parallel", help='encoding of cardinality constraints')
+parser.add_argument('--card', type=str, choices=["sequential", "parallel", "totalizer"], default="parallel", help='encoding of cardinality constraints')
 parser.add_argument('--target', type=str, default="adversarial", choices=['adversarial', 'truelabel'], help='target label')
 parser.add_argument('--instance-no', type=int, default=None, help='specify instance number')
 parser.add_argument('--instances-per-class', type=int, default=None, help='number of instances to generate per class')

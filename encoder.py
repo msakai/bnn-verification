@@ -338,11 +338,52 @@ class Encoder():
 
         return self.encode_disj(self.encode_bvuge(f(lhs), rhs_bits, polarity=polarity), *overflow_bits, polarity=polarity)
 
+    def encode_atleast_totalizer(self, lhs: Sequence[Lit], rhs: int) -> Lit:
+        def encode_sum(lhs: Sequence[Lit]) -> Sequence[Lit]:
+            if len(lhs) <= 1:
+                return lhs
+            else:
+                n = len(lhs)
+                xs1 = encode_sum(lhs[: n // 2])
+                xs2 = encode_sum(lhs[n // 2 :])
+                rs = self.new_vars(n)
+                for sigma in range(n+1):
+                    # a + b = sigma, 0 <= a <= n1, 0 <= b <= n2
+                    for a in range(max(0, sigma - len(xs2)), min(len(xs1), sigma) + 1):
+                        b = sigma - a
+                        # card(lits1) >= a ∧ card(lits2) >= b → card(lits) >= sigma
+                        # ¬(card(lits1) >= a) ∨ ¬(card(lits2) >= b) ∨ card(lits) >= sigma
+                        if sigma != 0:
+                            self.add_clause(
+                                ([- xs1[a - 1]] if a > 0 else []) + \
+                                ([- xs2[b - 1]] if b > 0 else []) + \
+                                [rs[sigma - 1]])
+                        # card(lits) > sigma → (card(lits1) > a ∨ card(lits2) > b)
+                        # card(lits) >= sigma+1 → (card(lits1) >= a+1 ∨ card(lits2) >= b+1)
+                        # card(lits1) >= a+1 ∨ card(lits2) >= b+1 ∨ ¬(card(lits) >= sigma+1)
+                        if sigma + 1 != n + 1:
+                            self.add_clause(
+                                ([xs1[a + 1 - 1]] if a + 1 < len(xs1) + 1 else []) + \
+                                ([xs2[b + 1 - 1]] if b + 1 < len(xs2) + 1 else []) + \
+                                [- rs[sigma + 1 - 1]])
+                return rs
+        if rhs <= 0:
+            return lit_true
+        elif len(lhs) < rhs:
+            return lit_false
+        else:
+            lits = encode_sum(sorted(lhs))
+            for i in range(len(lits)-1):
+                self.add_clause([-lits[i], lits[i+1]])  # l2→l1 or equivalently ¬l1→¬l2
+            return lits[rhs - 1]
+
     def encode_atleast(self, lhs: List[Lit], rhs: int, polarity: Polarity = Polarity(True, True)) -> Lit:
         if self._counter == "sequential":
             return self.encode_atleast_sequential_counter(lhs, rhs, polarity)
         elif self._counter == "parallel":
             return self.encode_atleast_parallel_counter(lhs, rhs, polarity)
+        elif self._counter == "totalizer":
+            return self.encode_atleast_totalizer(lhs, rhs)
         else:
             raise RuntimeError(f"unknown counter: \"{self._counter}\"")
 

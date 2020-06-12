@@ -128,13 +128,19 @@ for instance_no, (x, true_label) in enumerate(test):
     gamma = input_bn.gamma.array
     beta = input_bn.beta.array
 
+    numerically_unstable = False
+
     mod: List[Tuple[encoder.Lit, Optional[int]]] = []
     for j, pixel in enumerate(orig_image[instance_no]):
-        C_frac = 255 * (- beta[j] * sigma[j] / gamma[j] + mu[j])
+        # C_frac = 255 * (- beta[j] * sigma[j] / gamma[j] + mu[j])
+        C_frac = (- beta[j] * sigma[j] / gamma[j] + mu[j]) / np.float32(1 / 255.0)
         if gamma[j] >= 0:
             # x ≥ ⌈255 (- βσ/γ + μ)⌉ = C
             C = int(math.ceil(C_frac))
-            assert orig_image_bin[instance_no, j] == (pixel >= C)
+            if orig_image_bin[instance_no, j] != (pixel >= C):
+                numerically_unstable = True
+                break
+            #assert orig_image_bin[instance_no, j] == (pixel >= C)
             if pixel < C:
                 mod.append((- inputs[j], C - pixel))
             elif C == 0:
@@ -144,13 +150,20 @@ for instance_no, (x, true_label) in enumerate(test):
         else:
             # x ≤ ⌊255 (- βσ/γ + μ)⌋ = C
             C = int(math.floor(C_frac))
-            assert orig_image_bin[instance_no, j] == (pixel <= C)
+            #assert orig_image_bin[instance_no, j] == (pixel <= C)
+            if orig_image_bin[instance_no, j] != (pixel <= C):
+                numerically_unstable = True
+                break
             if pixel > C:
                 mod.append((- inputs[j], C - pixel))
             elif C == 255:
                 mod.append((inputs[j], None))  # impossible to change
             else:
                 mod.append((inputs[j], (C + 1) - pixel))
+
+    if numerically_unstable:
+        print("numerically unstable")
+        continue
 
     # debug
     if args.debug_sat:

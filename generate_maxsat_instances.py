@@ -189,8 +189,13 @@ for instance_no, (x, true_label) in enumerate(test):
             mod2 = [(lit, w if abs(lit) in important_variables else None) for lit, w in mod]
 
         for norm in args.norm:
-            suffix = ''.join(["_" + s for s in (args.target, "norm_" + str(norm), ratio_str, args.card) if len(s) > 0])
-            fname = result_dir / f"bnn_{args.dataset}_{instance_no}_label{true_label}{suffix}.{args.format}"
+            xs: List[str] = [
+                "bnn", args.dataset, str(instance_no), f"label{true_label}",
+                args.target, "norm_" + str(norm), ratio_str
+            ]
+            if args.format == "wcnf":
+                xs.append(args.card)
+            fname = result_dir / ('_'.join([s for s in xs if len(s) > 0]) + "." + args.format)
             enc2 = copy.copy(enc)
             add_norm(enc2, norm, mod2)
             enc2.write_to_file_opt(fname)

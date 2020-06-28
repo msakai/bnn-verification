@@ -1,0 +1,202 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{BNN verification dataset for \\
+Max-SAT Evaluation 2020
+% *\\
+% {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
+% should not be used
+% }
+% \thanks{Identify applicable funding agency here. If none, delete this.}
+}
+
+\author{\IEEEauthorblockN{Masahiro Sakai}
+\IEEEauthorblockA{
+%\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+% Japan \\
+masahiro.sakai@gmail.com}
+%\and
+%\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address or ORCID}
+%\and
+%\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address or ORCID}
+%\and
+%\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address or ORCID}
+%\and
+%\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address or ORCID}
+%\and
+%\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address or ORCID}
+}
+
+\maketitle
+
+\begin{abstract}
+This article describes a MaxSAT benchmarks that encode the problem of finding minimal adversarial examples for binarized neural networks, and the dataset is submitted to MaxSAT Evaluation 2020.
+% This document is a model and instructions for \LaTeX.
+% This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
+% or Math in Paper Title or Abstract.
+\end{abstract}
+
+\begin{IEEEkeywords}
+%component, formatting, style, styling, insert
+SAT, MaxSAT, binarized neural networks, adversarial examples
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+Binarized Neural Networks (BNN) \cite{bnn} are neural networks that their parameters (weights) and inputs are restricted to binary value. Due to these characteristics they are memory efficient and computationally efficient but also are suitable for analysis using SAT-based methods.
+
+One of the interested properties about neural networks is existence of \textit{adversarial examples} \cite{adversarial-examples,adversarial-examples-2}.
+Given a neural network $f$ and its input data $x$, an adversarial example is a slightly modified input data $x' = x + \tau$ which causes misclassification, \textit{i.e.} $f(x) \neq f(x + \tau)$.
+Existence of adversarial example may pose a security challenge when deploying the model, therefore it is an important problem to analyze the robustness of neural networks against adversarisal examples.
+
+Narodytska, \textit{et al.} \cite{bnnverif} proposed a SAT-based methods to certify the absence of adversarial examples for given BNN $f$ and $x$ within $\|\tau\|_{\infty} \le \epsilon$.
+Our formulation is based on theirs, but we recast it to an optimization problem in the form of maximum satisfiablity problem (MaxSAT) instead of a satisfiability problem (SAT) and we also make some other modifications in encoding as well.
+
+\section{Input datasets and training}
+
+As in \cite{bnnverif}, we use digit images from MNIST dataset \cite{mnist}, and its two variants: the MNIST-rot and the MNIST-back-image \cite{mnist-variation}. Each input image is represented as 8-bit 784 ($= 28\times 28$) dimension vectors $\{0,\ldots,255\}^{784}$.
+
+Our binarized neural networks have the same architecture as in \cite{bnnverif} (see the paper for details).
+We first scale input image $x \in \{0,\ldots,255\}^{784}$ to $[0,1]^{784}$, and apply (trained) batch normalization and binarization layers to get binarized image $\{-1,+1\}^{784}$.
+We denote binarization part as
+%\[
+%\mathrm{binarize} : \{0,\ldots,255\}^{784} \to \{-1,+1\}^{784}
+%\]
+\begin{align*}
+&\mathrm{bin} : \{0,\ldots,255\}^{784} \to \{-1,+1\}^{784} \\
+&\mathrm{bin}(x_1, \ldots, x_{784}) = (\mathrm{bin}_1 (x_1), \ldots, \mathrm{bin}_{784} (x_{784})) \\
+\\
+&\mathrm{bin}_i : \{0,\ldots,255\} \to \{-1,+1\}.
+\end{align*}
+Note that the binarization is performed depending on components (\textit{i.e.} pixel locations).
+
+After that, several internal layers and a output linear layer follow. We denote this part as
+\[
+g : \{-1,+1\}^{784} \to \mathbb{R}^{10},
+\]
+and its output is called \textit{logits}.
+
+Then 
+\[
+f(x) = \mathrm{argmax}_{c\in \{0,\ldots,9\}}  g(\mathrm{bin}(x))_c
+\]
+is the function that our binarized neural network computes. 
+
+We implemented and trained BNN models using deep learning framework Chainer \cite{chainer}.
+Our implementation is available at \url{https://github.com/msakai/bnn-verification} .
+
+\section{SAT encoding}
+
+In the following we identify $\{\mathrm{false},\mathrm{true}\}$ with $\{0,1\}$ for notational simplicity.
+
+\subsection{Inputs and decision variables}
+
+In the encoding of \cite{bnnverif}, they use raw 8-bit image ($x' \in \{0,\ldots,255\}^{784}$) as decision variables and add constraints like $x'_i \in [x -\epsilon, x + \epsilon]$.
+
+We instead use binarized image in $\{-1,+1\}^{784}$ as decision variables and represent $\mathrm{bin}_i(x_i)$ as $2 z_i - 1$ using a boolean variables $z_i$.
+We consider original 8-bit image as dependent variables, and use them in cost function instead of defining them as decision variables.
+
+\subsection{Relationship between inputs and logits}
+
+The $g$ part is encoded to CNF in a way similiar to \cite{bnnverif}, but we use \textit{totalizer} \cite{totalizer} instead of \textit{sequential counter} \cite{sequential-counter} for encoding cardinality constraints.
+
+\subsection{Relationship between logits and outputs}
+
+For the $\mathrm{argmax}$ part, let $\mathrm{logits} \in \mathbb{R}^{10}$ be output of $g$, and let $\{y_c\}_{c\in\{0,\ldots,9\}}$ be ten boolean variables representing output of $f$ ($i.e.$ $y_i \Leftrightarrow f(x') = i$).
+
+The fact that $\{y_c\}_{c}$ is a one-hot vector can be expressed as cardinality constraint $\sum_i y_i = 1$.
+
+Also, if $y_c$ then $c$-th logit must be largest, \textit{i.e.}
+\[
+y_c \rightarrow \mathrm{logits}_c \ge \mathrm{logits}_{c'} \text{\;for all $c'$}.
+\]
+Because $\mathrm{logits}_c$ is represented as $(\sum_j W_{c,j} (2 u_j - 1)) + b_c$ where $W_{c,j} \in \{-1, +1\}$ and $u_j$ are some boolean variables introduced in encoding of $g$, this can be expressed as conditional cardinality constraints:
+\begin{align*}
+y_c \rightarrow
+& \sum_j \frac{(W_{c,j} - W_{c',j})}{2} u_j \\
+& \ge \Big\lceil \frac{\sum_j (W_{c,j} - W_{c',j}) + b_{c'} - b_c}{4}\Big\rceil.
+\end{align*}
+
+We encode those (conditional) cardinality constraints using totalizer.
+
+Finally, if $f(x) = c$ then we add $\neg y_c$ to require the input to be misclassified.
+
+\section{Cost function}
+
+As we want to find an adversarial example with the smallest perturbation, we want to set a cost for modifying $x_i$s.
+Because our decision variable is $z_i$s, this corresponds to adding a soft constraint\footnote{As we assume a concrete $x$, right hand side is $0$ or $1$, therefore this constraint is represented as a unit clause $\neg z_i$ or $z_i$} $z_i = \frac{bin_i(x_i) + 1}{2}$ with appropriate cost of violation.
+
+First, we define $\delta_i$ as the smallest change of $x_i$ to flip its binarized value, \textit{i.e.} $\mathrm{bin}_i (x_i + \delta_i) \neq \mathrm{bin}_i (x_i)$.
+If it is impossible to flip (this is the case when $\mathrm{bin}_i$ is constant function), we define $\delta_i$ to be $\perp$.
+
+Then it is easy to define cost functions to minimize $L_p$-norms including $L_\infty$-norm.
+
+\subsection{$L_p$-norms for $p \neq \infty$}
+
+We add $z_i = \frac{bin_i(x_i) + 1}{2}$ as a soft constraint with cost $|\delta_i|^p$ for each $i$ if $\delta_i \neq \perp$, and add it as a hard constraint if $\delta_i = \perp$.
+Note that we get unweighted (partial) Max-SAT instances in case of $L_0$-norm.
+
+\subsection{$L_\infty$-norm}
+
+Let $\Delta = \{|\delta_i| \mid \delta_i \neq \perp\}$ and $w_1 < \ldots < w_{|\Delta|} \in \Delta$ be sorted in ascending order, and we introduce new boolean variable $r_k$ called \textit{relaxation variable} for each $w_k$. Then we add following constraints.
+
+\begin{itemize}
+    \item Unit soft clause $(\neg r_k)$ with cost $|w_k|$ for each $k \in \{1,\ldots,|\Delta|\}$.
+    \item Relaxation variables are lower closed: $r_{k} \to r_{k-1}$ for each $k > 0$
+    \item $z_i$ is allowed to be flipped only when corresponding relaxation variable is true: $\neg r_k \to z_i = \frac{bin_i(x_i) + 1}{2}$ for each $i$ with $|\delta_i| = w_k$.
+    \item $z_i$ is fixed if it cannot be flipped: $z_i = \frac{bin_i(x_i) + 1}{2}$ for each $i$ with $\delta_i = \perp$.
+\end{itemize}
+
+\section{Problem files}
+
+We choose 20 images (2 images for each digit class) from test data of each data set (mnist, mnist\_rot, mnist\_back\_image) that trained BNN models predicted true label.
+
+Adversarial example finding problem is generated for each image using the BNN model trained for the dataset.
+Generated instances have 1.8 M variables and 132 M clauses on average.
+
+File names are in the form of ``\texttt{bnn\_\{dataset\_name\}\_\\
+\{instance number\}\_label\{true label\}\_\\
+adversarial\_norm\_inf\_totalizer.wcnf}'' where
+
+\begin{itemize}
+    \item \texttt{dataset name} is mnist, mnist\_rot or mnist\_back\_\\image,
+    \item \texttt{instance number} is image number in test dataset,
+    \item \texttt{true label} is one of $0 \ldots 9$.
+\end{itemize}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,ref.bib}
+
+\end{document}

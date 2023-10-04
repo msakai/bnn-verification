@@ -501,14 +501,14 @@ class BNNEncoder(Encoder):
     def encode_block(self, block: bnn.Block, xs: Sequence[Lit]) -> List[Lit]:
         n_output, n_input = block.lin.W.shape
         assert len(xs) == n_input
-        W = block.lin.W.array.astype(np.int)
+        W = block.lin.W.array.astype(np.int32)
         b = block.lin.b.array
         mu = block.bn.avg_mean
         sigma = np.sqrt(block.bn.avg_var + block.bn.eps)
         gamma = block.bn.gamma.array
         beta = block.bn.beta.array
-        assert all(int(x) == 1 or int(x) == -1 for x in W.astype(np.int).reshape(-1))
-        return [self.encode_block_1(W[i].astype(np.int), b[i], mu[i], sigma[i], gamma[i], beta[i], xs) for i in range(n_output)]
+        assert all(int(x) == 1 or int(x) == -1 for x in W.astype(np.int32).reshape(-1))
+        return [self.encode_block_1(W[i].astype(np.int32), b[i], mu[i], sigma[i], gamma[i], beta[i], xs) for i in range(n_output)]
 
     def encode_output(self, lin: bnn.BinLinear, xs: Sequence[Lit], output: Sequence[Lit]) -> None:
         m = len(xs)
@@ -522,7 +522,7 @@ class BNNEncoder(Encoder):
         else:
             self.add_pb_exactly(PBExactly([(1,x) for x in output], 1))
 
-        W = lin.W.array.astype(np.int)
+        W = lin.W.array.astype(np.int32)
         b = lin.b.array
         #   (Σ_j W[i,j] (2xs[j]-1)) + b[i]
         # = (Σ_j 2 W[i,j] xs[j]) - (Σ_j W[i,j]) + b[i]

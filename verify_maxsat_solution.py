@@ -13,7 +13,7 @@ import datasets
 
 
 def read_binary_solution(fname: Union[Path, str]) -> Optional[np.ndarray]:
-    sol = np.zeros(28*28, dtype=np.bool)
+    sol = np.zeros(28*28, dtype=bool)
     with open(fname) as f:
         for line in f:
             if line.startswith('v '):

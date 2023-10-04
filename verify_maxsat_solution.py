@@ -67,7 +67,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', type=str, help='dataset name: mnist, mnist_back_image, mnist_rot')
     parser.add_argument('--instance', type=int, help='instance number')
-    parser.add_argument('--output-image', '-o', type=str, default=None, help='output image')
+    parser.add_argument('--output-image', '-o', type=str, default=None, help='output perturbated image')
+    parser.add_argument('--output-orig-image', type=str, default=None, help='output original image')
+    parser.add_argument('--output-diff-image', type=str, default=None, help='output diff image')
+    parser.add_argument('--diff-image-scale', type=int, default=1, help='diff image scale')
     parser.add_argument('file', type=str, help='solution filename')
     args = parser.parse_args()
 
@@ -85,18 +88,30 @@ if __name__ == "__main__":
     orig_image = np.round(scaled_image * 255).astype(np.uint8)
     pertubated_image = decode_binary_solution(model, orig_image, sol)
 
-    diff = pertubated_image.astype(np.int32) - orig_image.astype(np.int32)
-    print(diff)
+    print("original image:")
+    with chainer.using_config("train", False), chainer.using_config("enable_backprop", True):
+        logits = model((orig_image.astype(np.float32) / 255.0)[None]).array[0]
+    print(f"  predicted class: {np.argmax(logits)}")
+    print(f"  logits: {list(logits)}")
+    if args.output_orig_image is not None:
+        img = PIL.Image.fromarray(orig_image.reshape(28, 28))
+        img.save(args.output_orig_image)
 
-    for norm in [0, 1, 2, np.inf]:
-        z = np.linalg.norm(diff, ord=norm)
-        print(f"{norm}-norm: {z}")
-
+    print("perturbated image:")
     with chainer.using_config("train", False), chainer.using_config("enable_backprop", True):
         logits = model((pertubated_image.astype(np.float32) / 255.0)[None]).array[0]
-    print(f"predicted class: {np.argmax(logits)}")
-    print(f"logits: {list(logits)}")
-
+    print(f"  predicted class: {np.argmax(logits)}")
+    print(f"  logits: {list(logits)}")
     if args.output_image is not None:
         img = PIL.Image.fromarray(pertubated_image.reshape(28, 28))
         img.save(args.output_image)
+
+    print("difference:")
+    diff = pertubated_image.astype(np.int32) - orig_image.astype(np.int32)
+    print(diff)
+    for norm in [0, 1, 2, np.inf]:
+        z = np.linalg.norm(diff, ord=norm)
+        print(f"{norm}-norm: {z}")
+    if args.output_diff_image is not None:
+        img = PIL.Image.fromarray((diff * args.diff_image_scale + 127).astype(np.uint8).reshape(28, 28))
+        img.save(args.output_diff_image)

@@ -8,6 +8,8 @@
 
 ## `bnn_mnist_rot_10_label4_adversarial_norm_inf_totalizer.wcnf`
 
+![original](./examples/bnn_mnist_rot_10_label4_adversarial_norm_inf_orig.png) → ![perturbated](./examples/bnn_mnist_rot_10_label4_adversarial_norm_inf_perturbated.png)
+
 | | | Prediction of a model | logits[0] | logits[1] | logits[2] | logits[3] | logits[4] | logits[5] | logits[6] | logits[7] | logits[8] | logits[9] |
 |-|-|-|-|-|-|-|-|-|-|-|-|-|
 | Original image | ![original](./examples/bnn_mnist_rot_10_label4_adversarial_norm_inf_orig.png) | 4 | 8.883254 | -8.975005 | 28.656395 | -4.049718 | 39.974392 | 12.88087 | 18.302235 | 31.816982 | 14.072353 | 16.055202 |

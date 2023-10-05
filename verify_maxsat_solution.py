@@ -25,7 +25,7 @@ def read_binary_solution(fname: Union[Path, str]) -> Optional[np.ndarray]:
 
 
 def decode_binary_solution(model, orig_image: np.ndarray, sol: np.ndarray) -> np.ndarray:
-    pertubated_image = orig_image.copy()
+    perturbated_image = orig_image.copy()
 
     input_bn = model.input_bn
     mu = input_bn.avg_mean
@@ -42,11 +42,11 @@ def decode_binary_solution(model, orig_image: np.ndarray, sol: np.ndarray) -> np
             if orig:
                 if not sol[j]:
                     #print((j, pixel, C - 1))
-                    pertubated_image[j] = C - 1
+                    perturbated_image[j] = C - 1
             else:
                 if sol[j]:
                     #print((j, pixel, C))
-                    pertubated_image[j] = C
+                    perturbated_image[j] = C
         else:
             # x ≤ ⌊255 (- βσ/γ + μ)⌋ = C
             C = int(math.floor(C_frac))
@@ -54,13 +54,13 @@ def decode_binary_solution(model, orig_image: np.ndarray, sol: np.ndarray) -> np
             if orig:
                 if not sol[j]:
                     #print((j, pixel, C + 1))
-                    pertubated_image[j] = C + 1
+                    perturbated_image[j] = C + 1
             else:
                 if sol[j]:
                     #print((j, pixel, C))
-                    pertubated_image[j] = C
+                    perturbated_image[j] = C
 
-    return pertubated_image
+    return perturbated_image
 
 
 if __name__ == "__main__":
@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     scaled_image = test[args.instance][0]
     orig_image = np.round(scaled_image * 255).astype(np.uint8)
-    pertubated_image = decode_binary_solution(model, orig_image, sol)
+    perturbated_image = decode_binary_solution(model, orig_image, sol)
 
     print("original image:")
     with chainer.using_config("train", False), chainer.using_config("enable_backprop", True):
@@ -99,15 +99,15 @@ if __name__ == "__main__":
 
     print("perturbated image:")
     with chainer.using_config("train", False), chainer.using_config("enable_backprop", True):
-        logits = model((pertubated_image.astype(np.float32) / 255.0)[None]).array[0]
+        logits = model((perturbated_image.astype(np.float32) / 255.0)[None]).array[0]
     print(f"  predicted class: {np.argmax(logits)}")
     print(f"  logits: {list(logits)}")
     if args.output_image is not None:
-        img = PIL.Image.fromarray(pertubated_image.reshape(28, 28))
+        img = PIL.Image.fromarray(perturbated_image.reshape(28, 28))
         img.save(args.output_image)
 
     print("difference:")
-    diff = pertubated_image.astype(np.int32) - orig_image.astype(np.int32)
+    diff = perturbated_image.astype(np.int32) - orig_image.astype(np.int32)
     print(diff)
     for norm in [0, 1, 2, np.inf]:
         z = np.linalg.norm(diff, ord=norm)

@@ -5,6 +5,7 @@ import re
 from typing import Optional, Sequence, Union
 
 import chainer
+import chainer.functions as F
 import numpy as np
 import PIL
 
@@ -90,18 +91,22 @@ if __name__ == "__main__":
 
     print("original image:")
     with chainer.using_config("train", False), chainer.using_config("enable_backprop", True):
-        logits = model((orig_image.astype(np.float32) / 255.0)[None]).array[0]
-    print(f"  predicted class: {np.argmax(logits)}")
-    print(f"  logits: {list(logits)}")
+        logits = model((orig_image.astype(np.float32) / 255.0)[None])
+        prob = F.softmax(logits)
+    print(f"  logits: {list(logits.array[0])}")
+    print(f"  probability: {list(prob.array[0])}")
+    print(f"  predicted class: {np.argmax(logits.array[0])}")
     if args.output_orig_image is not None:
         img = PIL.Image.fromarray(orig_image.reshape(28, 28))
         img.save(args.output_orig_image)
 
     print("perturbated image:")
     with chainer.using_config("train", False), chainer.using_config("enable_backprop", True):
-        logits = model((perturbated_image.astype(np.float32) / 255.0)[None]).array[0]
-    print(f"  predicted class: {np.argmax(logits)}")
-    print(f"  logits: {list(logits)}")
+        logits = model((perturbated_image.astype(np.float32) / 255.0)[None])
+        prob = F.softmax(logits)
+    print(f"  logits: {list(logits.array[0])}")
+    print(f"  probability: {list(prob.array[0])}")
+    print(f"  predicted class: {np.argmax(logits.array[0])}")
     if args.output_image is not None:
         img = PIL.Image.fromarray(perturbated_image.reshape(28, 28))
         img.save(args.output_image)

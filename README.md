@@ -20,8 +20,6 @@ Added perturbation:
 * 2-norm: 4.242640687119285
 * ∞-norm: 1.0
 
-(TODO: Not a good example. Replace it)
-
 ## Submission to Max-SAT evaluation 2020
 
 * [Description](maxsat2020/description.pdf)

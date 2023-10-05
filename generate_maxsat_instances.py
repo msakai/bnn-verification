@@ -6,11 +6,11 @@ from typing import Counter, Dict, List, Optional, Sequence, Tuple
 
 import chainer
 import numpy as np
-import PIL
 
 import bnn
 import datasets
 import encoder
+import visualize
 
 
 def add_norm(enc: encoder.Encoder, norm: str,
@@ -108,7 +108,7 @@ for instance_no, (x, true_label) in enumerate(test):
         continue
     counter[true_label] += 1
 
-    img = PIL.Image.fromarray(orig_image[instance_no].reshape(28, 28))
+    img = visualize.to_image(args.dataset, orig_image[instance_no])
     fname = result_dir / f"bnn_{args.dataset}_{instance_no}_label{true_label}.png"
     if not fname.exists():
         img.save(fname)

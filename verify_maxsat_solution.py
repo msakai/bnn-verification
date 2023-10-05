@@ -7,10 +7,10 @@ from typing import Optional, Sequence, Union
 import chainer
 import chainer.functions as F
 import numpy as np
-import PIL
 
 import bnn
 import datasets
+import visualize
 
 
 def read_binary_solution(fname: Union[Path, str]) -> Optional[np.ndarray]:
@@ -97,7 +97,7 @@ if __name__ == "__main__":
     print(f"  probability: {list(prob.array[0])}")
     print(f"  predicted class: {np.argmax(logits.array[0])}")
     if args.output_orig_image is not None:
-        img = PIL.Image.fromarray(orig_image.reshape(28, 28))
+        img = visualize.to_image(args.dataset, orig_image)
         img.save(args.output_orig_image)
 
     print("perturbated image:")
@@ -108,7 +108,7 @@ if __name__ == "__main__":
     print(f"  probability: {list(prob.array[0])}")
     print(f"  predicted class: {np.argmax(logits.array[0])}")
     if args.output_image is not None:
-        img = PIL.Image.fromarray(perturbated_image.reshape(28, 28))
+        img = visualize.to_image(args.dataset, perturbated_image)
         img.save(args.output_image)
 
     print("difference:")
@@ -118,5 +118,5 @@ if __name__ == "__main__":
         z = np.linalg.norm(diff, ord=norm)
         print(f"{norm}-norm: {z}")
     if args.output_diff_image is not None:
-        img = PIL.Image.fromarray((diff * args.diff_image_scale + 127).astype(np.uint8).reshape(28, 28))
+        img = visualize.to_image(args.dataset, (diff * args.diff_image_scale + 127).astype(np.uint8))
         img.save(args.output_diff_image)

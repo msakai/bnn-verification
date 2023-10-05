@@ -11,7 +11,7 @@
 | | Image | Prediction of a model | P(y=0)<br>(logit) | P(y=1)<br>(logit) | P(y=2)<br>(logit) | P(y=3)<br>(logit) | P(y=4)<br>(logit) | P(y=5)<br>(logit) | P(y=6)<br>(logit) | P(y=7)<br>(logit) | P(y=8)<br>(logit) | P(y=9)<br>(logit) |
 |-|-|-|-|-|-|-|-|-|-|-|-|-|
 | Original image | ![original](./examples/bnn_mnist_rot_10_label4_adversarial_norm_inf_orig.png) | 4 | 3.1416737e-14<br>(8.883254) | 5.5133663e-22<br>(-8.975005) | 1.2148612e-05<br>(28.656395) | 7.593513e-20<br>(-4.049718) | **0.9997013**<br>(**39.974392**) | 1.711211e-12<br>(12.88087) | 3.8705436e-10<br>(18.302235) | 0.00028651825<br>(31.816982) | 5.633235e-12<br>(14.072353) | 4.0916482e-11<br>(16.055202) |
-| Pertubated image) | ![perturbated](./examples/bnn_mnist_rot_10_label4_adversarial_norm_inf_perturbated.png) | 6 | 4.5545687e-10<br>(12.883254) | 2.6813108e-21<br>(-12.975005) | 0.0032257813<br>(28.656395) | 1.7916893e-10<br>(11.950282) | 0.0016309624<br>(27.97439) | 0.004037595<br>(28.880869) | **0.91325474**<br>(**34.302235**) | 0.07607825<br>(31.816982) | 4.4588405e-06<br>(22.072353) | 0.0017682364<br>(28.055202) |
+| Perturbated image | ![perturbated](./examples/bnn_mnist_rot_10_label4_adversarial_norm_inf_perturbated.png) | 6 | 4.5545687e-10<br>(12.883254) | 2.6813108e-21<br>(-12.975005) | 0.0032257813<br>(28.656395) | 1.7916893e-10<br>(11.950282) | 0.0016309624<br>(27.97439) | 0.004037595<br>(28.880869) | **0.91325474**<br>(**34.302235**) | 0.07607825<br>(31.816982) | 4.4588405e-06<br>(22.072353) | 0.0017682364<br>(28.055202) |
 
 Added perturbation:
 

@@ -15,10 +15,10 @@
 
 Added perturbation:
 
-* 0-norm: 18.0
-* 1-norm: 18.0
-* 2-norm: 4.242640687119285
-* ∞-norm: 1.0
+* L<sub>0</sub>-norm: 18.0
+* L<sub>1</sub>-norm: 18.0
+* L<sub>2</sub>-norm: 4.242640687119285
+* L<sub>∞</sub>-norm: 1.0
 
 ## Submission to Max-SAT evaluation 2020
 
@@ -33,7 +33,7 @@ Added perturbation:
 
 ### Some follow-ups
 
-* Q: In several samples used in the contest, the images do not look like the numbers shown on the labels
+* Q: In several samples used in the contest, the images do not look like the numbers shown as their labels.
   * A: This problem was caused by my misunderstanding of the order of the features in `MNIST-rot` and `MNIST-back-image` datasets (`MNIST` does not have this problem). Thereby images were rotated and flipped from their original form. This problem should have been resolved in the preprocessing during data set creation. However, this is a visualization-only issue, since training and inference treat data in a consistent manner.
 
 ## References

@@ -26,6 +26,16 @@ Added perturbation:
 * [Submitted instances](https://www.dropbox.com/s/s5r30rcpfby1vmd/maxsat2020_bnn_verification.tar.gz?dl=0) (29.62 GB)
   * [Problems actually used in the competition](https://www.dropbox.com/scl/fi/o5iseq0pm4ynsi3oq5d2m/maxsat2020_bnn_verification_used.tar.gz?rlkey=brvvfdxs0v4o56f9vo29bvskk&dl=0) (2.5 GB)
 
+## Talk at NII Shonan Meeting No. 180 “The Art of SAT”
+
+* [Program](https://nikolajbjorner.github.io/ShonanArtOfSAT/program.html)
+* [Slides](https://nikolajbjorner.github.io/ShonanArtOfSAT/MasahiroSakai-slides.pdf)
+
+### Some follow-ups
+
+* Q: In several samples used in the contest, the images do not look like the numbers shown on the labels
+  * A: This problem was caused by my misunderstanding of the order of the features in `MNIST-rot` and `MNIST-back-image` datasets (`MNIST` does not have this problem). Thereby images were rotated and flipped from their original form. This problem should have been resolved in the preprocessing during data set creation. However, this is a visualization-only issue, since training and inference treat data in a consistent manner.
+
 ## References
 
 * [MaxSAT Evaluation 2020 : Solver and Benchmark Descriptions](https://helda.helsinki.fi/items/a24cd636-edb1-4e20-bbdf-e56a66a3a05c)

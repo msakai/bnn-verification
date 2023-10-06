@@ -6,7 +6,7 @@
 
 ## Example
 
-This is in case for `bnn_mnist_rot_10_label4_adversarial_norm_inf_totalizer.wcnf`.
+This is the case for `bnn_mnist_rot_10_label4_adversarial_norm_inf_totalizer.wcnf`.
 
 | | Image | Prediction of a model | P(y=0)<br>(logit) | P(y=1)<br>(logit) | P(y=2)<br>(logit) | P(y=3)<br>(logit) | P(y=4)<br>(logit) | P(y=5)<br>(logit) | P(y=6)<br>(logit) | P(y=7)<br>(logit) | P(y=8)<br>(logit) | P(y=9)<br>(logit) |
 |-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -37,7 +37,7 @@ Added perturbation:
   * A: This problem was caused by my misunderstanding of the order of the features in `MNIST-rot` and `MNIST-back-image` datasets (`MNIST` does not have this problem). Thereby images were rotated and flipped from their original form. The features should have been reordered in the preprocessing during dataset creation. However, this is a visualization-only issue, since training and inference treat data in a consistent manner.
 * Q: What happens if two classes have the same maximum logit value?
   * A: It is common to return a class with the smallest index in actual implementations (e.g. [numpy.argmax](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html) and [torch.argmax](https://pytorch.org/docs/stable/generated/torch.argmax.html)). However, safety property relying on such an assumption is not robust (in particular in the case of floating point numbers). Therefore, we didn't specify which of the maximum-logit classes is chosen and allowed one of them to be chosen non-determinically, in a way similar to how unspecified behavior is modeled with non-determinism in model checking safety properties. In other words, we are checking whether it is possible for an incorrect class to have a logit value at least as large as the one for the correct class.
-* Q: Is there images of successfully perturbated image?
+* Q: Is there images of successfully perturbated cases?
   * A: I added an example above, although it is not the one used in the competition.
 * Q: You said that using the *sequential encoder* produced a much larger file than using the *totalizer*. However, their sizes should be close both theoretically and empirically.
   * A: Since there were no records kept, and my recollection was not clear, I re-run the experiment using the sequential counter.

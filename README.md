@@ -24,7 +24,30 @@ Added perturbation:
 
 * [Description](maxsat2020/description.pdf)
 * [Submitted instances](https://www.dropbox.com/s/s5r30rcpfby1vmd/maxsat2020_bnn_verification.tar.gz?dl=0) (29.62 GB)
-  * [Problems actually used in the competition](https://www.dropbox.com/scl/fi/o5iseq0pm4ynsi3oq5d2m/maxsat2020_bnn_verification_used.tar.gz?rlkey=brvvfdxs0v4o56f9vo29bvskk&dl=0) (2.5 GB)
+ 
+## Result in the Max-SAT Evaluation 2020
+
+[The competition results and organizer's slides](https://maxsat-evaluations.github.io/2020/rankings.html) are available on the competition website.
+
+Among submitted 60 instance, 5 instances ([maxsat2020_bnn_verification_used.tar.gz](https://www.dropbox.com/scl/fi/o5iseq0pm4ynsi3oq5d2m/maxsat2020_bnn_verification_used.tar.gz?rlkey=brvvfdxs0v4o56f9vo29bvskk&dl=0), 2.5 GB) were used in the competition:
+
+|Instance|Image|Label|Minimum ǁτǁ<sub>∞</sub>|
+|-|-|-:|-:|
+|bnn_mnist_7_label9_adversarial_norm_inf_totalizer.wcnf.gz| |9|1|
+|bnn_mnist_back_image_32_label3_adversarial_norm_inf_totalizer.wcnf.gz| |3|2|
+|bnn_mnist_rot_16_label5_adversarial_norm_inf_totalizer.wcnf.gz| |5|1|
+|bnn_mnist_rot_8_label1_adversarial_norm_inf_totalizer.wcnf.gz| |1|1|
+|bnn_mnist_back_image_73_label5_adversarial_norm_inf_totalizer.wcnf.gz| |5|4|
+
+Solving time (in seconds; 3600.0 means timeout):
+
+|Instance|maxino-pref|maxino|Pacose|UWrMaxSat|MaxHS|QMaxSAT|RC2-B / RC2-A /<br>smax-minisat / smax-mergesat|
+|-|-:|-:|-:|-:|-:|-:|-:|
+|…|270.62|269.06|402.17|648.45|991.52|141.42|3600.0|
+|…|279.84|277.76|1101.24|795.81|1733.77|1729.06|3600.0|
+|…|367.28|367.06|221.87|657.69|1006.6|704.83|3600.0|
+|…|84.87|84.06|347.71|588.25|1083.57|3600.0|3600.0|
+|…|2215.51|2232.61|3600.0|3600.0|3600.0|3600.0|3600.0|
 
 ## Talk at NII Shonan Meeting No. 180 “The Art of SAT”
 

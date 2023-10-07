@@ -33,11 +33,11 @@ Among submitted 60 instance, 5 instances ([maxsat2020_bnn_verification_used.tar.
 
 |Instance|Image|Label|Minimum ǁτǁ<sub>∞</sub>|
 |-|-|-:|-:|
-|bnn_mnist_7_label9_adversarial_norm_inf_totalizer.wcnf.gz| |9|1|
-|bnn_mnist_back_image_32_label3_adversarial_norm_inf_totalizer.wcnf.gz| |3|2|
-|bnn_mnist_rot_16_label5_adversarial_norm_inf_totalizer.wcnf.gz| |5|1|
-|bnn_mnist_rot_8_label1_adversarial_norm_inf_totalizer.wcnf.gz| |1|1|
-|bnn_mnist_back_image_73_label5_adversarial_norm_inf_totalizer.wcnf.gz| |5|4|
+|bnn_mnist_7_label9_adversarial_norm_inf_totalizer.wcnf.gz|![](images/bnn_mnist_7_label9.png)|9|1|
+|bnn_mnist_back_image_32_label3_adversarial_norm_inf_totalizer.wcnf.gz|![](images/bnn_mnist_back_image_32_label3.png)|3|2|
+|bnn_mnist_rot_16_label5_adversarial_norm_inf_totalizer.wcnf.gz|![](images/bnn_mnist_rot_16_label5.png)|5|1|
+|bnn_mnist_rot_8_label1_adversarial_norm_inf_totalizer.wcnf.gz|![](images/bnn_mnist_rot_8_label1.png)|1|1|
+|bnn_mnist_back_image_73_label5_adversarial_norm_inf_totalizer.wcnf.gz|![](images/bnn_mnist_back_image_73_label5.png)|5|4|
 
 Solving time (in seconds; 3600.0 means timeout):
 

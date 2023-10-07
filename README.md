@@ -37,7 +37,7 @@ Added perturbation:
   * A: This problem was caused by my misunderstanding of the order of the features in `MNIST-rot` and `MNIST-back-image` datasets (`MNIST` does not have this problem). Thereby images were rotated and flipped from their original form. The features should have been reordered in the preprocessing during dataset creation. However, this is a visualization-only issue, since training and inference treat data in a consistent manner.
 * Q: What happens if two classes have the same maximum logit value?
   * A: It is common to return a class with the smallest index in actual implementations (e.g. [numpy.argmax](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html) and [torch.argmax](https://pytorch.org/docs/stable/generated/torch.argmax.html)). However, safety property relying on such an assumption is not robust (in particular in the case of floating point numbers). Therefore, we didn't specify which of the maximum-logit classes is chosen and allowed one of them to be chosen non-determinically, in a way similar to how unspecified behavior is modeled with non-determinism in model checking safety properties. In other words, we are checking whether it is possible for an incorrect class to have a logit value at least as large as the one for the correct class.
-* Q: Is there images of successfully perturbated cases?
+* Q: Are there images of successfully perturbated cases?
   * A: I added an example above, although it is not the one used in the competition.
 * Q: You said that using *sequential counters* produced a much larger file than using the *totalizer*. However, their sizes should be close both theoretically and empirically.
   * A: Since I didn't keep the results of experiments with *sequential counters*, I re-run the experiment using the sequential counter.
@@ -49,7 +49,7 @@ Added perturbation:
     |parallel counters|94,898,008 B|516,006|3,227,479|
     |(PB constraints in WBO file)|3,215,049 B|1,452|2,191|
 
-    The file size and the number of constraints were certainly larger in the *sequential counters* case, but the difference was not that much
+    The file size and the number of constraints are certainly larger in the *sequential counters* case, but the difference is not that much
     (although there is a huge difference in the number of variables).
     Therefore, it appears that I misremembered the results.
     

@@ -42,12 +42,12 @@ Added perturbation:
 * Q: You said that using *sequential counters* produced a much larger file than using the *totalizer*. However, their sizes should be close both theoretically and empirically.
   * A: Since I didn't keep the results of experiments with *sequential counters*, I re-run the experiment using the sequential counter.
     The result for the 7th data in the MNIST test dataset (label = 9) in the case of L<sub>∞</sub> norm is as follows:
-    |encoding|file size (uncompressed file)|#variables|#constraints|
-    |-|-:|-:|-:|
-    |sequential counters|5,076,826,688 B|64,168,245|192,424,087|
-    |totalizer|3,871,189,890 B|1,824,676|132,670,200|
-    |parallel counters|94,898,008 B|516,006|3,227,479|
-    |(PB constraints in WBO file)|3,215,049 B|1,452|2,191|
+    |encoding|file size (uncompressed file)|#variables|#constraints|Download|
+    |-|-:|-:|-:|-|
+    |sequential counters|5,076,826,688 B|64,168,245|192,424,087|[bnn_mnist_7_label9_adversarial_norm_inf_sequential.wcnf.zst](https://www.dropbox.com/scl/fo/8ppww4gw2ulcxci9lakzu/h/problem_size_comparison?dl=0&preview=bnn_mnist_7_label9_adversarial_norm_inf_sequential.wcnf.zst&rlkey=xm0xobzf1lu1qbv3h5plsv9ds&subfolder_nav_tracking=1)|
+    |totalizer|3,871,189,890 B|1,824,676|132,670,200|[bnn_mnist_7_label9_adversarial_norm_inf_totalizer.wcnf.zst](https://www.dropbox.com/scl/fo/8ppww4gw2ulcxci9lakzu/h/problem_size_comparison?dl=0&preview=bnn_mnist_7_label9_adversarial_norm_inf_totalizer.wcnf.zst&rlkey=xm0xobzf1lu1qbv3h5plsv9ds&subfolder_nav_tracking=1)|
+    |parallel counters|94,898,008 B|516,006|3,227,479|[bnn_mnist_7_label9_adversarial_norm_inf_parallel.wcnf.zst](https://www.dropbox.com/scl/fo/8ppww4gw2ulcxci9lakzu/h/problem_size_comparison?dl=0&preview=bnn_mnist_7_label9_adversarial_norm_inf_parallel.wcnf.zst&rlkey=xm0xobzf1lu1qbv3h5plsv9ds&subfolder_nav_tracking=1)|
+    |(PB constraints in WBO file)|3,215,049 B|1,452|2,191|[bnn_mnist_7_label9_adversarial_norm_inf.wbo.zst](https://www.dropbox.com/scl/fo/8ppww4gw2ulcxci9lakzu/h/problem_size_comparison?dl=0&preview=bnn_mnist_7_label9_adversarial_norm_inf.wbo.zst&rlkey=xm0xobzf1lu1qbv3h5plsv9ds&subfolder_nav_tracking=1)|
 
     The file size and the number of constraints are certainly larger in the *sequential counters* case, but the difference is not that much
     (although there is a huge difference in the number of variables).

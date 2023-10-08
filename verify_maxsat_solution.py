@@ -18,10 +18,16 @@ def read_binary_solution(fname: Union[Path, str]) -> Optional[np.ndarray]:
     with open(fname) as f:
         for line in f:
             if line.startswith('v '):
-                for s in line[2:].split():
-                    l = int(s)
-                    if abs(l) <= 28*28:
-                        sol[abs(l) - 1] = (l > 0)
+                line = line[2:].strip()
+                if re.fullmatch(r"[01]+", line):
+                    for i in range(28*28):
+                        sol[i] = (line[i] == "1")
+                    break
+                else:
+                    for s in line[2:].split():
+                        l = int(s)
+                        if abs(l) <= 28*28:
+                            sol[abs(l) - 1] = (l > 0)
     return sol
 
 

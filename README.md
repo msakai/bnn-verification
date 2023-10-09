@@ -44,7 +44,7 @@ $ python3 generate_maxsat_instances.py --dataset mnist_back_image --model models
 
 You can also specify an individual sample by using `--instance-no` instead of `--instances-per-class`.
 
-### Solution processing
+### Validating solutions
 
 Once the solver successfully solves a problem instance, you can check the solution as follows:
 

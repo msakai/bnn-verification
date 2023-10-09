@@ -7,9 +7,70 @@ to the [Max-SAT Evaluation
 
 ## Usage
 
-(TBD)
+### Preparation
 
-## Example
+```console
+$ pip3 install -r requirements.txt
+```
+
+### (Optional) Training model
+
+Trained model weights are included in the `models/` directory:
+
+* [models/mnist.npz](models/mnist.npz)
+* [models/mnist_rot.npz](models/mnist_rot.npz)
+* [models/mnist_back_image.npz](models/mnist_back_image.npz)
+
+Use those models to get the same problem instances we submitted to the
+Max-SAT Evaluation 2020.
+
+[models/Verifying_Properties_of_Binarized_Deep_Neural_Networks.ipynb](models/Verifying_Properties_of_Binarized_Deep_Neural_Networks.ipynb)
+is the notebook we used for training those models on Google Colaboratory.
+Note, however, that this code is older than the other codes in this
+repository and should be used with caution.
+
+### Max-SAT instance generation
+
+Run the following to generate the same data set submitted to Max-SAT Evaluation 2020: 
+
+```console
+$ python3 generate_maxsat_instances.py --dataset mnist --model models/mnist.npz -o outdir \
+--format wcnf --card totalizer --norm inf --target adversarial --instances-per-class 2
+$ python3 generate_maxsat_instances.py --dataset mnist_rot --model models/mnist_rot.npz -o outdir \
+--format wcnf --card totalizer --norm inf --target adversarial --instances-per-class 2
+$ python3 generate_maxsat_instances.py --dataset mnist_back_image --model models/mnist_back_image.npz -o outdir \
+--format wcnf --card totalizer --norm inf --target adversarial --instances-per-class 2
+```
+
+You can also specify an individual sample by using `--instance-no` instead of `--instances-per-class`.
+
+### Solution processing
+
+Once the solver successfully solves a problem instance, you can check the solution as follows:
+
+```console
+$ python3 verify_maxsat_solution.py --dataset mnist --instance 7 \
+  --output-image perturbated.png \
+  --output-orig-image orig.png \
+  output.txt
+```
+
+Here, `output.txt` is a file containing the output of your solver (only `v` lines are used).
+The [logs/maxino-pref-fixed/](logs/maxino-pref-fixed/) directory contains log files that
+you can try.
+
+This converts the solution in the `output.txt` to an image file named `perturbated.pn`,
+and also provides some information:
+* model's prediction (probability distribution over the digit classes and predicted class)
+  on the original image and the perturbated image, and
+* the norms of the perturbation.
+
+You need to provide a dataset and an instance number equal to the ones
+used to generate the problem. If you generated a problem using
+`--instances-per-class`, you can find the instance number from the
+filename.
+
+### Example result
 
 This is the case for `bnn_mnist_rot_10_label4_adversarial_norm_inf_totalizer.wcnf`.
 

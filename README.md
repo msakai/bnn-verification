@@ -1,5 +1,10 @@
 # BNN verification dataset for Max-SAT Evaluation 2020
 
+This repository contains the source code and related information for
+the binarized neural networks (BNNs) verification datasets submitted
+to the [Max-SAT Evaluation
+2020](https://maxsat-evaluations.github.io/2020/).
+
 ## Usage
 
 (TBD)

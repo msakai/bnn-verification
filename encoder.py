@@ -1,10 +1,8 @@
 import copy
-from itertools import zip_longest
 import math
 from pathlib import Path
-from typing import cast, Counter, Dict, List, NamedTuple, Optional, Sequence, Tuple, Union
+from typing import Counter, Dict, List, NamedTuple, Optional, Sequence, Tuple, Union
 
-import chainer
 import numpy as np
 
 import bnn
@@ -39,7 +37,7 @@ def normalize_clause(clause: Sequence[Lit]) -> Optional[List[Lit]]:
 def normalize_pbsum(xs: PBSum) -> Tuple[PBSum, int]:
     def f(xs: PBSum, offset: int) -> Tuple[PBSum, int]:
         xs2 = Counter[Lit]()
-        for (c,l) in xs:
+        for (c, l) in xs:
             if l > 0:
                 xs2[l] += c
             else:
@@ -48,13 +46,13 @@ def normalize_pbsum(xs: PBSum) -> Tuple[PBSum, int]:
                 offset += c
         offset += xs2.get(lit_true, 0)
         del xs2[lit_true]
-        return ([(c,l) for (l,c) in xs2.items() if c != 0], offset)
+        return ([(c, l) for (l, c) in xs2.items() if c != 0], offset)
 
     def g(xs: PBSum, offset: int) -> Tuple[PBSum, int]:
         xs2 = []
-        for (c,x) in xs:
+        for (c, x) in xs:
             if c >= 0:
-                xs2.append((c,x))
+                xs2.append((c, x))
             else:
                 # c x = -c (1 - x) + c = -c ¬x + c
                 xs2.append((- c, -x))
@@ -81,17 +79,17 @@ class PBAtLeast(NamedTuple):
 
     # ¬ (lhs ≥ rhs) ⇔ (lhs < rhs) ⇔ (-lhs > -rhs) ⇔ (-lhs ≥ -rhs + 1)
     def negate(self) -> 'PBAtLeast':
-        return PBAtLeast([(-c,x) for (c,x) in self.lhs], -self.rhs + 1)
+        return PBAtLeast([(-c, x) for (c, x) in self.lhs], -self.rhs + 1)
 
     def to_pos_literals(self) -> 'PBAtLeast':
         lhs2 = []
         offset = 0
-        for (c,l) in self.lhs:
+        for (c, l) in self.lhs:
             if l > 0:
-                lhs2.append((c,l))
+                lhs2.append((c, l))
             else:
                 # c ¬x = c (1 - x) = c - c x
-                lhs2.append((-c,-l))
+                lhs2.append((-c, -l))
                 offset += c
         return PBAtLeast(lhs2, self.rhs - offset)
 
@@ -105,7 +103,7 @@ class PBAtLeast(NamedTuple):
     def _normalize_pb_atleast_trivial(self) -> 'PBAtLeast':
         if self.rhs <= 0:
             return PBAtLeast([], 0)
-        elif sum(c for (c,_) in self.lhs) < self.rhs:
+        elif sum(c for (c, _) in self.lhs) < self.rhs:
             return PBAtLeast([], 1)
         else:
             return self
@@ -113,10 +111,10 @@ class PBAtLeast(NamedTuple):
     def _normalize_pb_atleast_gcd(self) -> 'PBAtLeast':
         if self.rhs <= 0:
             return self
-        lhs = [(min(c, self.rhs), x) for (c,x) in self.lhs]
+        lhs = [(min(c, self.rhs), x) for (c, x) in self.lhs]
 
         g = None
-        for (c,x) in lhs:
+        for (c, x) in lhs:
             assert c >= 0
             if c < self.rhs:
                 if g is None:
@@ -124,17 +122,17 @@ class PBAtLeast(NamedTuple):
                 else:
                     g = math.gcd(g, c)
 
-        if g is None: # all coefficients are >=rhs
-            lhs = [(1, x) for (c,x) in lhs]
+        if g is None:  # all coefficients are >=rhs
+            lhs = [(1, x) for (c, x) in lhs]
             rhs = 1
         else:
-            lhs = [((c + g - 1) // g, x) for (c,x) in lhs]
+            lhs = [((c + g - 1) // g, x) for (c, x) in lhs]
             rhs = (self.rhs + g - 1) // g
         return PBAtLeast(lhs, rhs)
 
     def fix_literals(self) -> Tuple['PBAtLeast', List[Lit]]:
         lhs = sorted(self.lhs, key=lambda x: x[0], reverse=True)
-        slack = sum(c for (c,x) in lhs) - self.rhs
+        slack = sum(c for (c, x) in lhs) - self.rhs
         lhs2 = []
         rhs2 = self.rhs
         fixed = []
@@ -144,7 +142,7 @@ class PBAtLeast(NamedTuple):
                 fixed.append(x)
                 rhs2 -= c
             else:
-                lhs2.append((c,x))
+                lhs2.append((c, x))
         return (PBAtLeast(lhs2, rhs2), fixed)
 
 
@@ -167,12 +165,12 @@ class PBExactly(NamedTuple):
     def to_pos_literals(self) -> 'PBExactly':
         lhs2 = []
         offset = 0
-        for (c,l) in self.lhs:
+        for (c, l) in self.lhs:
             if l > 0:
-                lhs2.append((c,l))
+                lhs2.append((c, l))
             else:
                 # c ¬x = c (1 - x) = c - c x
-                lhs2.append((-c,-l))
+                lhs2.append((-c, -l))
                 offset += c
         return PBExactly(lhs2, self.rhs - offset)
 
@@ -223,15 +221,15 @@ class Encoder():
         self.add_pb_atleast(constr)
 
     def _lb(self, s: PBSum) -> int:
-        return sum(c if c < 0 else 0 for (c,_) in s)
+        return sum(c if c < 0 else 0 for (c, _) in s)
 
     def _ub(self, s: PBSum) -> int:
-        return sum(c if c > 0 else 0 for (c,_) in s)
+        return sum(c if c > 0 else 0 for (c, _) in s)
 
     def add_pb_exactly(self, constr: PBExactly, cost: Optional[int] = None) -> None:
         self.constrs.append((cost, constr.normalize()))
 
-    def encode_conj(self, *xs: Lit, polarity: Polarity = Polarity(True,True)) -> Lit:
+    def encode_conj(self, *xs: Lit, polarity: Polarity = Polarity(True, True)) -> Lit:
         if any(x == lit_false for x in xs):
             return lit_false
         else:
@@ -255,13 +253,13 @@ class Encoder():
                     e.neg_asserted = True
                 return r
 
-    def encode_disj(self, *xs: Lit, polarity: Polarity = Polarity(True,True)) -> Lit:
+    def encode_disj(self, *xs: Lit, polarity: Polarity = Polarity(True, True)) -> Lit:
         return - self.encode_conj(*[-x for x in xs], polarity=polarity.negate())
 
     def encode_bvuge(self, lhs: Sequence[Lit], rhs: Sequence[Lit], polarity: Polarity = Polarity(True, True)) -> Lit:
         # lhs occurs positively and rhs occurs negatively
         ret = lit_true
-        assert len(lhs)==len(rhs)
+        assert len(lhs) == len(rhs)
         for i in range(len(lhs)):
             cond1 = self.encode_conj(lhs[i], -rhs[i], polarity=polarity)
             cond2 = self.encode_conj(self.encode_disj(-rhs[i], lhs[i], polarity=polarity), ret, polarity=polarity)
@@ -272,17 +270,17 @@ class Encoder():
         x = self.new_var()
         if polarity.neg:
             # FASum(a,b,c) → x
-            self.add_clause([-a,-b,-c,x]) #  a ∧  b ∧  c → x
-            self.add_clause([-a,b,c,x])   #  a ∧ ¬b ∧ ¬c → x
-            self.add_clause([a,-b,c,x])   # ¬a ∧  b ∧ ¬c → x
-            self.add_clause([a,b,-c,x])   # ¬a ∧ ¬b ∧  c → x
+            self.add_clause([-a, -b, -c, x])  #  a ∧  b ∧  c → x
+            self.add_clause([-a, b, c, x])    #  a ∧ ¬b ∧ ¬c → x
+            self.add_clause([a, -b, c, x])    # ¬a ∧  b ∧ ¬c → x
+            self.add_clause([a, b, -c, x])    # ¬a ∧ ¬b ∧  c → x
         if polarity.pos:
             # x → FASum(a,b,c)
             # ⇔ ¬FASum(a,b,c) → ¬x
-            self.add_clause([a,b,c,-x])   # ¬a ∧ ¬b ∧ ¬c → ¬x
-            self.add_clause([a,-b,-c,-x]) # ¬a ∧  b ∧  c → ¬x
-            self.add_clause([-a,b,-c,-x]) #  a ∧ ¬b ∧  c → ¬x
-            self.add_clause([-a,-b,c,-x]) #  a ∧  b ∧ ¬c → ¬x
+            self.add_clause([a, b, c, -x])    # ¬a ∧ ¬b ∧ ¬c → ¬x
+            self.add_clause([a, -b, -c, -x])  # ¬a ∧  b ∧  c → ¬x
+            self.add_clause([-a, b, -c, -x])  #  a ∧ ¬b ∧  c → ¬x
+            self.add_clause([-a, -b, c, -x])  #  a ∧  b ∧ ¬c → ¬x
         return x
 
     def encode_fa_carry(self, a, b, c, polarity: Polarity = Polarity(True, True)) -> Lit:
@@ -290,14 +288,14 @@ class Encoder():
         if polarity.pos:
             # x → FACarry(a,b,c)
             # ⇔ ¬FACarry(a,b,c) → ¬x
-            self.add_clause([a,b,-x]) #  ¬a ∧ ¬b → ¬x
-            self.add_clause([a,c,-x]) #  ¬a ∧ ¬c → ¬x
-            self.add_clause([b,c,-x]) #  ¬b ∧ ¬c → ¬x
+            self.add_clause([a, b, -x])  #  ¬a ∧ ¬b → ¬x
+            self.add_clause([a, c, -x])  #  ¬a ∧ ¬c → ¬x
+            self.add_clause([b, c, -x])  #  ¬b ∧ ¬c → ¬x
         if polarity.neg:
             # FACarry(a,b,c) → x
-            self.add_clause([-a,-b,x]) # a ∧ b → x
-            self.add_clause([-a,-c,x]) # a ∧ c → x
-            self.add_clause([-b,-c,x]) # b ∧ c → x
+            self.add_clause([-a, -b, x])  # a ∧ b → x
+            self.add_clause([-a, -c, x])  # a ∧ c → x
+            self.add_clause([-b, -c, x])  # b ∧ c → x
         return x
 
     def encode_atleast_sequential_counter(self, lhs: Sequence[Lit], rhs: int, polarity: Polarity = Polarity(True, True)) -> Lit:
@@ -344,8 +342,8 @@ class Encoder():
                 return lhs
             else:
                 n = len(lhs)
-                xs1 = encode_sum(lhs[: n // 2])
-                xs2 = encode_sum(lhs[n // 2 :])
+                xs1 = encode_sum(lhs[:n // 2])
+                xs2 = encode_sum(lhs[n // 2:])
                 rs = self.new_vars(n)
                 for sigma in range(n+1):
                     # a + b = sigma, 0 <= a <= n1, 0 <= b <= n2
@@ -394,8 +392,8 @@ class Encoder():
         if self._ub(constr.lhs) < constr.rhs:
             return lit_false
         elif self._cnf:
-            assert all(c == 1 for (c,_) in constr.lhs)
-            return self.encode_atleast([x for (_,x) in constr.lhs], constr.rhs, polarity=polarity)
+            assert all(c == 1 for (c, _) in constr.lhs)
+            return self.encode_atleast([x for (_, x) in constr.lhs], constr.rhs, polarity=polarity)
         else:
             y = self.new_var()
             if polarity.pos:
@@ -455,7 +453,7 @@ class BNNEncoder(Encoder):
             return [lit_true if ((x >> i) & 1) > 0 else lit_false for i in range(8)]
 
         def bits_to_pbsum(x):
-            return [(2**i, b) for (i,b) in enumerate(x)]
+            return [(2**i, b) for (i, b) in enumerate(x)]
 
         # γ((x/255 - μ) / σ) + β >= 0
         # (γ/σ) (x/255 - μ) ≥ - β
@@ -474,7 +472,7 @@ class BNNEncoder(Encoder):
                 return self.encode_bvuge(byte_bits(C), x)
             else:
                 # -x ≥ -C
-                return self.encode_pb_atleast(PBAtLeast([(-c,v) for (c,v) in bits_to_pbsum(x)], -C))
+                return self.encode_pb_atleast(PBAtLeast([(-c, v) for (c, v) in bits_to_pbsum(x)], -C))
 
     def encode_binarize_image(self, input_bn, image: Sequence[Sequence[Lit]]) -> Sequence[Lit]:
         mu = input_bn.avg_mean
@@ -484,7 +482,7 @@ class BNNEncoder(Encoder):
         return [self.encode_binarize_pixel(mu[i], sigma[i], gamma[i], beta[i], x) for i, x in enumerate(image)]
 
     def encode_block_1(self, row, b: float, mu: float, sigma: float, gamma: float, beta: float, xs: Sequence[Lit]) -> Lit:
-        #assert all(int(x) == 1 or int(x) == -1 for x in row.reshape(-1))
+        # assert all(int(x) == 1 or int(x) == -1 for x in row.reshape(-1))
         # γ((Σ_i row[i]*(2*xs[i]-1) + b) - μ)/σ + β ≥ 0
         # ((Σ_i row[i]*(2*xs[i]-1) + b) - μ)*(γ/σ) ≥ -β
         C_frac = (- beta * sigma / gamma + mu - b + sum(row)) / 2
@@ -518,9 +516,9 @@ class BNNEncoder(Encoder):
             for i in range(len(output)):
                 o1 = output[i]
                 for o2 in output[i+1:]:
-                    self.add_clause([-o1,-o2])
+                    self.add_clause([-o1, -o2])
         else:
-            self.add_pb_exactly(PBExactly([(1,x) for x in output], 1))
+            self.add_pb_exactly(PBExactly([(1, x) for x in output], 1))
 
         W = lin.W.array.astype(np.int32)
         b = lin.b.array
@@ -532,10 +530,10 @@ class BNNEncoder(Encoder):
                 if i == j:
                     continue
                 # logits[i] >= logits[j]
-                constr = PBAtLeast(logits[i][0] + [(-c, v) for (c,v) in logits[j][0]], int(math.ceil(logits[j][1] - logits[i][1])))
+                constr = PBAtLeast(logits[i][0] + [(-c, v) for (c, v) in logits[j][0]], int(math.ceil(logits[j][1] - logits[i][1])))
                 if self._cnf:
                     constr = constr.normalize()
-                    assert all(c==1 for c, v in constr.lhs)
+                    assert all(c == 1 for c, v in constr.lhs)
                     x = self.encode_atleast([v for _, v in constr.lhs], constr.rhs, Polarity(True, False))
                     self.add_clause([-output[i], x])
                 else:

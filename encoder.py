@@ -548,3 +548,37 @@ class BNNEncoder(Encoder):
         for block in model.blocks:
             h = self.encode_block(block, h)
         self.encode_output(model.output_lin, h, output)
+
+    def add_norm_cost(self, norm: str, mod: Sequence[Tuple[Lit, Optional[int]]]) -> None:
+        if norm == '0':
+            for lit, w in mod:
+                self.add_clause([lit], None if w is None else 1)
+        elif norm == '1':
+            for lit, w in mod:
+                self.add_clause([lit], None if w is None else abs(w))
+        elif norm == '2':
+            for lit, w in mod:
+                self.add_clause([lit], None if w is None else w*w)
+        elif norm == 'inf':
+            d: Dict[int, List[Lit]] = {}
+            for lit, w in mod:
+                if w is None:
+                    self.add_clause([lit])
+                else:
+                    w = abs(w)
+                    if w not in d:
+                        d[w] = []
+                    d[w].append(lit)
+            c_prev = 0
+            relax_prev = None
+            for w in sorted(d.keys()):
+                relax = self.new_var()
+                self.add_clause([-relax], cost=w - c_prev)
+                if relax_prev is not None:
+                    self.add_clause([-relax, relax_prev])  # relax → relax_prev
+                for lit in d[w]:
+                    self.add_clause([relax, lit])  # ¬lit → relax
+                c_prev = w
+                relax_prev = relax
+        else:
+            raise RuntimeError("unknown norm: " + str(norm))

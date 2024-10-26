@@ -13,42 +13,6 @@ import encoder
 import visualize
 
 
-def add_norm(enc: encoder.Encoder, norm: str,
-             mod: Sequence[Tuple[encoder.Lit, Optional[int]]]) -> None:
-    if norm == '0':
-        for lit, w in mod:
-            enc.add_clause([lit], None if w is None else 1)
-    elif norm == '1':
-        for lit, w in mod:
-            enc.add_clause([lit], None if w is None else abs(w))
-    elif norm == '2':
-        for lit, w in mod:
-            enc.add_clause([lit], None if w is None else w*w)
-    elif norm == 'inf':
-        d: Dict[int, List[encoder.Lit]] = {}
-        for lit, w in mod:
-            if w is None:
-                enc.add_clause([lit])
-            else:
-                w = abs(w)
-                if w not in d:
-                    d[w] = []
-                d[w].append(lit)
-        c_prev = 0
-        relax_prev = None
-        for w in sorted(d.keys()):
-            relax = enc.new_var()
-            enc.add_clause([-relax], cost=w - c_prev)
-            if relax_prev is not None:
-                enc.add_clause([-relax, relax_prev])  # relax → relax_prev
-            for lit in d[w]:
-                enc.add_clause([relax, lit])  # ¬lit → relax
-            c_prev = w
-            relax_prev = relax
-    else:
-        raise RuntimeError("unknown norm: " + str(norm))
-
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, choices=['mnist', 'mnist_back_image', 'mnist_rot'], default='mnist', help='dataset name')
 parser.add_argument('--model', type=str, default=None, help='model file (*.npz)')
@@ -197,5 +161,5 @@ for instance_no, (x, true_label) in enumerate(test):
                 xs.append(args.card)
             fname = result_dir / ('_'.join([s for s in xs if len(s) > 0]) + "." + args.format)
             enc2 = copy.copy(enc)
-            add_norm(enc2, norm, mod2)
+            enc2.add_norm_cost(norm, mod2)
             enc2.write_to_file_opt(fname)

@@ -54,7 +54,7 @@ parser.add_argument('--dataset', type=str, choices=['mnist', 'mnist_back_image',
 parser.add_argument('--model', type=str, default=None, help='model file (*.npz)')
 parser.add_argument('-o', '--output-dir', type=str, default="instances/maxsat", help='output directory')
 parser.add_argument('--format', type=str, choices=["wbo", "wcnf"], help='file format')
-parser.add_argument('--norm', type=str, choices=['0', '1', '2', 'inf'], nargs='*', default=['0', '1', '2', 'inf'], help='encoding of cardinality constraints')
+parser.add_argument('--norm', type=str, choices=['0', '1', '2', 'inf'], nargs='*', default=['0', '1', '2', 'inf'], help='norm to minimize')
 parser.add_argument('--card', type=str, choices=["sequential", "parallel", "totalizer"], default="parallel", help='encoding of cardinality constraints')
 parser.add_argument('--target', type=str, default="adversarial", choices=['adversarial', 'truelabel'], help='target label')
 parser.add_argument('--instance-no', type=int, default=None, help='specify instance number')

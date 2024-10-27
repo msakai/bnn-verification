@@ -226,6 +226,9 @@ class BNNEncoder(Encoder):
                 # logits[i] ≥ logits[j]
                 lhs = [(w, xs[k]) for k, w in enumerate(logits[i][0] - logits[j][0]) if w != 0]
                 rhs = int(math.ceil(logits[j][1] - logits[i][1]))
+                assert all(c % 4 == 0 for c, _ in lhs)
+                lhs = [(c // 4, v) for c, v in lhs]
+                rhs = rhs // 4  # Note that // is floor division
                 self.add_ge_soft(output[i], lhs, rhs)
 
     def encode(self, model: bnn.BNN, image: Sequence[Var], output: Sequence[Var]) -> None:

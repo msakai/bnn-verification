@@ -294,6 +294,6 @@ class BNNEncoder(Encoder):
                         offset += f(w)
 
             if offset != 0:
-                one = self.new_var("one", 1, 1, is_int=True)
+                one = self.new_var("one", 1, 1)
                 obj.append((offset, one))
             self.set_objective(obj)

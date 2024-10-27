@@ -522,6 +522,8 @@ class BNNEncoder(Encoder):
 
         W = lin.W.array.astype(np.int32)
         b = lin.b.array
+        assert W.shape == (n, m)
+        assert b.shape == (n, )
         #   (Σ_j W[i,j] (2xs[j]-1)) + b[i]
         # = (Σ_j 2 W[i,j] xs[j]) - (Σ_j W[i,j]) + b[i]
         logits = [([(2 * int(W[i, j]), xs[j]) for j in range(m)], - sum(W[i, j] for j in range(m)) + b[i]) for i in range(n)]

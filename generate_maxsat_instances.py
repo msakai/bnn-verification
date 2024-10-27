@@ -21,7 +21,7 @@ parser.add_argument('--format', type=str, choices=["wbo", "wcnf"], help='file fo
 parser.add_argument('--norm', type=str, choices=['0', '1', '2', 'inf'], nargs='*', default=['0', '1', '2', 'inf'], help='norm to minimize')
 parser.add_argument('--card', type=str, choices=["sequential", "parallel", "totalizer"], default="parallel", help='encoding of cardinality constraints')
 parser.add_argument('--target', type=str, default="adversarial", choices=['adversarial', 'truelabel'], help='target label')
-parser.add_argument('--instance-no', type=int, default=None, help='specify instance number')
+parser.add_argument('--instance-no', type=int, nargs='*', default=[], help='specify instance number')
 parser.add_argument('--instances-per-class', type=int, default=None, help='number of instances to generate per class')
 parser.add_argument('--debug-sat', action='store_true', help='produce CNF or OPB for debug')
 parser.add_argument('--ratio', type=float, nargs='*', default=[1.0], help='restrict search space to most salient pixels')
@@ -63,7 +63,7 @@ enc_base.encode_bin_input(model, inputs, outputs)
 counter = Counter[int]()
 
 for instance_no, (x, true_label) in enumerate(test):
-    if args.instance_no is not None and instance_no != args.instance_no:
+    if len(args.instance_no) > 0 and instance_no not in args.instance_no:
         continue
     if args.instances_per_class is not None and counter[true_label] >= args.instances_per_class:
         continue

@@ -202,7 +202,7 @@ class BNNEncoder(Encoder):
         gamma = block.bn.gamma.data
         beta = block.bn.beta.data
         assert all(int(x) == 1 or int(x) == -1 for x in W.astype(np.int32).reshape(-1))
-        output = [self.new_var(f"block({no},{i})", 0, 1, True) for i in range(n_output)]
+        output = [self.new_var(f"block{no}({i})", 0, 1, True) for i in range(n_output)]
         for i in range(n_output):
             self.encode_block_1(W[i].astype(np.int32), b[i], mu[i], sigma[i], gamma[i], beta[i], xs, output[i])
         return output

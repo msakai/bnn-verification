@@ -25,7 +25,7 @@ f: {0,…,255}⁷⁸⁴ → {0,…,9}
 The network architecture is based on Binarized Neural Networks (BNNs) [2][3]. Through detailed explanations of BNN are omitted, our BNN consists of the following steps:
 
 1. Each pixel xᵢ ∈ {0, …, 255} is binarized to zᵢ = binᵢ(xᵢ) ∈ {-1, +1} using learned threshold which varies depending on i.
-2. A function g is applied to z = (zᵢ)ᵢ to product logits = g(z) ∈ R¹⁰,
+2. A function g is applied to z = (zᵢ)ᵢ to produce logits = g(z) ∈ R¹⁰,
 3. Finally, the output y is given by y = argmaxⱼ logitsⱼ.
 
 Thus, f = argmax ∘ g ∘ bin.

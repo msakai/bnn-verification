@@ -58,7 +58,7 @@ bnn_{dataset_name}_{instance number}_label{true label}_adversarial_norm_{norm's 
 
 ## Notes on MILP encoding
 
-### Decision variables
+### Decision Variables
 
 We use input\_bin(0), …, input\_bin(783) as decision variables instead of εᵢs.
 

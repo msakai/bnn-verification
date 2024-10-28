@@ -22,11 +22,10 @@ f: {0,…,255}⁷⁸⁴ → {0,…,9}
 
 ## Target neural networks
 
-The network architecture is based on BNNs (binarized neural networks) [2][3].
+The network architecture is based on BNNs (binarized neural networks) [2][3]. We omit the detail of BNN here, but our BNN consists of the following steps:
 
-We omit the detail of BNN here, but our BNN consists of the following steps:
 1. Each input pixel xᵢ ∈ {0, …, 255} is first binarized as zᵢ = binᵢ(xᵢ) ∈ {-1, +1} using learned threshold (note that threshold varies depending on i),
-2. Some computation g is applied to z to obtain logits = g(z) ∈ R¹⁰,
+2. Some computation g is applied to z = (zᵢ)ᵢ to obtain logits = g(z) ∈ R¹⁰,
 3. Then, y = argmaxⱼ logitsⱼ is the output.
 
 ```
@@ -64,15 +63,15 @@ bnn_{dataset_name}_{instance number}_label{true label}_adversarial_norm_{norm's 
 
 ### Decision variables
 
-We use `input_bin(i)`s instead of εᵢs as decision variables.
+We use input\_bin(0), …, input\_bin(783) instead of εᵢs as decision variables.
 
-`input_bin(i)` ∈ {0, 1} corresponds to (binᵢ(x⁰ᵢ + εᵢ) + 1) / 2.
+input\_bin(i) corresponds to (binᵢ(x⁰ᵢ + εᵢ) + 1) / 2.
 
-Conversely, we define wᵢ to be the smallest magnitude perturbation to flip binᵢ(xᵢ), i.e. binᵢ(x⁰ᵢ + wᵢ) ≠ binᵢ(x⁰ᵢ). Also, we define dᵢ to be `input_bin(i)` if binᵢ(x⁰ᵢ) is -1 and (1 - `input_bin(i)`) if binᵢ(x⁰ᵢ) is +1. Then we can define εᵢ as wᵢ dᵢ.
+Conversely, we define wᵢ to be the smallest magnitude perturbation to flip binᵢ(xᵢ), i.e. binᵢ(x⁰ᵢ + wᵢ) ≠ binᵢ(x⁰ᵢ). Also, we define dᵢ to be input_bin(i) if binᵢ(x⁰ᵢ) is -1 and (1 - input\_bin(i)) if binᵢ(x⁰ᵢ) is +1. Then we can define εᵢ as wᵢ dᵢ.
 
 ### Output variables
 
-`output(j)`s are one hot encoding of f(x + ε) ∈ {0,…,9}.
+output(0), …, output(9) are one hot encoding of f(x + ε) ∈ {0,…,9}.
 
 ### Objective functions
 

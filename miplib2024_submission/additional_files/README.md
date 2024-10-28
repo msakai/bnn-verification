@@ -4,7 +4,7 @@ This dataset consists of MILP instances designed to find minimal perturbation ad
 
 The authors have previously submitted similar instances to [Max-SAT Evaluation 2020](https://maxsat-evaluations.github.io/2020/) [1]; this dataset is its MILP version. Detailed information including source code is available at <https://github.com/msakai/bnn-verification/>.
 
-## Problem overview
+## Problem Overview
 
 Given a trained neural network f and an input x⁰, the objective is to find the minimal perturbation ε such that x⁰ + ε is misclassified. This can be formulated as the following optimization problem:
 

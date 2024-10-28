@@ -37,7 +37,7 @@ We trained BNNs on three datasets: [MNIST](https://yann.lecun.com/exdb/mnist/) a
 
 ## Objective functions
 
-We consider four norms: L₀, L₁, L₂ and L<sub>∞</sub>. (In the Max-SAT Evaluation 2020, we were able to submit only L<sub>∞</sub> cases, but this time we have prepared L₀, L₁, L₂  cases too.)
+We consider four norms: L₀, L₁, L₂ and L<sub>∞</sub>. (In the Max-SAT Evaluation 2020, we were able to submit only L<sub>∞</sub> instances, but this time we have prepared L₀, L₁, L₂ instances too.)
 
 ## Problem Instances
 
@@ -68,7 +68,7 @@ We use `input_bin(i)`s instead of εᵢs as decision variables.
 
 `input_bin(i)` ∈ {0, 1} corresponds to (binᵢ(x⁰ᵢ + εᵢ) + 1) / 2.
 
-Conversely, let wᵢ be the smallest magnitude perturbation to flip binᵢ(xᵢ), i.e. binᵢ(x⁰ᵢ + wᵢ) ≠ binᵢ(x⁰ᵢ) and binᵢ(x⁰ᵢ + v) = binᵢ(x⁰ᵢ) for all v such that |v| < |wᵢ|. Then we can reconstruct εᵢ as wᵢ I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2].
+Conversely, we define wᵢ to be the smallest magnitude perturbation to flip binᵢ(xᵢ), i.e. binᵢ(x⁰ᵢ + wᵢ) ≠ binᵢ(x⁰ᵢ) and binᵢ(x⁰ᵢ + v) = binᵢ(x⁰ᵢ) for all v such that |v| < |wᵢ|. Also, we define dᵢ to be `input_bin(i)` if binᵢ(x⁰ᵢ) is -1 and (1 - `input_bin(i)`) if binᵢ(x⁰ᵢ) is +1. Then we can define εᵢ as wᵢ dᵢ.
 
 ### Output variables
 
@@ -76,11 +76,9 @@ Conversely, let wᵢ be the smallest magnitude perturbation to flip binᵢ(xᵢ)
 
 ### Objective functions
 
-L<sub>∞</sub>-norm objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2]}ᵢ. This can be minimized by minimizing a fresh variable u under the constraints |wᵢ| I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2] ≤ u for all i.
+L<sub>∞</sub>-norm objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| dᵢ}ᵢ. This can be minimized by introducing a fresh variable u, adding constraints |wᵢ| dᵢ ≤ u for all i, and minimizing u. (We used more complicated encoding to encode the problem as a Max-SAT problem [1], but here we can use the familiar one in MILP.)
 
-(We used more complicated encoding in Max-SAT evaluation to encode the problem as Max-SAT problems [1], but here we use the one that is simple and is standard in MILP.)
-
-For Lₚ-norm cases (p ≠ ∞), minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |wᵢ|ᵖ I[input_bin(i) ≠ (binᵢ(x⁰ᵢ) + 1) / 2]. We use the last expression as the objective function in our MILP encoding.
+For Lₚ-norm cases (p ≠ ∞), minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |εᵢ|ᵖ = ∑ᵢ |wᵢ|ᵖ dᵢ. We use the last expression as the objective function in our MILP encoding.
 
 ## Known solutions
 

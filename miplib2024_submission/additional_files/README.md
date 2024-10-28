@@ -37,7 +37,7 @@ We trained BNNs on three datasets: [MNIST](https://yann.lecun.com/exdb/mnist/) a
 
 ## Objective functions
 
-We consider four norms: L₀, L₁, L₂ and L<sub>∞</sub>. (In the Max-SAT Evaluation 2020, we were able to submit only L<sub>∞</sub> instances, but this time we have prepared L₀, L₁, L₂ instances too.)
+We consider four norms L₀, L₁, L₂, and L<sub>∞</sub> of ε  as objective functions. (In the Max-SAT Evaluation 2020, we were able to submit only L<sub>∞</sub> instances, but this time we have prepared L₀, L₁, L₂ instances too.)
 
 ## Problem Instances
 
@@ -68,7 +68,7 @@ We use `input_bin(i)`s instead of εᵢs as decision variables.
 
 `input_bin(i)` ∈ {0, 1} corresponds to (binᵢ(x⁰ᵢ + εᵢ) + 1) / 2.
 
-Conversely, we define wᵢ to be the smallest magnitude perturbation to flip binᵢ(xᵢ), i.e. binᵢ(x⁰ᵢ + wᵢ) ≠ binᵢ(x⁰ᵢ) and binᵢ(x⁰ᵢ + v) = binᵢ(x⁰ᵢ) for all v such that |v| < |wᵢ|. Also, we define dᵢ to be `input_bin(i)` if binᵢ(x⁰ᵢ) is -1 and (1 - `input_bin(i)`) if binᵢ(x⁰ᵢ) is +1. Then we can define εᵢ as wᵢ dᵢ.
+Conversely, we define wᵢ to be the smallest magnitude perturbation to flip binᵢ(xᵢ), i.e. binᵢ(x⁰ᵢ + wᵢ) ≠ binᵢ(x⁰ᵢ). Also, we define dᵢ to be `input_bin(i)` if binᵢ(x⁰ᵢ) is -1 and (1 - `input_bin(i)`) if binᵢ(x⁰ᵢ) is +1. Then we can define εᵢ as wᵢ dᵢ.
 
 ### Output variables
 

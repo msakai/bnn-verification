@@ -76,7 +76,7 @@ For L<sub>∞</sub>-norm, the objective function is ǁεǁ<sub>∞</sub> = max {
 
 For Lₚ-norm with p ≠ ∞, minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |εᵢ|ᵖ = ∑ᵢ |wᵢ|ᵖ dᵢ. This expression serves as the objective function in our MILP encoding.
 
-## Known solutions
+## Known Solutions
 
 For instances with the L<sub>∞</sub>-norm, optimal solutions are known:
 
@@ -92,7 +92,7 @@ Optimal solutions for instances with other norm types are currently unknown.
 
 ## References
 
-* [1] M. Sakai “BNN verification dataset for Max-SAT Evaluation 2020,”
+* [1] M. Sakai, “BNN verification dataset for Max-SAT Evaluation 2020,”
   In MaxSAT Evaluation 2020: Solver and Benchmark Descriptions. 2020,
   pp. 37-28. [Online]. Available: <http://hdl.handle.net/10138/318451>
 * [2] I. Hubara, M. Courbariaux, D. Soudry, R. El-Yaniv, and Y. Bengio, “Binarized neural networks,” in Advances in Neural Information Processing Systems 29, D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, Eds. Curran Associates, Inc., 2016, pp. 4107–4115. [Online]. Available: <http://papers.nips.cc/paper/6573-binarized-neural-networks.pdf>

@@ -2,23 +2,48 @@
 
 This dataset consists of MILP instances for finding minimal perturbation adversarial examples of BNNs (binarized neural networks).
 
-The authors have previously submitted similar problem instances to Max-SAT Evaluation 2020 [1], and this is its MILP version.
+The authors have previously submitted similar problem instances to Max-SAT Evaluation 2020 [1], and this is its MILP version. Detailed information including source code for generation are available at <https://github.com/msakai/bnn-verification/>.
 
 ## Problem overview
 
-Given a trained neural network $f$ and input $x^0$, the goal is to find the minimal perturbation $\epsilon$ such that $x^0 + \epsilon$ is misclassified, i.e. we consider the following optimization problem.
+Given a trained neural network f and an input x⁰, the goal is to find the minimal perturbation ε such that x⁰ + ε is misclassified, i.e. we consider the following optimization problem.
 
-$$
-\begin{align*}
-&\underset{\epsilon}{\text{minimize}}& & \| x^0 \|_p \\
-&\text{subject\;to}
-& & f(x^0 + \epsilon) \ne f(x^0) \\
-\end{align*}
-$$
+```
+minimize ǁεǁ
 
-## Input images: $x^0$
+subject to f(x⁰ + ε) ≠ f(x⁰)
+```
 
-Our task is hand-written digit classification, and we use the following five images. These are the images used in the five problems used in the Max-SAT Evaluation 2020.
+In our case, the task is hand-written digit classification. The input space is the 8-bit image of 28×28 (= 784) pixels and the output space is {0,…,9}.
+
+```
+f: {0,…,256}⁷⁸⁴ → {0,…,9}
+```
+
+## Target neural networks
+
+The network architecture is based on BNNs (binarized neural networks).
+
+We omit the detail of BNN here, but our BNN consists of the following steps:
+1. Each input pixel xᵢ ∈ {0, …, 255} is first binarized as zᵢ = binᵢ(xᵢ) ∈ {-1, +1} using learned threshold (note that threshold varies depending on i),
+2. Some computation g is applied to z to obtain logits = g(z) ∈ R¹⁰,
+3. Then, y = argmaxⱼ logitsⱼ is the output.
+
+i.e.:
+
+```
+f = argmax ∘ g ∘ bin
+```
+
+We trained BNNs on three datasets *MNIST*, *MNIST-rot*, and *MNIST-back-image*.
+
+## Objective functions
+
+We consider four norms: L₀, L₁, L₂ and L<sub>∞</sub>. (In the Max-SAT Evaluation 2020, we were able to submit only L<sub>∞</sub> cases, but this time we have prepared L₀, L₁, L₂  cases too.)
+
+## Problem Instances
+
+We use the following five images. These are the images used in the five problems selected for the Max-SAT Evaluation 2020.
 
 |Dataset|Instance No.|Image|True Label|
 |-|-:|-|-:|
@@ -28,62 +53,42 @@ Our task is hand-written digit classification, and we use the following five ima
 |MNIST-back-image|32|![](images/bnn_mnist_back_image_32_label3.png)|3|
 |MNIST-back-image|73|![](images/bnn_mnist_back_image_73_label5.png)|5|
 
-They are 8-bit image of $28\times 28$ pixels and represented as 8-bit 784 ($= 28\times 28$) dimension vectors (i.e. $x \in \{0, \ldots, 255\} ^{784}$).
 
-## Target neural networks: $f$
+With the five images and four norm combinations, there are 20 problems.
 
-The network architecture is based on BNNs (binarized neural networks) and the networks are trained on three datasets *MNIST*, *MNIST-rot*, *MNIST-back-image*.
+The file names of problem instances are in the following form:
 
-The representation of neural networks in MILP is similar to the one described in [1], but simpler. This is because (conditional) cardinality constraints do not need to be *encoded* into SAT-level constraints, but can be used as-is as linear constraints.
+```
+bnn_{dataset_name}_{instance number}_label{true label}_adversarial_norm_{norm's p}.lp
+```
 
-In our BNNs, each input pixel $x_i \in \{0, \ldots, 255\}$ is first binalized as $z_i = \text{bin}_i(x_i) \in \{-1, +1\}$ using learnt threashold (the threshold depends on $i$). Since it is easy to construct $x$ from $z$ that is closest to $x^0$, we use $z_i$ s instead of $x_i$ s as decision variables in the following.
+## Some notes on MILP encoding
+
+### Decision variables
+
+We use `input_bin(i)`s instead of εᵢs as decision variables.
+
+`input_bin(i)` ∈ {0, 1} corresponds to (binᵢ(x⁰ᵢ + εᵢ) + 1) / 2.
+
+Conversely, let wᵢ be the smallest magnitude perturbation to flip binᵢ(xᵢ), i.e. binᵢ(x⁰ᵢ + wᵢ) ≠ binᵢ(x⁰ᵢ) and binᵢ(x⁰ᵢ + v) = binᵢ(x⁰ᵢ) for all v such that |v| < |wᵢ|. Then we can reconstruct εᵢ as wᵢ I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2].
+
+## Output variables
+
+`output(j)`'s are one hot encoding of f(x + ε) ∈ {0,…,9}.
 
 ## Objective functions
 
-We consider four norm: $L_0$, $L_1$, $L_2$ and $L_\infty$.
+Then L<sub>∞</sub>-norm objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2]}ᵢ. This can be minimized by minimizing a fresh variable u under the constraints |wᵢ| I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2] ≤ u for all i.
 
-Let $w_i$ be the smallest change to flip $\text{bin}_i(x_i)$, i.e. $\text{bin}_i(x^0_i + w_i) \ne \text{bin}_i(x^0_i)$.
+(We used more complicated encoding in Max-SAT evaluation to encode the problem as Max-SAT problems [1], but here we use the one that is simple and is standard in MILP.)
 
-Then $L_\infty$-norm objective is $\max \{|w_i| I(z_i \ne \text{bin}_i(x^0_i))\}_i$. This can be optimized by introducing a fresh variable $u$:
-
-$$
-\begin{align*}
-&\underset{z}{\text{minimize}}& & u \\
-&\text{subject\;to}
-& & |w_i| I(z_i \ne \text{bin}_i(x^0_i)) \le u & \text{for\ all} i\\
-& & & \cdots
-\end{align*}
-$$
-
-(We used more complex encoding in Max-SAT evaluation to encode the problem as Max-SAT problems [1], but here we the one that is standard in MILP.)
-
-For $L_p$-norm ($p \ne \infty$) case, we solve the following problems:
-
-$$
-\begin{align*}
-&\underset{z}{\text{minimize}}& & \sum_i |w_i|^p I(z_i \ne \text{bin}_i(x^0_i))  \\
-&\text{subject\;to}
-& & \cdots
-\end{align*}
-$$
-
- We were able to submit only $L_\infty$ cases to Max-SAT Evaluation 2020 due to the lack of time, but this time we have prepared $L_0$, $L_1$, $L_2$ cases too.
-
-## Problem Instances
-
-With the above four images and four norm combinations, there are 20 problems.
-
-File names are in the following form.
-
-```
-bnn_{dataset_name}_{instance number}_label{true label}_ adversarial_norm_{norm's p}.wcnf
-```
+For Lₚ-norm cases (p ≠ ∞), minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |wᵢ|ᵖ I[input_bin(i) ≠ (binᵢ(x⁰ᵢ) + 1) / 2]. We use the last representation n in our MILP formulation.
 
 ## Known solutions
 
-For $L_\infty$-norm cases, we already know optimal solutions.
+For L<sub>∞</sub>-norm cases, we already know optimal solutions.
 
-|Problem instance|Solution|Minimum ǁεǁ<sub>∞</sub>|Original Image|Predicted Label|Perturbated Image<sup>†</sup>|Predicted Label|
+|Problem instance|Solution| ǁεǁ<sub>∞</sub>|Original Image|Predicted Label|Perturbated Image<sup>†</sup>|Predicted Label|
 |-|-|-:|-|-:|-|-:|
 |bnn_mnist_7_label9_adversarial_norm_inf.lp.bz2|[solution](solutions/bnn_mnist_7_label9_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_7_label9.png)|9|![](solutions/bnn_mnist_7_label9_adversarial_norm_inf.png)|5|
 |bnn_mnist_rot_8_label1_adversarial_norm_inf.lp.bz2|[soltuion](solutions/bnn_mnist_rot_8_label1_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_rot_8_label1.png)|1|![](solutions/bnn_mnist_rot_8_label1_adversarial_norm_inf.png)|3|

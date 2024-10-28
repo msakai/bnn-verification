@@ -16,7 +16,7 @@ $$
 \end{align*}
 $$
 
-## Input images: $x_0$
+## Input images: $x^0$
 
 Our task is hand-written digit classification, and we use the following five images. These are the images used in the five problems used in the Max-SAT Evaluation 2020.
 

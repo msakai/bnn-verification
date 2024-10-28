@@ -14,7 +14,7 @@ minimize ǁεǁ
 subject to f(x⁰ + ε) ≠ f(x⁰)
 ```
 
-In this data set, the task is hand-written digit classification. The input space of f comprises 8-bit images of size 28×28 (784 pixels in total), and the output space is {0, …, 9}.
+In this dataset, the task of neural networks is hand-written digit classification. The input space of f comprises 8-bit images of size 28×28 (784 pixels in total), and the output space is {0, …, 9}.
 
 ```
 f: {0,…,255}⁷⁸⁴ → {0,…,9}

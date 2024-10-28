@@ -2,7 +2,7 @@
 
 This dataset consists of MILP instances for finding minimal perturbation adversarial examples of BNNs (binarized neural networks).
 
-The authors have previously submitted similar problem instances to Max-SAT Evaluation 2020 [1], and this is its MILP version. Detailed information including source code for generation are available at <https://github.com/msakai/bnn-verification/>.
+The authors have previously submitted similar problem instances to [Max-SAT Evaluation 2020](https://maxsat-evaluations.github.io/2020/) [1], and this is its MILP version. Detailed information including source code is available at <https://github.com/msakai/bnn-verification/>.
 
 ## Problem overview
 
@@ -17,7 +17,7 @@ subject to f(x⁰ + ε) ≠ f(x⁰)
 In our case, the task is hand-written digit classification. The input space is the 8-bit image of 28×28 (= 784) pixels and the output space is {0,…,9}.
 
 ```
-f: {0,…,256}⁷⁸⁴ → {0,…,9}
+f: {0,…,255}⁷⁸⁴ → {0,…,9}
 ```
 
 ## Target neural networks
@@ -29,13 +29,11 @@ We omit the detail of BNN here, but our BNN consists of the following steps:
 2. Some computation g is applied to z to obtain logits = g(z) ∈ R¹⁰,
 3. Then, y = argmaxⱼ logitsⱼ is the output.
 
-i.e.:
-
 ```
 f = argmax ∘ g ∘ bin
 ```
 
-We trained BNNs on three datasets *MNIST*, *MNIST-rot*, and *MNIST-back-image*.
+We trained BNNs on three datasets: [MNIST](https://yann.lecun.com/exdb/mnist/) and its two variants [MNIST-rot and MNIST-back-image](http://web.archive.org/web/20180831072509/http://www.iro.umontreal.ca/~lisa/twiki/bin/view.cgi/Public/MnistVariations).
 
 ## Objective functions
 
@@ -54,7 +52,7 @@ We use the following five images. These are the images used in the five problems
 |MNIST-back-image|73|![](images/bnn_mnist_back_image_73_label5.png)|5|
 
 
-With the five images and four norm combinations, there are 20 problems.
+With the five images and four norm combinations, there are 20 problems in total.
 
 The file names of problem instances are in the following form:
 
@@ -72,17 +70,17 @@ We use `input_bin(i)`s instead of εᵢs as decision variables.
 
 Conversely, let wᵢ be the smallest magnitude perturbation to flip binᵢ(xᵢ), i.e. binᵢ(x⁰ᵢ + wᵢ) ≠ binᵢ(x⁰ᵢ) and binᵢ(x⁰ᵢ + v) = binᵢ(x⁰ᵢ) for all v such that |v| < |wᵢ|. Then we can reconstruct εᵢ as wᵢ I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2].
 
-## Output variables
+### Output variables
 
-`output(j)`'s are one hot encoding of f(x + ε) ∈ {0,…,9}.
+`output(j)`s are one hot encoding of f(x + ε) ∈ {0,…,9}.
 
-## Objective functions
+### Objective functions
 
-Then L<sub>∞</sub>-norm objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2]}ᵢ. This can be minimized by minimizing a fresh variable u under the constraints |wᵢ| I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2] ≤ u for all i.
+L<sub>∞</sub>-norm objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2]}ᵢ. This can be minimized by minimizing a fresh variable u under the constraints |wᵢ| I[`input_bin(i)` ≠ (binᵢ(x⁰ᵢ) + 1) / 2] ≤ u for all i.
 
 (We used more complicated encoding in Max-SAT evaluation to encode the problem as Max-SAT problems [1], but here we use the one that is simple and is standard in MILP.)
 
-For Lₚ-norm cases (p ≠ ∞), minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |wᵢ|ᵖ I[input_bin(i) ≠ (binᵢ(x⁰ᵢ) + 1) / 2]. We use the last representation n in our MILP formulation.
+For Lₚ-norm cases (p ≠ ∞), minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |wᵢ|ᵖ I[input_bin(i) ≠ (binᵢ(x⁰ᵢ) + 1) / 2]. We use the last expression as the objective function in our MILP encoding.
 
 ## Known solutions
 

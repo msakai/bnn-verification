@@ -1,6 +1,6 @@
 # BNN Verification Instances for MIPLIB 2024 submission
 
-This dataset consists of MILP instances designed to find minimal perturbation adversarial examples of BNNs (binarized neural networks).
+This dataset consists of MILP instances designed to find minimal perturbation adversarial examples of BNNs (Binarized Neural Networks).
 
 The authors have previously submitted similar instances to [Max-SAT Evaluation 2020](https://maxsat-evaluations.github.io/2020/) [1]; this dataset is its MILP version. Detailed information including source code is available at <https://github.com/msakai/bnn-verification/>.
 
@@ -64,7 +64,7 @@ We use input\_bin(0), …, input\_bin(783) as decision variables instead of ε�
 
 Each input\_bin(i) corresponds to (binᵢ(x⁰ᵢ + εᵢ) + 1) / 2.
 
-Conversely, we define wᵢ to be the smallest magnitude v such that binᵢ(x⁰ᵢ + v) ≠ binᵢ(x⁰ᵢ). We define dᵢ as input\_bin(i) if binᵢ(x⁰ᵢ)=-1 and (1 - input\_bin(i)) if binᵢ(x⁰ᵢ)=+1. Then εᵢ can be recovered as wᵢ dᵢ.
+Conversely, we define wᵢ to be the smallest magnitude v such that binᵢ(x⁰ᵢ + v) ≠ binᵢ(x⁰ᵢ). We define dᵢ as input\_bin(i) if binᵢ(x⁰ᵢ)=-1 and as (1 - input\_bin(i)) if binᵢ(x⁰ᵢ)=+1. Then εᵢ can be recovered as wᵢ dᵢ.
 
 ### Output Variables
 

@@ -80,7 +80,7 @@ For Lₚ-norm with p ≠ ∞, minimizing ǁεǁₚ is equivalent to minimizing �
 
 For instances with the L<sub>∞</sub>-norm, optimal solutions are known:
 
-|Problem instance|Solution| ǁεǁ<sub>∞</sub>|Original Image|Predicted Label|Perturbated Image<sup>†</sup>|Predicted Label|
+|Problem instance|Solution| ǁεǁ<sub>∞</sub>|Original Image|Predicted Label|Perturbated Image|Predicted Label|
 |-|-|-:|-|-:|-|-:|
 |bnn_mnist_7_label9_adversarial_norm_inf.lp|[solution](solutions/bnn_mnist_7_label9_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_7_label9.png)|9|![](solutions/bnn_mnist_7_label9_adversarial_norm_inf.png)|5|
 |bnn_mnist_rot_8_label1_adversarial_norm_inf.lp|[soltuion](solutions/bnn_mnist_rot_8_label1_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_rot_8_label1.png)|1|![](solutions/bnn_mnist_rot_8_label1_adversarial_norm_inf.png)|3|

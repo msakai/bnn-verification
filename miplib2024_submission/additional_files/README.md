@@ -72,7 +72,7 @@ The variables output(0), …, output(9) represents a one hot encoding of f(x⁰ 
 
 ### Objective Functions
 
-For L<sub>∞</sub>-norm, the objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| dᵢ}ᵢ. This is minimized by introducing a fresh variable u, adding constraints |wᵢ| dᵢ ≤ u for all i, and minimizing u. (In Max-SAT, we used a more complex encoding, but here we use the standard technique for handling max in MILP.)
+For L<sub>∞</sub>-norm, the objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| dᵢ}ᵢ. This is minimized by introducing a fresh variable top, adding constraints |wᵢ| dᵢ ≤ top for all i, and minimizing top. (In Max-SAT, we used a more complex encoding, but here we use the standard technique for handling max in MILP.)
 
 For Lₚ-norm with p ≠ ∞, minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |εᵢ|ᵖ = ∑ᵢ |wᵢ|ᵖ dᵢ. This expression serves as the objective function in our MILP encoding.
 
@@ -82,11 +82,11 @@ For instances with the L<sub>∞</sub>-norm, optimal solutions are known:
 
 |Problem instance|Solution| ǁεǁ<sub>∞</sub>|Original Image|Predicted Label|Perturbated Image<sup>†</sup>|Predicted Label|
 |-|-|-:|-|-:|-|-:|
-|bnn_mnist_7_label9_adversarial_norm_inf.lp.bz2|[solution](solutions/bnn_mnist_7_label9_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_7_label9.png)|9|![](solutions/bnn_mnist_7_label9_adversarial_norm_inf.png)|5|
-|bnn_mnist_rot_8_label1_adversarial_norm_inf.lp.bz2|[soltuion](solutions/bnn_mnist_rot_8_label1_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_rot_8_label1.png)|1|![](solutions/bnn_mnist_rot_8_label1_adversarial_norm_inf.png)|3|
-|bnn_mnist_rot_16_label5_adversarial_norm_inf.lp.bz2|[soltuion](solutions/bnn_mnist_rot_16_label5_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_rot_16_label5.png)|5|![](solutions/bnn_mnist_rot_16_label5_adversarial_norm_inf.png)|7|
-|bnn_mnist_back_image_32_label3_adversarial_norm_inf.lp.bz2|[soltuion](solutions/bnn_mnist_back_image_32_label3_adversarial_norm_inf.sol)|2|![](images/bnn_mnist_back_image_32_label3.png)|3|![](solutions/bnn_mnist_back_image_32_label3_adversarial_norm_inf.png)|8|
-|bnn_mnist_back_image_73_label5_adversarial_norm_inf.lp.bz2|[soltuion](solutions/bnn_mnist_back_image_73_label5_adversarial_norm_inf.sol)|4|![](images/bnn_mnist_back_image_73_label5.png)|5|![](solutions/bnn_mnist_back_image_73_label5_adversarial_norm_inf.png)|3|
+|bnn_mnist_7_label9_adversarial_norm_inf.lp|[solution](solutions/bnn_mnist_7_label9_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_7_label9.png)|9|![](solutions/bnn_mnist_7_label9_adversarial_norm_inf.png)|5|
+|bnn_mnist_rot_8_label1_adversarial_norm_inf.lp|[soltuion](solutions/bnn_mnist_rot_8_label1_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_rot_8_label1.png)|1|![](solutions/bnn_mnist_rot_8_label1_adversarial_norm_inf.png)|3|
+|bnn_mnist_rot_16_label5_adversarial_norm_inf.lp|[soltuion](solutions/bnn_mnist_rot_16_label5_adversarial_norm_inf.sol)|1|![](images/bnn_mnist_rot_16_label5.png)|5|![](solutions/bnn_mnist_rot_16_label5_adversarial_norm_inf.png)|7|
+|bnn_mnist_back_image_32_label3_adversarial_norm_inf.lp|[soltuion](solutions/bnn_mnist_back_image_32_label3_adversarial_norm_inf.sol)|2|![](images/bnn_mnist_back_image_32_label3.png)|3|![](solutions/bnn_mnist_back_image_32_label3_adversarial_norm_inf.png)|8|
+|bnn_mnist_back_image_73_label5_adversarial_norm_inf.lp|[soltuion](solutions/bnn_mnist_back_image_73_label5_adversarial_norm_inf.sol)|4|![](images/bnn_mnist_back_image_73_label5.png)|5|![](solutions/bnn_mnist_back_image_73_label5_adversarial_norm_inf.png)|3|
 
 Optimal solutions for instances with other norm types are currently unknown.
 

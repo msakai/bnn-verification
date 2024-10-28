@@ -22,7 +22,7 @@ f: {0,…,255}⁷⁸⁴ → {0,…,9}
 
 ## Target neural networks
 
-The network architecture is based on BNNs (binarized neural networks).
+The network architecture is based on BNNs (binarized neural networks) [2][3].
 
 We omit the detail of BNN here, but our BNN consists of the following steps:
 1. Each input pixel xᵢ ∈ {0, …, 255} is first binarized as zᵢ = binᵢ(xᵢ) ∈ {-1, +1} using learned threshold (note that threshold varies depending on i),
@@ -99,3 +99,5 @@ For other norm cases, however, optimal solutions are not yet known.
 * [1] M. Sakai “BNN verification dataset for Max-SAT Evaluation 2020,”
   In MaxSAT Evaluation 2020: Solver and Benchmark Descriptions. 2020,
   pp. 37-28. <http://hdl.handle.net/10138/318451>
+* [2] I. Hubara, M. Courbariaux, D. Soudry, R. El-Yaniv, and Y. Bengio, “Binarized neural networks,” in Advances in Neural Information Processing Systems 29, D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, Eds. Curran Associates, Inc., 2016, pp. 4107–4115. [Online]. Available: <http://papers.nips.cc/paper/6573-binarized-neural-networks.pdf>
+* [3] N. Narodytska, S. P. Kasiviswanathan, L. Ryzhyk, M. Sagiv, and T. Walsh, “Verifying properties of binarized deep neural networks,” in Proceedings of the Thirty-Second AAAI Conference on Artificial Intelligence, (AAAI-18), the 30th innovative Applications of Artificial Intelligence (IAAI-18), and the 8th AAAI Symposium on Educational Advances in Artificial Intelligence (EAAI-18), New Orleans, Louisiana, USA, February 2-7, 2018, S. A. McIlraith and K. Q. Weinberger, Eds. AAAI Press, 2018, pp. 6615–6624. [Online]. Available: <https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16898>

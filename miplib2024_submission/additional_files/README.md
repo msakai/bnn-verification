@@ -1,8 +1,8 @@
-# BNN Verification Instances for MIPLIB 2024 submission
+# BNN Verification Instances for the MIPLIB 2024 submission
 
 This dataset consists of MILP instances designed to find minimal perturbation adversarial examples of BNNs (Binarized Neural Networks).
 
-The authors have previously submitted similar instances to [Max-SAT Evaluation 2020](https://maxsat-evaluations.github.io/2020/) [1]; this dataset is its MILP version. Detailed information including source code is available at <https://github.com/msakai/bnn-verification/>.
+The authors have previously submitted similar instances to the [Max-SAT Evaluation 2020](https://maxsat-evaluations.github.io/2020/) [1]; this dataset is its MILP version. Detailed information including source code is available at <https://github.com/msakai/bnn-verification/>.
 
 ## Problem Overview
 
@@ -10,7 +10,6 @@ Given a trained neural network f and an input x⁰, the objective is to find the
 
 ```
 minimize ǁεǁ
-
 subject to f(x⁰ + ε) ≠ f(x⁰)
 ```
 
@@ -53,7 +52,7 @@ Combining these five images with four norm types results in a total of 20 instan
 The filenames of the problem instances follow this format:
 
 ```
-bnn_{dataset_name}_{instance number}_label{true label}_adversarial_norm_{norm's p}.lp
+bnn_{dataset_name}_{instance no}_label{true label}_adversarial_norm_{norm's p}.lp
 ```
 
 ## Notes on MILP encoding
@@ -74,7 +73,7 @@ The variables output(0), …, output(9) represents a one hot encoding of f(x⁰ 
 
 For L<sub>∞</sub>-norm, the objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| dᵢ}ᵢ. This is minimized by introducing a fresh variable top, adding constraints |wᵢ| dᵢ ≤ top for all i, and minimizing top. (In Max-SAT, we used a more complex encoding, but here we use the standard technique for handling max in MILP.)
 
-For Lₚ-norm with p ≠ ∞, minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |εᵢ|ᵖ = ∑ᵢ |wᵢ|ᵖ dᵢ. This expression serves as the objective function in our MILP encoding.
+For Lₚ-norm with p ≠ ∞, minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |εᵢ|ᵖ = ∑ᵢ |wᵢ|ᵖ dᵢ. The last expression serves as the objective function in our MILP encoding.
 
 ## Known Solutions
 

@@ -1,0 +1,3 @@
+[submodule "miplib2024_submission/easy-pandoc-templates"]
+	path = miplib2024_submission/easy-pandoc-templates
+	url = https://github.com/ryangrose/easy-pandoc-templates.git

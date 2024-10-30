@@ -71,9 +71,20 @@ The variables output(0), …, output(9) represents a one hot encoding of f(x⁰ 
 
 ### Objective Functions
 
-For L<sub>∞</sub>-norm, the objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| dᵢ}ᵢ. This is minimized by introducing a fresh variable top, adding constraints |wᵢ| dᵢ ≤ top for all i, and minimizing top. (In Max-SAT, we used a more complex encoding, but here we use the standard technique for handling max in MILP.)
+For L<sub>∞</sub>-norm, the objective function is ǁεǁ<sub>∞</sub> = max {|εᵢ|}ᵢ = max {|wᵢ| dᵢ}ᵢ. This is minimized by introducing a fresh variable top, adding constraints |wᵢ| dᵢ ≤ top for all i, and minimizing top. (In Max-SAT, we used a more complex encoding, but here we use the standard technique for handling maximum in MILP.)
 
 For Lₚ-norm with p ≠ ∞, minimizing ǁεǁₚ is equivalent to minimizing ǁεǁₚᵖ = ∑ᵢ |εᵢ|ᵖ = ∑ᵢ |wᵢ|ᵖ dᵢ. The last expression serves as the objective function in our MILP encoding.
+
+### Problem Size
+
+Thanks to the expressiveness of MILP, MILP encoding produces much more concise problem files than Max-SAT encoding.
+
+The following table presents a comparison in the case of MNIST no. 7 and L<sub>∞</sub> norm.
+
+| | #Variables | #Constraints | Filesize |
+|-|-:|-:|-:|
+| Max-SAT encoding using Totalizer for cardinality constraints | 1,824,676 | 132,670,200 | 3.61 GiB (.wcnf file) |
+| MILP encoding | 1,295 | 1,876 | 6.14 MiB (.lp file) |
 
 ## Known Solutions
 

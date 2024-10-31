@@ -64,7 +64,7 @@ Here, `output.txt` is a file containing the output of your solver (only `v` line
 The [logs/maxino-pref-fixed/](logs/maxino-pref-fixed/) directory contains log files that
 you can try.
 
-This converts the solution in the `output.txt` to an image file named `perturbated.pn`,
+This converts the solution in the `output.txt` to an image file named `perturbated.png`,
 and also provides some information:
 * model's prediction (probability distribution over the digit classes and predicted class)
   on the original image and the perturbated image, and

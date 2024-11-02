@@ -49,6 +49,19 @@ $ python3 generate_maxsat_instances.py --dataset mnist_back_image --model models
 
 You can also specify an individual sample by using `--instance-no` instead of `--instances-per-class`.
 
+### MIP instance generation
+
+You can use `generate_mip_instances.py` instead:
+
+```console
+$ python3 generate_mip_instances.py --dataset mnist --model models/mnist.npz -o outdir \
+--norm inf --target adversarial --instances-per-class 2
+$ python3 generate_mip_instances.py --dataset mnist_rot --model models/mnist_rot.npz -o outdir \
+--norm inf --target adversarial --instances-per-class 2
+$ python3 generate_mip_instances.py --dataset mnist_back_image --model models/mnist_back_image.npz -o outdir \
+--norm inf --target adversarial --instances-per-class 2
+```
+
 ### Validating solutions
 
 Once the solver successfully solves a problem instance, you can check the solution as follows:
@@ -57,14 +70,11 @@ Once the solver successfully solves a problem instance, you can check the soluti
 $ python3 verify_solution.py --dataset mnist --instance 7 \
   --output-image perturbated.png \
   --output-orig-image orig.png \
-  output.txt
+  --format maxsat \
+  SOLUTION_FILE
 ```
 
-Here, `output.txt` is a file containing the output of your solver (only `v` lines are used).
-The [logs/maxino-pref-fixed/](logs/maxino-pref-fixed/) directory contains log files that
-you can try.
-
-This converts the solution in the `output.txt` to an image file named `perturbated.png`,
+This converts the solution in the `SOLUTION_FILE` to an image file named `perturbated.png`,
 and also provides some information:
 * model's prediction (probability distribution over the digit classes and predicted class)
   on the original image and the perturbated image, and
@@ -74,6 +84,18 @@ You need to provide a dataset and an instance number equal to the ones
 used to generate the problem. If you generated a problem using
 `--instances-per-class`, you can find the instance number from the
 filename.
+
+`--format` specify the format of `SOLUTION_FILE`:
+
+* `--format maxsat`:
+  `SOLUTION_FILE` is a file containing the output of Max-SAT solver (only `v` lines are used).
+  The [logs/maxino-pref-fixed/](logs/maxino-pref-fixed/) directory contains log files that
+  you can try.
+* `--format gurobi`:
+  `SOLUTION_FILE` is a solution file of Gurobi.
+  The [miplib2024_submission/additional_files/solutions/](miplib2024_submission/additional_files/solutions/)
+  directory contains some examples.
+
 
 ### Example result
 

@@ -106,11 +106,15 @@ for instance_no, (x, true_label) in enumerate(test):
                 break
             # assert orig_image_bin[instance_no, j] == (pixel >= C)
             if pixel < C:
-                mod.append((- inputs[j], C - pixel))
-            elif C == 0:
-                mod.append((inputs[j], None))  # impossible to change
+                if C <= 255:
+                    mod.append((- inputs[j], C - pixel))
+                else:
+                    mod.append((- inputs[j], None))  # impossible to change
             else:
-                mod.append((inputs[j], (C - 1) - pixel))
+                if C - 1 >= 0:
+                    mod.append((inputs[j], (C - 1) - pixel))
+                else:
+                    mod.append((inputs[j], None))  # impossible to change
         else:
             # x ≤ ⌊255 (- βσ/γ + μ)⌋ = C
             C = int(math.floor(C_frac))
@@ -119,11 +123,15 @@ for instance_no, (x, true_label) in enumerate(test):
                 numerically_unstable = True
                 break
             if pixel > C:
-                mod.append((- inputs[j], C - pixel))
-            elif C == 255:
-                mod.append((inputs[j], None))  # impossible to change
+                if C >= 0:
+                    mod.append((- inputs[j], C - pixel))
+                else:
+                    mod.append((- inputs[j], None))  # impossible to change
             else:
-                mod.append((inputs[j], (C + 1) - pixel))
+                if C + 1 <= 255:
+                    mod.append((inputs[j], (C + 1) - pixel))
+                else:
+                    mod.append((inputs[j], None))  # impossible to change
 
     if numerically_unstable:
         print("numerically unstable")

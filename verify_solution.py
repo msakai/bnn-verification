@@ -13,7 +13,7 @@ import datasets
 import visualize
 
 
-def read_binary_solution(fname: Union[Path, str]) -> Optional[np.ndarray]:
+def read_binary_solution_maxsat(fname: Union[Path, str]) -> Optional[np.ndarray]:
     sol = np.zeros(28*28, dtype=bool)
     with open(fname) as f:
         for line in f:
@@ -72,6 +72,7 @@ def decode_binary_solution(model, orig_image: np.ndarray, sol: np.ndarray) -> np
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument('--format', type=str, choices=['maxsat'], default='maxsat', help='solution format')
     parser.add_argument('--dataset', type=str, help='dataset name: mnist, mnist_back_image, mnist_rot')
     parser.add_argument('--instance', type=int, help='instance number')
     parser.add_argument('--output-image', '-o', type=str, default=None, help='output perturbated image')
@@ -81,7 +82,10 @@ if __name__ == "__main__":
     parser.add_argument('file', type=str, help='solution filename')
     args = parser.parse_args()
 
-    sol = read_binary_solution(args.file)
+    if args.format == "maxsat":
+        sol = read_binary_solution_maxsat(args.file)
+    else:
+        raise RuntimeError(f"unknown format: {args.format}")
     if sol is None:
         exit()
 

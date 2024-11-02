@@ -59,10 +59,14 @@ def decode_binary_solution(model, orig_image: np.ndarray, sol: np.ndarray) -> np
             if orig:
                 if not sol[j]:
                     #print((j, pixel, C - 1))
+                    if not (0 <= C - 1 <= 255):
+                        print(f"invalid input at {j}: {C - 1}")
                     perturbated_image[j] = C - 1
             else:
                 if sol[j]:
                     #print((j, pixel, C))
+                    if not (0 <= C <= 255):
+                        print(f"invalid input at {j}: {C}")
                     perturbated_image[j] = C
         else:
             # x ≤ ⌊255 (- βσ/γ + μ)⌋ = C
@@ -71,10 +75,14 @@ def decode_binary_solution(model, orig_image: np.ndarray, sol: np.ndarray) -> np
             if orig:
                 if not sol[j]:
                     #print((j, pixel, C + 1))
+                    if not (0 <= C + 1 <= 255):
+                        print(f"invalid input at {j}: {C + 1}")
                     perturbated_image[j] = C + 1
             else:
                 if sol[j]:
                     #print((j, pixel, C))
+                    if not (0 <= C <= 255):
+                        print(f"invalid input at {j}: {C}")
                     perturbated_image[j] = C
 
     return perturbated_image

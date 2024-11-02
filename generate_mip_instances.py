@@ -100,7 +100,7 @@ for instance_no, (x, true_label) in enumerate(test):
             if orig_image_bin[instance_no, j] != (pixel >= C):
                 numerically_unstable = True
                 break
-            #assert orig_image_bin[instance_no, j] == (pixel >= C)
+            # assert orig_image_bin[instance_no, j] == (pixel >= C)
             if pixel < C:
                 mod.append((inputs[j], True, C - pixel))
             elif C == 0:
@@ -110,7 +110,7 @@ for instance_no, (x, true_label) in enumerate(test):
         else:
             # x ≤ ⌊255 (- βσ/γ + μ)⌋ = C
             C = int(math.floor(C_frac))
-            #assert orig_image_bin[instance_no, j] == (pixel <= C)
+            # assert orig_image_bin[instance_no, j] == (pixel <= C)
             if orig_image_bin[instance_no, j] != (pixel <= C):
                 numerically_unstable = True
                 break

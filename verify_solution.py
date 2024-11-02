@@ -31,6 +31,16 @@ def read_binary_solution_maxsat(fname: Union[Path, str]) -> Optional[np.ndarray]
     return sol
 
 
+def read_binary_solution_gurobi(fname: Union[Path, str]) -> Optional[np.ndarray]:
+    sol = np.zeros(28*28, dtype=bool)
+    p = re.compile(r"input_bin\((\d+)\)\s+(\d+)")
+    with open(fname) as f:
+        for line in f:
+            if m := re.fullmatch(p, line.strip()):
+                sol[int(m.group(1))] = int(m.group(2))
+    return sol
+
+
 def decode_binary_solution(model, orig_image: np.ndarray, sol: np.ndarray) -> np.ndarray:
     perturbated_image = orig_image.copy()
 
@@ -72,7 +82,7 @@ def decode_binary_solution(model, orig_image: np.ndarray, sol: np.ndarray) -> np
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--format', type=str, choices=['maxsat'], default='maxsat', help='solution format')
+    parser.add_argument('--format', type=str, choices=['maxsat', 'gurobi'], default='maxsat', help='solution format')
     parser.add_argument('--dataset', type=str, help='dataset name: mnist, mnist_back_image, mnist_rot')
     parser.add_argument('--instance', type=int, help='instance number')
     parser.add_argument('--output-image', '-o', type=str, default=None, help='output perturbated image')
@@ -84,6 +94,8 @@ if __name__ == "__main__":
 
     if args.format == "maxsat":
         sol = read_binary_solution_maxsat(args.file)
+    elif args.format == "gurobi":
+        sol = read_binary_solution_gurobi(args.file)
     else:
         raise RuntimeError(f"unknown format: {args.format}")
     if sol is None:

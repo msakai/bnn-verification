@@ -54,7 +54,7 @@ You can also specify an individual sample by using `--instance-no` instead of `-
 Once the solver successfully solves a problem instance, you can check the solution as follows:
 
 ```console
-$ python3 verify_maxsat_solution.py --dataset mnist --instance 7 \
+$ python3 verify_solution.py --dataset mnist --instance 7 \
   --output-image perturbated.png \
   --output-orig-image orig.png \
   output.txt

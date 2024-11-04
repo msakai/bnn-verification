@@ -1,0 +1,221 @@
+
+Gurobi 11.0.3 (mac64[arm], gurobi_cl) logging started Mon Nov  4 11:08:50 2024
+
+Set parameter TimeLimit to value 600
+Set parameter NoRelHeurTime to value 600
+Set parameter LogFile to value "gurobi.log"
+Using license file /Users/sakai/gurobi.lic
+Restricted license - for non-production use only - expires 2025-11-24
+
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (mac64[arm] - Darwin 22.6.0 22H123)
+Copyright (c) 2024, Gurobi Optimization, LLC
+
+Read LP format model from file ../../../miplib2024_submission/instances.20241102/bnn_mnist_rot_16_label5_adversarial_norm_2.lp
+Reading time = 0.13 seconds
+: 1104 rows, 1295 columns, 398390 nonzeros
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 1104 rows, 1295 columns and 398390 nonzeros
+Model fingerprint: 0xcbc08a1b
+Variable types: 1 continuous, 1294 integer (1294 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+03]
+  Objective range  [1e+00, 2e+06]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+03]
+Presolve removed 32 rows and 19 columns
+Presolve time: 1.04s
+Presolved: 1072 rows, 1276 columns, 392008 nonzeros
+Variable types: 0 continuous, 1276 integer (1276 binary)
+Starting NoRel heuristic
+Found phase-1 solution: relaxation 553
+Found phase-1 solution: relaxation 550
+Found phase-1 solution: relaxation 549
+Found phase-1 solution: relaxation 520
+Found phase-1 solution: relaxation 478
+Found phase-1 solution: relaxation 472
+Found phase-1 solution: relaxation 417
+Found phase-1 solution: relaxation 300
+Found phase-1 solution: relaxation 292
+Found phase-1 solution: relaxation 187
+Found phase-1 solution: relaxation 183
+Found phase-1 solution: relaxation 180
+Found phase-1 solution: relaxation 137
+Found phase-1 solution: relaxation 129
+Found phase-1 solution: relaxation 123
+Found phase-1 solution: relaxation 120
+Found phase-1 solution: relaxation 115
+Found phase-1 solution: relaxation 113
+Found phase-1 solution: relaxation 112
+Found phase-1 solution: relaxation 94
+Elapsed time for NoRel heuristic: 5s (best bound 0)
+Found phase-1 solution: relaxation 53
+Found phase-1 solution: relaxation 27
+Found phase-1 solution: relaxation 13
+Found phase-1 solution: relaxation 0
+Found heuristic solution: objective 1316150.0000
+Transition to phase 2
+Found heuristic solution: objective 1098578.0000
+Found heuristic solution: objective 1082067.0000
+Found heuristic solution: objective 1003594.0000
+Elapsed time for NoRel heuristic: 11s (best bound 0)
+Found heuristic solution: objective 774559.00000
+Elapsed time for NoRel heuristic: 19s (best bound 0)
+Found heuristic solution: objective 755958.00000
+Found heuristic solution: objective 688389.00000
+Found heuristic solution: objective 673382.00000
+Found heuristic solution: objective 566977.00000
+Found heuristic solution: objective 566939.00000
+Found heuristic solution: objective 560277.00000
+Found heuristic solution: objective 540027.00000
+Found heuristic solution: objective 498298.00000
+Found heuristic solution: objective 468769.00000
+Found heuristic solution: objective 427907.00000
+Elapsed time for NoRel heuristic: 26s (best bound 0)
+Found heuristic solution: objective 417720.00000
+Found heuristic solution: objective 414753.00000
+Found heuristic solution: objective 381450.00000
+Found heuristic solution: objective 365904.00000
+Found heuristic solution: objective 365901.00000
+Found heuristic solution: objective 365829.00000
+Found heuristic solution: objective 313878.00000
+Found heuristic solution: objective 288043.00000
+Elapsed time for NoRel heuristic: 32s (best bound 0)
+Found heuristic solution: objective 287733.00000
+Found heuristic solution: objective 228452.00000
+Found heuristic solution: objective 185851.00000
+Found heuristic solution: objective 179341.00000
+Found heuristic solution: objective 173895.00000
+Elapsed time for NoRel heuristic: 39s (best bound 0)
+Found heuristic solution: objective 169307.00000
+Elapsed time for NoRel heuristic: 46s (best bound 0)
+Found heuristic solution: objective 167956.00000
+Found heuristic solution: objective 165108.00000
+Found heuristic solution: objective 163069.00000
+Elapsed time for NoRel heuristic: 56s (best bound 0)
+Found heuristic solution: objective 153158.00000
+Elapsed time for NoRel heuristic: 62s (best bound 0)
+Elapsed time for NoRel heuristic: 69s (best bound 0)
+Elapsed time for NoRel heuristic: 74s (best bound 0)
+Found heuristic solution: objective 151343.00000
+Elapsed time for NoRel heuristic: 83s (best bound 0)
+Found heuristic solution: objective 151335.00000
+Found heuristic solution: objective 146977.00000
+Elapsed time for NoRel heuristic: 98s (best bound 0)
+Found heuristic solution: objective 146398.00000
+Found heuristic solution: objective 143686.00000
+Found heuristic solution: objective 116311.00000
+Found heuristic solution: objective 103012.00000
+Elapsed time for NoRel heuristic: 106s (best bound 0)
+Found heuristic solution: objective 101236.00000
+Elapsed time for NoRel heuristic: 111s (best bound 0)
+Found heuristic solution: objective 100864.00000
+Found heuristic solution: objective 99932.000000
+Elapsed time for NoRel heuristic: 119s (best bound 0)
+Found heuristic solution: objective 95874.000000
+Elapsed time for NoRel heuristic: 124s (best bound 0)
+Elapsed time for NoRel heuristic: 131s (best bound 0)
+Found heuristic solution: objective 88584.000000
+Elapsed time for NoRel heuristic: 147s (best bound 0)
+Elapsed time for NoRel heuristic: 152s (best bound 0)
+Found heuristic solution: objective 86854.000000
+Elapsed time for NoRel heuristic: 159s (best bound 0)
+Found heuristic solution: objective 77587.000000
+Elapsed time for NoRel heuristic: 166s (best bound 0)
+Found heuristic solution: objective 73367.000000
+Found heuristic solution: objective 61582.000000
+Elapsed time for NoRel heuristic: 173s (best bound 0)
+Found heuristic solution: objective 61165.000000
+Found heuristic solution: objective 56192.000000
+Found heuristic solution: objective 37951.000000
+Found heuristic solution: objective 32602.000000
+Found heuristic solution: objective 31454.000000
+Found heuristic solution: objective 26143.000000
+Elapsed time for NoRel heuristic: 180s (best bound 0)
+Found heuristic solution: objective 15061.000000
+Found heuristic solution: objective 14887.000000
+Found heuristic solution: objective 14589.000000
+Found heuristic solution: objective 9924.0000000
+Found heuristic solution: objective 6102.0000000
+Elapsed time for NoRel heuristic: 192s (best bound 0)
+Found heuristic solution: objective 6032.0000000
+Found heuristic solution: objective 3465.0000000
+Found heuristic solution: objective 2950.0000000
+Found heuristic solution: objective 2632.0000000
+Elapsed time for NoRel heuristic: 197s (best bound 0)
+Found heuristic solution: objective 2536.0000000
+Found heuristic solution: objective 1930.0000000
+Found heuristic solution: objective 1915.0000000
+Found heuristic solution: objective 1521.0000000
+Elapsed time for NoRel heuristic: 207s (best bound 0)
+Found heuristic solution: objective 1005.0000000
+Elapsed time for NoRel heuristic: 213s (best bound 0)
+Found heuristic solution: objective 982.0000000
+Found heuristic solution: objective 862.0000000
+Found heuristic solution: objective 741.0000000
+Found heuristic solution: objective 470.0000000
+Found heuristic solution: objective 445.0000000
+Elapsed time for NoRel heuristic: 223s (best bound 0)
+Found heuristic solution: objective 335.0000000
+Found heuristic solution: objective 313.0000000
+Found heuristic solution: objective 297.0000000
+Found heuristic solution: objective 183.0000000
+Elapsed time for NoRel heuristic: 233s (best bound 0)
+Found heuristic solution: objective 165.0000000
+Found heuristic solution: objective 149.0000000
+Elapsed time for NoRel heuristic: 243s (best bound 0)
+Elapsed time for NoRel heuristic: 248s (best bound 0)
+Found heuristic solution: objective 146.0000000
+Found heuristic solution: objective 137.0000000
+Found heuristic solution: objective 84.0000000
+Found heuristic solution: objective 80.0000000
+Elapsed time for NoRel heuristic: 257s (best bound 0)
+Found heuristic solution: objective 20.0000000
+Found heuristic solution: objective 18.0000000
+Elapsed time for NoRel heuristic: 263s (best bound 0)
+Found heuristic solution: objective 10.0000000
+Found heuristic solution: objective 9.0000000
+Elapsed time for NoRel heuristic: 270s (best bound 0)
+Elapsed time for NoRel heuristic: 277s (best bound 0)
+Elapsed time for NoRel heuristic: 289s (best bound 0)
+Found heuristic solution: objective 5.0000000
+Elapsed time for NoRel heuristic: 310s (best bound 0)
+Elapsed time for NoRel heuristic: 317s (best bound 0)
+Found heuristic solution: objective 4.0000000
+Elapsed time for NoRel heuristic: 331s (best bound 0)
+Elapsed time for NoRel heuristic: 340s (best bound 0)
+Found heuristic solution: objective 3.0000000
+Elapsed time for NoRel heuristic: 365s (best bound 0)
+Elapsed time for NoRel heuristic: 372s (best bound 0)
+Elapsed time for NoRel heuristic: 383s (best bound 0)
+Elapsed time for NoRel heuristic: 395s (best bound 0)
+Elapsed time for NoRel heuristic: 411s (best bound 0)
+Elapsed time for NoRel heuristic: 420s (best bound 0)
+Elapsed time for NoRel heuristic: 435s (best bound 0)
+Elapsed time for NoRel heuristic: 449s (best bound 0)
+Elapsed time for NoRel heuristic: 462s (best bound 0)
+Found heuristic solution: objective 2.0000000
+Elapsed time for NoRel heuristic: 483s (best bound 0)
+Elapsed time for NoRel heuristic: 488s (best bound 0)
+Elapsed time for NoRel heuristic: 502s (best bound 0)
+Elapsed time for NoRel heuristic: 515s (best bound 0)
+Elapsed time for NoRel heuristic: 534s (best bound 0)
+Elapsed time for NoRel heuristic: 546s (best bound 0)
+Elapsed time for NoRel heuristic: 560s (best bound 0)
+Elapsed time for NoRel heuristic: 577s (best bound 0)
+Elapsed time for NoRel heuristic: 592s (best bound 0)
+Elapsed time for NoRel heuristic: 599s (best bound 0)
+NoRel heuristic complete
+
+Explored 0 nodes (0 simplex iterations) in 600.31 seconds (483.26 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 10: 2 3 4 ... 84
+
+Time limit reached
+Best objective 2.000000000000e+00, best bound 0.000000000000e+00, gap 100.0000%
+
+Wrote result file 'bnn_mnist_rot_16_label5_adversarial_norm_2.sol'
+

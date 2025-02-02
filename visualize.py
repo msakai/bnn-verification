@@ -18,6 +18,10 @@ def to_image(dataset_name: str, data):
         data = data.T
     elif dataset_name == "mnist_rot":
         data = data.T
+    elif dataset_name == "mnist_back_image_reordered":
+        pass
+    elif dataset_name == "mnist_rot_reordered":
+        pass
     else:
         raise RuntimeError("unknown dataset: " + dataset_name)    
     return PIL.Image.fromarray(data)

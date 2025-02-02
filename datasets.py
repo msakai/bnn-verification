@@ -9,7 +9,7 @@ from chainer.datasets.mnist import preprocess_mnist
 
 
 def get_mnist_back_image(withlabel=True, ndim=1, scale=1., dtype=None,
-                         label_dtype=np.int32, rgb_format=False):
+                         label_dtype=np.int32, rgb_format=False, reorder=False):
     """Gets the MNIST-back-image dataset.
 
     `MNIST + background images <http://web.archive.org/web/20180831072509/http://www.iro.umontreal.ca/~lisa/twiki/bin/view.cgi/Public/MnistVariations>`_ is a
@@ -25,11 +25,12 @@ def get_mnist_back_image(withlabel=True, ndim=1, scale=1., dtype=None,
         "mnist_background_images_test",
         withlabel=withlabel, ndim=ndim, scale=scale, dtype=dtype,
         label_dtype=label_dtype, rgb_format=rgb_format,
+        reorder=reorder,
     )
 
 
 def get_mnist_rot(withlabel=True, ndim=1, scale=1., dtype=None,
-                  label_dtype=np.int32, rgb_format=False):
+                  label_dtype=np.int32, rgb_format=False, reorder=False):
     """Gets the rotated MNIST digits dataset.
 
     `Rotated MNIST digits <http://web.archive.org/web/20180831072509/http://www.iro.umontreal.ca/~lisa/twiki/bin/view.cgi/Public/MnistVariations>`_ is a
@@ -45,13 +46,14 @@ def get_mnist_rot(withlabel=True, ndim=1, scale=1., dtype=None,
         "mnist_all_rotation_normalized_float_test",
         withlabel=withlabel, ndim=ndim, scale=scale, dtype=dtype,
         label_dtype=label_dtype, rgb_format=rgb_format,
+        reorder=reorder,
     )
 
 
 def _get_mnist_variation(
         name, train_filename_base, test_filename_base,
         withlabel=True, ndim=1, scale=1., dtype=None,
-        label_dtype=np.int32, rgb_format=False):
+        label_dtype=np.int32, rgb_format=False, reorder=False):
     url = "http://www.iro.umontreal.ca/~lisa/icml2007data/" + name + ".zip"
     root = download.get_dataset_directory('msakai/mnist_variation/')
 
@@ -72,6 +74,17 @@ def _get_mnist_variation(
                              label_dtype, rgb_format)
     test = preprocess_mnist(test_raw, withlabel, ndim, scale, dtype,
                             label_dtype, rgb_format)
+    if reorder:
+        def f(x):
+            x = x.reshape(-1, 28, 28)
+            x = np.swapaxes(x, 1, 2)
+            x = x.reshape(-1, 28*28)
+            return x
+        assert len(train._datasets) == 2
+        assert len(test._datasets) == 2
+        train._datasets = (f(train._datasets[0]), train._datasets[1])
+        test._datasets = (f(test._datasets[0]), test._datasets[1])
+
     return train, test
 
 
@@ -93,5 +106,9 @@ def get_dataset(name: str, *args, **kwargs):
         return get_mnist_back_image(*args, **kwargs)
     elif name == "mnist_rot":
         return get_mnist_rot(*args, **kwargs)
+    elif name == "mnist_back_image_reordered":
+        return get_mnist_back_image(*args, **kwargs, reorder=True)
+    elif name == "mnist_rot_reordered":
+        return get_mnist_rot(*args, **kwargs, reorder=True)
     else:
         raise RuntimeError("unknown dataset: " + name)

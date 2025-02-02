@@ -15,11 +15,13 @@ def to_image(dataset_name: str, data):
     if dataset_name == "mnist":
         pass
     elif dataset_name == "mnist_back_image":
-        data = np.flipud(data)
-        data = np.rot90(data, 3)
+        data = data.T
     elif dataset_name == "mnist_rot":
-        data = np.flipud(data)
-        data = np.rot90(data, 3)
+        data = data.T
+    elif dataset_name == "mnist_back_image_reordered":
+        pass
+    elif dataset_name == "mnist_rot_reordered":
+        pass
     else:
         raise RuntimeError("unknown dataset: " + dataset_name)    
     return PIL.Image.fromarray(data)

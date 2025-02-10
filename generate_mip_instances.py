@@ -122,7 +122,7 @@ for instance_no, (x, true_label) in enumerate(test):
                 if C >= 0:
                     mod.append((inputs[j], True, C - pixel))
                 else:
-                    mod.append((inputs[j], True, None))
+                    mod.append((inputs[j], True, None))  # impossible to change
             else:
                 if C + 1 <= 255:
                     mod.append((inputs[j], False, (C + 1) - pixel))

@@ -17,6 +17,9 @@ def read_binary_solution_maxsat(fname: Union[Path, str]) -> Optional[np.ndarray]
     sol = np.zeros(28*28, dtype=bool)
     with open(fname) as f:
         for line in f:
+            # hack for parsing the output of CASHWMaxSAT solvers from MaxSAT Evaluation 2024
+            if (idx := line.find("\t")) >= 0:
+                line = line[idx+1:]
             if line.startswith('v '):
                 line = line[2:].strip()
                 if re.fullmatch(r"[01]+", line):

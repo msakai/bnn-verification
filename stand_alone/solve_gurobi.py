@@ -167,7 +167,7 @@ def create_model(model, x_orig, y_true, norm: Literal["0", "1", "2", "inf"]):
             rhs = int(math.ceil(logits[j][1] - logits[i][1]))
             assert all(c % 4 == 0 for c, _ in lhs)
             lhs = [(c // 4, v) for c, v in lhs]
-            rhs = rhs // 4  # Note that // is floor division
+            rhs = (rhs + 3) // 4  # Note that // is floor division
             m.addConstr((output[i] == 1) >> (gp.quicksum(c * v for c, v in lhs) >= rhs))
 
     # Misclassification constraint

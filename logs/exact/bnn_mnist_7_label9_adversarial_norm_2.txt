@@ -1,0 +1,2089 @@
+c Exact - branch main commit 8dac976
+c Reading input file, expected format is wbo
+c #vars 1975 #constraints 1873
+c PRESOLVE
+c     bounds 1818223 >= 0 @ 0.404387, 234
+c     bounds 698949 >= 0 @ 0.412497, 237
+c     bounds 691209 >= 0 @ 0.426784, 241
+c     bounds 688953 >= 0 @ 0.430151, 242
+c     bounds 687072 >= 0 @ 0.438718, 243
+c     bounds 685029 >= 0 @ 0.448053, 245
+c     bounds 677285 >= 0 @ 0.451898, 246
+c     bounds 677284 >= 0 @ 0.454502, 246
+c     bounds 677283 >= 0 @ 0.459971, 246
+c     bounds 677282 >= 0 @ 0.467955, 246
+c     bounds 677281 >= 0 @ 0.475633, 246
+c     bounds 677256 >= 0 @ 0.482977, 246
+c     bounds 677220 >= 0 @ 0.489544, 246
+c     bounds 677195 >= 0 @ 0.495014, 246
+c     bounds 677194 >= 0 @ 0.50004, 246
+c     bounds 677193 >= 0 @ 0.50214, 246
+c     bounds 677192 >= 0 @ 0.504268, 246
+c     bounds 677191 >= 0 @ 0.506285, 246
+c     bounds 677190 >= 0 @ 0.508327, 246
+c     bounds 677189 >= 0 @ 0.513162, 246
+c     bounds 677185 >= 0 @ 0.518541, 246
+c     bounds 677169 >= 0 @ 0.52929, 246
+c     bounds 677105 >= 0 @ 0.532107, 246
+c     bounds 677070 >= 0 @ 0.534536, 246
+c     bounds 677069 >= 0 @ 0.536586, 246
+c     bounds 676984 >= 0 @ 0.540594, 246
+c     bounds 676949 >= 0 @ 0.546085, 246
+c     bounds 676948 >= 0 @ 0.552008, 246
+c     bounds 676692 >= 0 @ 0.554656, 246
+c     bounds 676368 >= 0 @ 0.556998, 246
+c     bounds 675927 >= 0 @ 0.559373, 246
+c     bounds 675027 >= 0 @ 0.563374, 246
+c     bounds 674771 >= 0 @ 0.5707, 246
+c     bounds 674242 >= 0 @ 0.577377, 246
+c     bounds 674241 >= 0 @ 0.57972, 246
+c     bounds 674240 >= 0 @ 0.581602, 246
+c     bounds 674239 >= 0 @ 0.583516, 246
+c     bounds 668614 >= 0 @ 0.586185, 246
+c     bounds 667525 >= 0 @ 0.588651, 246
+c     bounds 667084 >= 0 @ 0.591232, 246
+c     bounds 666684 >= 0 @ 0.593523, 246
+c     bounds 665315 >= 0 @ 0.596038, 246
+c     bounds 664531 >= 0 @ 0.598496, 246
+c     bounds 664527 >= 0 @ 0.601171, 246
+c     bounds 664526 >= 0 @ 0.60323, 246
+c     bounds 664525 >= 0 @ 0.606253, 246
+c     bounds 664524 >= 0 @ 0.609887, 246
+c     bounds 664523 >= 0 @ 0.614375, 246
+c     bounds 664327 >= 0 @ 0.621928, 246
+c     bounds 664183 >= 0 @ 0.625231, 246
+c     bounds 659827 >= 0 @ 0.627761, 246
+c     bounds 659811 >= 0 @ 0.630293, 246
+c     bounds 658970 >= 0 @ 0.632858, 246
+c     bounds 658609 >= 0 @ 0.635342, 246
+c     bounds 658545 >= 0 @ 0.637799, 246
+c     bounds 658544 >= 0 @ 0.639987, 246
+c     bounds 658543 >= 0 @ 0.641804, 246
+c     bounds 658539 >= 0 @ 0.644031, 246
+c     bounds 658418 >= 0 @ 0.646492, 246
+c     bounds 658057 >= 0 @ 0.648764, 246
+c     bounds 658041 >= 0 @ 0.651213, 246
+c     bounds 656105 >= 0 @ 0.653726, 246
+c     bounds 656101 >= 0 @ 0.656289, 246
+c     bounds 652737 >= 0 @ 0.658948, 246
+c     bounds 649209 >= 0 @ 0.661206, 246
+c     bounds 648804 >= 0 @ 0.663673, 246
+c     bounds 648769 >= 0 @ 0.666074, 246
+c     bounds 648768 >= 0 @ 0.66815, 246
+c     bounds 648767 >= 0 @ 0.669905, 246
+c     bounds 648682 >= 0 @ 0.672874, 246
+c     bounds 648647 >= 0 @ 0.675957, 246
+c     bounds 648646 >= 0 @ 0.67789, 246
+c     bounds 648637 >= 0 @ 0.681042, 246
+c     bounds 648636 >= 0 @ 0.687121, 246
+c     bounds 648635 >= 0 @ 0.69161, 246
+c     bounds 648619 >= 0 @ 0.698007, 246
+c     bounds 648555 >= 0 @ 0.705273, 246
+c     bounds 648510 >= 0 @ 0.707807, 246
+c     bounds 648475 >= 0 @ 0.711923, 246
+c     bounds 648474 >= 0 @ 0.715365, 246
+c     bounds 648438 >= 0 @ 0.71778, 246
+c     bounds 648374 >= 0 @ 0.72017, 246
+c     bounds 643333 >= 0 @ 0.722718, 246
+c     bounds 643189 >= 0 @ 0.727994, 246
+c     bounds 643140 >= 0 @ 0.733041, 246
+c     bounds 643124 >= 0 @ 0.739618, 246
+c     bounds 642835 >= 0 @ 0.742477, 246
+c     bounds 635880 >= 0 @ 0.745044, 246
+c     bounds 635475 >= 0 @ 0.74937, 246
+c     bounds 635440 >= 0 @ 0.75199, 246
+c     bounds 635439 >= 0 @ 0.754016, 246
+c     bounds 622159 >= 0 @ 0.756872, 246
+c     bounds 620751 >= 0 @ 0.760117, 246
+c     bounds 620346 >= 0 @ 0.767764, 246
+c     bounds 620311 >= 0 @ 0.772344, 246
+c     bounds 620310 >= 0 @ 0.774673, 246
+c     bounds 620262 >= 0 @ 0.777246, 246
+c     bounds 620261 >= 0 @ 0.779411, 246
+c     bounds 612602 >= 0 @ 0.781957, 246
+c     bounds 612197 >= 0 @ 0.78612, 246
+c     bounds 612162 >= 0 @ 0.793218, 246
+c     bounds 612161 >= 0 @ 0.79896, 246
+c     bounds 612112 >= 0 @ 0.805578, 246
+c     bounds 612103 >= 0 @ 0.808307, 246
+c     bounds 612102 >= 0 @ 0.81055, 246
+c     bounds 612098 >= 0 @ 0.812918, 246
+c     bounds 612063 >= 0 @ 0.818381, 246
+c     bounds 612062 >= 0 @ 0.82312, 246
+c     bounds 611333 >= 0 @ 0.830863, 246
+c     bounds 610804 >= 0 @ 0.836389, 246
+c     bounds 597769 >= 0 @ 0.845553, 246
+c     bounds 595920 >= 0 @ 0.855243, 246
+c     bounds 581036 >= 0 @ 0.861487, 246
+c     bounds 581000 >= 0 @ 0.87005, 246
+c     bounds 580984 >= 0 @ 0.879113, 246
+c     bounds 580935 >= 0 @ 0.885981, 246
+c     bounds 580647 >= 0 @ 0.890765, 246
+c     bounds 580242 >= 0 @ 0.893494, 246
+c     bounds 580207 >= 0 @ 0.896046, 246
+c     bounds 580206 >= 0 @ 0.902447, 246
+c     bounds 580205 >= 0 @ 0.908096, 246
+c     bounds 580204 >= 0 @ 0.913924, 246
+c     bounds 580196 >= 0 @ 0.920779, 246
+c     bounds 580195 >= 0 @ 0.92811, 246
+c     bounds 580182 >= 0 @ 0.935417, 246
+c     bounds 580147 >= 0 @ 0.939852, 246
+c     bounds 580146 >= 0 @ 0.941837, 246
+c     bounds 579950 >= 0 @ 0.944415, 246
+c     bounds 579221 >= 0 @ 0.948798, 246
+c     bounds 577777 >= 0 @ 0.954269, 246
+c     bounds 576936 >= 0 @ 0.959407, 246
+c     bounds 564836 >= 0 @ 0.965735, 246
+c     bounds 550211 >= 0 @ 0.968283, 246
+c     bounds 550204 >= 0 @ 0.97105, 246
+c     bounds 550196 >= 0 @ 0.973652, 246
+c     bounds 550195 >= 0 @ 0.982561, 246
+c     bounds 538314 >= 0 @ 0.989945, 246
+c     bounds 532073 >= 0 @ 0.995334, 246
+c     bounds 522469 >= 0 @ 0.997759, 246
+c     bounds 522244 >= 0 @ 1.00031, 246
+c     bounds 521515 >= 0 @ 1.0028, 246
+c     bounds 521490 >= 0 @ 1.00921, 246
+c     bounds 521035 >= 0 @ 1.01488, 246
+c     bounds 519186 >= 0 @ 1.01735, 246
+c     bounds 519140 >= 0 @ 1.03838, 248
+c     bounds 513956 >= 0 @ 1.05744, 263
+c     bounds 510267 >= 0 @ 1.09776, 312
+c     bounds 500276 >= 0 @ 1.10951, 313
+c     bounds 485025 >= 0 @ 1.13131, 321
+c     bounds 484993 >= 0 @ 1.14154, 322
+c     bounds 480001 >= 0 @ 1.14827, 331
+c     bounds 479376 >= 0 @ 1.15795, 331
+c     bounds 479368 >= 0 @ 1.16374, 331
+c     bounds 468759 >= 0 @ 1.19695, 332
+c     bounds 468758 >= 0 @ 1.20142, 332
+c     bounds 458150 >= 0 @ 1.20603, 332
+c     bounds 458149 >= 0 @ 1.20815, 332
+c     bounds 443533 >= 0 @ 1.21047, 332
+c     bounds 443517 >= 0 @ 1.21294, 332
+c     bounds 443509 >= 0 @ 1.21508, 332
+c     bounds 443508 >= 0 @ 1.21907, 332
+c     bounds 433308 >= 0 @ 1.23142, 333
+c     bounds 427979 >= 0 @ 1.24065, 334
+c     bounds 419698 >= 0 @ 1.26827, 335
+c     bounds 413146 >= 0 @ 1.30194, 345
+c     bounds 411443 >= 0 @ 1.32793, 388
+c     bounds 407163 >= 0 @ 1.3635, 407
+c     bounds 406202 >= 0 @ 1.36633, 408
+c     bounds 406163 >= 0 @ 1.38913, 411
+c     bounds 405939 >= 0 @ 1.39489, 412
+c     bounds 405914 >= 0 @ 1.411, 415
+c     bounds 405913 >= 0 @ 1.41636, 415
+c     bounds 405912 >= 0 @ 1.42248, 415
+c     bounds 405903 >= 0 @ 1.43227, 416
+c     bounds 405902 >= 0 @ 1.43468, 416
+c     bounds 405678 >= 0 @ 1.44835, 418
+c     bounds 405677 >= 0 @ 1.45391, 418
+c     bounds 404918 >= 0 @ 1.47877, 430
+c     bounds 404095 >= 0 @ 1.64399, 453
+c     bounds 404094 >= 0 @ 1.65185, 453
+c     bounds 404085 >= 0 @ 1.67055, 454
+c     bounds 404084 >= 0 @ 1.67349, 454
+c     bounds 404083 >= 0 @ 1.67847, 454
+c     bounds 404048 >= 0 @ 1.68371, 455
+c     bounds 403664 >= 0 @ 1.69339, 482
+c     bounds 403601 >= 0 @ 1.72819, 493
+c     bounds 403600 >= 0 @ 1.73194, 493
+c     bounds 403599 >= 0 @ 1.73401, 493
+c     bounds 391282 >= 0 @ 1.73661, 493
+c     bounds 391279 >= 0 @ 1.73928, 493
+c     bounds 391278 >= 0 @ 1.74135, 493
+c     bounds 391269 >= 0 @ 1.74387, 493
+c     bounds 383698 >= 0 @ 1.74635, 493
+c     bounds 383569 >= 0 @ 1.74854, 493
+c     bounds 383185 >= 0 @ 1.75053, 493
+c     bounds 383169 >= 0 @ 1.75312, 493
+c     bounds 379673 >= 0 @ 1.75589, 493
+c     bounds 379449 >= 0 @ 1.75843, 493
+c     bounds 379448 >= 0 @ 1.7605, 493
+c     bounds 377857 >= 0 @ 1.76292, 493
+c     bounds 377849 >= 0 @ 1.76557, 493
+c     bounds 377848 >= 0 @ 1.7677, 493
+c     bounds 377823 >= 0 @ 1.77023, 493
+c     bounds 377819 >= 0 @ 1.77277, 493
+c     bounds 377818 >= 0 @ 1.77478, 493
+c     bounds 377809 >= 0 @ 1.77707, 493
+c     bounds 377709 >= 0 @ 1.7795, 493
+c     bounds 377669 >= 0 @ 1.7818, 493
+c     bounds 377665 >= 0 @ 1.78828, 495
+c     bounds 363779 >= 0 @ 1.82397, 549
+c     bounds 363563 >= 0 @ 1.82816, 549
+c     bounds 363558 >= 0 @ 1.83021, 549
+c     bounds 363499 >= 0 @ 1.83321, 550
+c     bounds 352687 >= 0 @ 1.85212, 558
+c     bounds 352686 >= 0 @ 1.85625, 558
+c     bounds 352685 >= 0 @ 1.85877, 558
+c     bounds 352684 >= 0 @ 1.86274, 558
+c     bounds 352673 >= 0 @ 1.8663, 558
+c     bounds 352664 >= 0 @ 1.86858, 558
+c     bounds 352657 >= 0 @ 1.871, 558
+c     bounds 352652 >= 0 @ 1.87351, 558
+c     bounds 352649 >= 0 @ 1.87588, 558
+c     bounds 352119 >= 0 @ 1.88681, 559
+c     bounds 352107 >= 0 @ 1.88995, 560
+c     bounds 345051 >= 0 @ 1.89669, 568
+c     bounds 341082 >= 0 @ 1.89927, 568
+c     bounds 340922 >= 0 @ 1.90183, 568
+c     bounds 340914 >= 0 @ 1.90424, 568
+c     bounds 340913 >= 0 @ 1.90599, 568
+c     bounds 338768 >= 0 @ 1.90867, 569
+c     bounds 329291 >= 0 @ 1.91572, 576
+c     bounds 329066 >= 0 @ 1.9185, 576
+c     bounds 329050 >= 0 @ 1.92103, 576
+c     bounds 328726 >= 0 @ 1.92363, 576
+c     bounds 328582 >= 0 @ 1.92588, 576
+c     bounds 327853 >= 0 @ 1.92845, 576
+c     bounds 326829 >= 0 @ 1.93087, 576
+c     bounds 326604 >= 0 @ 1.9333, 576
+c     bounds 315789 >= 0 @ 1.93586, 576
+c     bounds 315788 >= 0 @ 1.93774, 576
+c     bounds 310163 >= 0 @ 1.94018, 576
+c     bounds 310160 >= 0 @ 1.9428, 576
+c     bounds 310159 >= 0 @ 1.94489, 576
+c     bounds 310158 >= 0 @ 1.94688, 576
+c     bounds 310058 >= 0 @ 1.94962, 576
+c     bounds 307849 >= 0 @ 1.95241, 576
+c     bounds 307786 >= 0 @ 1.95905, 576
+c     bounds 307785 >= 0 @ 1.96473, 576
+c     bounds 307781 >= 0 @ 1.96842, 576
+c     bounds 306941 >= 0 @ 1.97152, 576
+c     bounds 306940 >= 0 @ 1.97393, 576
+c     bounds 302179 >= 0 @ 1.9804, 576
+c     bounds 299154 >= 0 @ 1.98703, 576
+c     bounds 298865 >= 0 @ 1.99141, 576
+c     bounds 298816 >= 0 @ 1.99676, 576
+c     bounds 298812 >= 0 @ 2.00727, 576
+c     bounds 298811 >= 0 @ 2.00961, 576
+c     bounds 298810 >= 0 @ 2.01178, 576
+c     bounds 297211 >= 0 @ 2.01785, 576
+c     bounds 297210 >= 0 @ 2.02564, 576
+c     bounds 296249 >= 0 @ 2.03072, 576
+c     bounds 295024 >= 0 @ 2.04078, 576
+c     bounds 288135 >= 0 @ 2.04712, 576
+c     bounds 278531 >= 0 @ 2.05279, 576
+c     bounds 266431 >= 0 @ 2.05652, 576
+c     bounds 254767 >= 0 @ 2.05938, 576
+c     bounds 251046 >= 0 @ 2.06231, 576
+c     bounds 245862 >= 0 @ 2.06515, 576
+c     bounds 245237 >= 0 @ 2.06831, 576
+c     bounds 245201 >= 0 @ 2.07129, 576
+c     bounds 245200 >= 0 @ 2.07372, 576
+c     bounds 245184 >= 0 @ 2.07653, 576
+c     bounds 242159 >= 0 @ 2.07965, 576
+c     bounds 240934 >= 0 @ 2.0824, 576
+c     bounds 239710 >= 0 @ 2.08672, 576
+c     bounds 239709 >= 0 @ 2.09198, 576
+c     bounds 223580 >= 0 @ 2.09634, 576
+c     bounds 212764 >= 0 @ 2.09901, 576
+c     bounds 204664 >= 0 @ 2.10221, 576
+c     bounds 191439 >= 0 @ 2.10627, 576
+c     bounds 190955 >= 0 @ 2.11329, 576
+c     bounds 185027 >= 0 @ 2.12018, 576
+c     bounds 185026 >= 0 @ 2.12525, 576
+c     bounds 184665 >= 0 @ 2.13587, 576
+c     bounds 184664 >= 0 @ 2.14163, 576
+c     bounds 184660 >= 0 @ 2.14986, 576
+c     bounds 184405 >= 0 @ 2.15422, 576
+c     bounds 184404 >= 0 @ 2.15664, 576
+c     bounds 181488 >= 0 @ 2.15975, 576
+c     bounds 179807 >= 0 @ 2.16654, 576
+c     bounds 179803 >= 0 @ 2.17378, 576
+c     bounds 173403 >= 0 @ 2.1815, 576
+c     bounds 166178 >= 0 @ 2.18841, 576
+c     bounds 166009 >= 0 @ 2.19177, 576
+c     bounds 163984 >= 0 @ 2.19471, 576
+c     bounds 163903 >= 0 @ 2.19868, 576
+c     bounds 163878 >= 0 @ 2.20818, 576
+c     bounds 163877 >= 0 @ 2.21526, 576
+c     bounds 163876 >= 0 @ 2.22026, 576
+c     bounds 163755 >= 0 @ 2.23172, 576
+c     bounds 163355 >= 0 @ 2.23467, 576
+c     bounds 153356 >= 0 @ 2.23808, 576
+c     bounds 153355 >= 0 @ 2.24806, 576
+c     bounds 143355 >= 0 @ 2.25633, 576
+c     bounds 133946 >= 0 @ 2.25885, 576
+c     bounds 119305 >= 0 @ 2.26187, 576
+c     bounds 119301 >= 0 @ 2.26508, 576
+c     bounds 119201 >= 0 @ 2.26928, 576
+c     bounds 119152 >= 0 @ 2.27564, 576
+c     bounds 119127 >= 0 @ 2.28264, 576
+c     bounds 119126 >= 0 @ 2.28525, 576
+c     bounds 119101 >= 0 @ 2.28804, 576
+c     bounds 118876 >= 0 @ 2.29107, 576
+c     bounds 117720 >= 0 @ 2.29406, 576
+c     bounds 117320 >= 0 @ 2.29887, 576
+c     bounds 111695 >= 0 @ 2.30781, 576
+c     bounds 104126 >= 0 @ 2.31043, 576
+c     bounds 104101 >= 0 @ 2.32032, 576
+c     bounds 103777 >= 0 @ 2.32569, 576
+c     bounds 103713 >= 0 @ 2.32855, 576
+c     bounds 103712 >= 0 @ 2.33102, 576
+c     bounds 103711 >= 0 @ 2.33308, 576
+c     bounds 103702 >= 0 @ 2.33573, 576
+c     bounds 103218 >= 0 @ 2.34015, 576
+c     bounds 99122 >= 0 @ 2.34707, 576
+c     bounds 87022 >= 0 @ 2.35595, 576
+c     bounds 82122 >= 0 @ 2.35882, 576
+c     bounds 82073 >= 0 @ 2.36186, 576
+c     bounds 82069 >= 0 @ 2.36491, 576
+c     bounds 82068 >= 0 @ 2.37179, 576
+c     bounds 82052 >= 0 @ 2.37958, 576
+c     bounds 81427 >= 0 @ 2.38594, 576
+c     bounds 71427 >= 0 @ 2.39332, 576
+c     bounds 46571 >= 0 @ 2.39658, 576
+c     bounds 40330 >= 0 @ 2.3995, 576
+c     bounds 18146 >= 0 @ 2.40639, 576
+c     bounds 15745 >= 0 @ 2.41561, 576
+c     bounds 4817 >= 0 @ 2.42718, 576
+c     bounds 4801 >= 0 @ 2.43545, 576
+c     bounds 4797 >= 0 @ 2.4419, 576
+c     bounds 2768 >= 0 @ 2.45215, 579
+c     bounds 2743 >= 0 @ 2.45919, 580
+c     bounds 2127 >= 0 @ 2.50411, 597
+c     bounds 2126 >= 0 @ 2.50674, 597
+c     bounds 2125 >= 0 @ 2.50874, 597
+c     bounds 2101 >= 0 @ 2.51816, 598
+c     bounds 2100 >= 0 @ 2.64298, 628
+c     bounds 1147 >= 0 @ 2.75343, 660
+c     bounds 1146 >= 0 @ 2.83017, 672
+c     bounds 305 >= 0 @ 2.83335, 672
+c 1000 confls 4293 constrs 1233 vars
+c     bounds 303 >= 0 @ 3.2198, 1608
+c     bounds 300 >= 0 @ 3.22432, 1612
+c     bounds 297 >= 0 @ 3.22998, 1616
+c     bounds 296 >= 0 @ 3.23202, 1616
+c     bounds 295 >= 0 @ 3.26511, 1620
+c     bounds 292 >= 0 @ 3.2786, 1626
+c     bounds 291 >= 0 @ 3.29709, 1628
+c     bounds 290 >= 0 @ 3.30505, 1629
+c     bounds 289 >= 0 @ 3.31069, 1629
+c     bounds 288 >= 0 @ 3.31263, 1629
+c     bounds 287 >= 0 @ 3.31473, 1629
+c     bounds 286 >= 0 @ 3.31669, 1629
+c     bounds 285 >= 0 @ 3.31865, 1629
+c     bounds 284 >= 0 @ 3.32839, 1629
+c     bounds 283 >= 0 @ 3.3332, 1629
+c     bounds 282 >= 0 @ 3.3362, 1629
+c     bounds 279 >= 0 @ 3.33879, 1631
+c     bounds 275 >= 0 @ 3.38673, 1635
+c     bounds 274 >= 0 @ 3.59388, 1666
+c     bounds 182 >= 0 @ 4.33389, 1854
+c     bounds 170 >= 0 @ 4.4138, 1876
+c     bounds 169 >= 0 @ 4.43169, 1913
+c     bounds 167 >= 0 @ 4.51314, 1921
+c     bounds 166 >= 0 @ 4.54436, 1930
+c     bounds 163 >= 0 @ 4.80383, 1981
+c 2000 confls 5343 constrs 1155 vars
+c INPROCESSING 0.049673 proptime 177843 prop/sec 0.462428 prop/ca
+c     bounds 162 >= 0 @ 5.26097, 2007
+c     bounds 160 >= 0 @ 5.2764, 2008
+c     bounds 156 >= 0 @ 5.28078, 2008
+c     bounds 147 >= 0 @ 5.28786, 2008
+c     bounds 144 >= 0 @ 5.29321, 2009
+c     bounds 139 >= 0 @ 5.39178, 2064
+c     bounds 138 >= 0 @ 5.45992, 2078
+c     bounds 137 >= 0 @ 5.46421, 2078
+c     bounds 136 >= 0 @ 5.46583, 2078
+c     bounds 135 >= 0 @ 5.48496, 2080
+c     bounds 125 >= 0 @ 5.4963, 2084
+c     bounds 124 >= 0 @ 5.49927, 2084
+c     bounds 122 >= 0 @ 5.50612, 2085
+c     bounds 121 >= 0 @ 5.50908, 2085
+c     bounds 119 >= 0 @ 5.52056, 2087
+c     bounds 118 >= 0 @ 5.54213, 2089
+c     bounds 117 >= 0 @ 5.54487, 2089
+c     bounds 115 >= 0 @ 5.55151, 2090
+c     bounds 111 >= 0 @ 5.55318, 2090
+c     bounds 96 >= 0 @ 5.56468, 2092
+c     bounds 92 >= 0 @ 5.58785, 2109
+c     bounds 91 >= 0 @ 5.65053, 2132
+c     bounds 89 >= 0 @ 5.66438, 2139
+c     bounds 88 >= 0 @ 5.68564, 2145
+c     bounds 87 >= 0 @ 5.70191, 2148
+c     bounds 86 >= 0 @ 6.00232, 2204
+c     bounds 82 >= 0 @ 6.87595, 2463
+c     bounds 81 >= 0 @ 6.91016, 2497
+c     bounds 76 >= 0 @ 7.15802, 2559
+c     bounds 67 >= 0 @ 7.166, 2560
+c     bounds 65 >= 0 @ 7.23835, 2573
+c 3000 confls 4691 constrs 1069 vars
+c     bounds 64 >= 0 @ 13.2742, 3918
+c     bounds 63 >= 0 @ 13.6194, 3967
+c 4000 confls 5695 constrs 1041 vars
+c     bounds 62 >= 0 @ 17.1781, 4572
+c     bounds 61 >= 0 @ 18.1444, 4700
+c 5000 confls 6699 constrs 1041 vars
+c     bounds 60 >= 0 @ 25.0358, 5767
+c     bounds 59 >= 0 @ 25.1852, 5812
+c 6000 confls 7703 constrs 1041 vars
+c     bounds 58 >= 0 @ 28.5837, 6480
+c     bounds 57 >= 0 @ 29.0095, 6545
+c INPROCESSING 0.607581 proptime 95687.6 prop/sec 1.28518 prop/ca
+c 7000 confls 7726 constrs 1041 vars
+c 8000 confls 8726 constrs 1041 vars
+c     bounds 55 >= 0 @ 51.9597, 8857
+c     bounds 54 >= 0 @ 52.1411, 8906
+c 9000 confls 9730 constrs 1041 vars
+c 10000 confls 10730 constrs 1041 vars
+c 11000 confls 11730 constrs 1041 vars
+c     bounds 53 >= 0 @ 57.8301, 11658
+c 12000 confls 12732 constrs 1041 vars
+c INPROCESSING 0.0589209 proptime 431731 prop/sec 1.08015 prop/ca
+c     bounds 52 >= 0 @ 60.2626, 12682
+c     bounds 51 >= 0 @ 60.2688, 12682
+c     bounds 50 >= 0 @ 60.2731, 12682
+c     bounds 49 >= 0 @ 60.2766, 12682
+c     bounds 48 >= 0 @ 60.2803, 12682
+c     bounds 47 >= 0 @ 60.2821, 12682
+c     bounds 46 >= 0 @ 60.2838, 12682
+c     bounds 45 >= 0 @ 60.2851, 12682
+c     bounds 44 >= 0 @ 60.2863, 12682
+c     bounds 43 >= 0 @ 60.2904, 12682
+c     bounds 42 >= 0 @ 60.2966, 12682
+c     bounds 41 >= 0 @ 60.3008, 12682
+c     bounds 40 >= 0 @ 60.3093, 12682
+c     bounds 39 >= 0 @ 60.311, 12682
+c     bounds 38 >= 0 @ 60.3123, 12682
+c     bounds 37 >= 0 @ 60.3138, 12682
+c     bounds 36 >= 0 @ 60.3156, 12682
+c 13000 confls 9800 constrs 981 vars
+c     bounds 35 >= 0 @ 62.2611, 13093
+c     bounds 34 >= 0 @ 64.7358, 13494
+c     bounds 33 >= 0 @ 67.3939, 13917
+c 14000 confls 10806 constrs 981 vars
+c 15000 confls 11806 constrs 981 vars
+c 16000 confls 12806 constrs 981 vars
+c 17000 confls 13806 constrs 981 vars
+c 18000 confls 14806 constrs 981 vars
+c INPROCESSING 5.00746 proptime 252974 prop/sec 0.48707 prop/ca
+c 19000 confls 11894 constrs 980 vars
+c     bounds 32 >= 0 @ 88.7081, 19296
+c     bounds 31 >= 0 @ 90.0886, 19645
+c     bounds 30 >= 0 @ 90.6151, 19710
+c 20000 confls 12900 constrs 979 vars
+c     bounds 29 >= 0 @ 92.2519, 20041
+c     bounds 28 >= 0 @ 92.9229, 20148
+c     bounds 27 >= 0 @ 92.9792, 20165
+c     bounds 26 >= 0 @ 94.1636, 20331
+c 21000 confls 13908 constrs 977 vars
+c 22000 confls 14908 constrs 976 vars
+c 23000 confls 15908 constrs 976 vars
+c 24000 confls 16908 constrs 976 vars
+c INPROCESSING 11.573 proptime 121673 prop/sec 1.01244 prop/ca
+c 25000 confls 12760 constrs 936 vars
+c 26000 confls 13760 constrs 936 vars
+c 27000 confls 14760 constrs 935 vars
+c 28000 confls 15760 constrs 934 vars
+c 29000 confls 16760 constrs 934 vars
+c 30000 confls 17760 constrs 934 vars
+c INPROCESSING 0.884031 proptime 452284 prop/sec 0.669605 prop/ca
+c 31000 confls 11741 constrs 934 vars
+c 32000 confls 12741 constrs 932 vars
+c 33000 confls 13741 constrs 932 vars
+c 34000 confls 14741 constrs 932 vars
+c 35000 confls 15741 constrs 932 vars
+c 36000 confls 16741 constrs 932 vars
+c 37000 confls 17741 constrs 930 vars
+c INPROCESSING 1.13215 proptime 330111 prop/sec 1.31419 prop/ca
+c 38000 confls 14895 constrs 928 vars
+c 39000 confls 15895 constrs 928 vars
+c 40000 confls 16895 constrs 928 vars
+c 41000 confls 17895 constrs 928 vars
+c 42000 confls 18895 constrs 928 vars
+c 43000 confls 19895 constrs 928 vars
+c INPROCESSING 0.95602 proptime 300356 prop/sec 1.47553 prop/ca
+c 44000 confls 13361 constrs 927 vars
+c 45000 confls 14361 constrs 921 vars
+c 46000 confls 15361 constrs 920 vars
+c 47000 confls 16361 constrs 920 vars
+c 48000 confls 17361 constrs 920 vars
+c 49000 confls 18361 constrs 920 vars
+c 50000 confls 19361 constrs 919 vars
+c INPROCESSING 7.92128 proptime 282650 prop/sec 0.51787 prop/ca
+c     bounds 25 >= 0 @ 149.081, 50670
+c 51000 confls 13624 constrs 918 vars
+c     bounds 23 >= 0 @ 151.019, 51446
+c 52000 confls 14626 constrs 918 vars
+c 53000 confls 15626 constrs 918 vars
+c 54000 confls 16626 constrs 918 vars
+c 55000 confls 17626 constrs 916 vars
+c 56000 confls 18626 constrs 915 vars
+c 57000 confls 19626 constrs 914 vars
+c INPROCESSING 12.7732 proptime 130761 prop/sec 1.1519 prop/ca
+c 58000 confls 13334 constrs 914 vars
+c 59000 confls 14334 constrs 914 vars
+c 60000 confls 15334 constrs 914 vars
+c 61000 confls 16334 constrs 913 vars
+c 62000 confls 17334 constrs 913 vars
+c 63000 confls 18334 constrs 913 vars
+c 64000 confls 19334 constrs 913 vars
+c INPROCESSING 6.2542 proptime 260397 prop/sec 0.601402 prop/ca
+c 65000 confls 12975 constrs 911 vars
+c 66000 confls 13975 constrs 909 vars
+c 67000 confls 14975 constrs 909 vars
+c 68000 confls 15975 constrs 909 vars
+c 69000 confls 16975 constrs 907 vars
+c 70000 confls 17975 constrs 907 vars
+c 71000 confls 18975 constrs 907 vars
+c INPROCESSING 16.0315 proptime 105074 prop/sec 1.62202 prop/ca
+c 72000 confls 14238 constrs 907 vars
+c 73000 confls 15238 constrs 907 vars
+c 74000 confls 16238 constrs 907 vars
+c 75000 confls 17238 constrs 907 vars
+c     bounds 22 >= 0 @ 233.114, 75306
+c 76000 confls 18240 constrs 906 vars
+c 77000 confls 19240 constrs 906 vars
+c 78000 confls 20240 constrs 906 vars
+c INPROCESSING 3.26311 proptime 286289 prop/sec 0.480381 prop/ca
+c 79000 confls 13625 constrs 906 vars
+c 80000 confls 14625 constrs 906 vars
+c 81000 confls 15625 constrs 906 vars
+c 82000 confls 16625 constrs 906 vars
+c 83000 confls 17625 constrs 906 vars
+c 84000 confls 18625 constrs 906 vars
+c 85000 confls 19625 constrs 906 vars
+c INPROCESSING 16.1626 proptime 187213 prop/sec 0.776663 prop/ca
+c 86000 confls 15191 constrs 904 vars
+c 87000 confls 16191 constrs 904 vars
+c 88000 confls 17191 constrs 904 vars
+c 89000 confls 18191 constrs 904 vars
+c 90000 confls 19191 constrs 904 vars
+c 91000 confls 20191 constrs 904 vars
+c 92000 confls 21191 constrs 904 vars
+c INPROCESSING 9.18079 proptime 250503 prop/sec 0.540524 prop/ca
+c 93000 confls 12199 constrs 904 vars
+c 94000 confls 13199 constrs 904 vars
+c 95000 confls 14199 constrs 904 vars
+c 96000 confls 15199 constrs 904 vars
+c 97000 confls 16199 constrs 904 vars
+c 98000 confls 17199 constrs 904 vars
+c 99000 confls 18199 constrs 904 vars
+c 100000 confls 19199 constrs 904 vars
+c INPROCESSING 7.94329 proptime 271985 prop/sec 0.494612 prop/ca
+c 101000 confls 12101 constrs 904 vars
+c 102000 confls 13101 constrs 904 vars
+c 103000 confls 14101 constrs 904 vars
+c 104000 confls 15101 constrs 904 vars
+c 105000 confls 16101 constrs 904 vars
+c 106000 confls 17101 constrs 904 vars
+c 107000 confls 18101 constrs 904 vars
+c INPROCESSING 16.273 proptime 188730 prop/sec 0.760512 prop/ca
+c 108000 confls 15395 constrs 904 vars
+c 109000 confls 16395 constrs 904 vars
+c 110000 confls 17395 constrs 904 vars
+c 111000 confls 18395 constrs 904 vars
+c 112000 confls 19395 constrs 904 vars
+c 113000 confls 20395 constrs 904 vars
+c 114000 confls 21395 constrs 904 vars
+c INPROCESSING 9.01672 proptime 242182 prop/sec 0.528858 prop/ca
+c 115000 confls 12002 constrs 904 vars
+c 116000 confls 13002 constrs 904 vars
+c 117000 confls 14002 constrs 904 vars
+c 118000 confls 15002 constrs 904 vars
+c 119000 confls 16002 constrs 904 vars
+c 120000 confls 17002 constrs 904 vars
+c 121000 confls 18002 constrs 904 vars
+c 122000 confls 19002 constrs 903 vars
+c INPROCESSING 17.5369 proptime 177897 prop/sec 0.763669 prop/ca
+c 123000 confls 16198 constrs 903 vars
+c 124000 confls 17198 constrs 903 vars
+c 125000 confls 18198 constrs 903 vars
+c 126000 confls 19198 constrs 903 vars
+c 127000 confls 20198 constrs 903 vars
+c 128000 confls 21198 constrs 903 vars
+c 129000 confls 22198 constrs 903 vars
+c INPROCESSING 8.34752 proptime 264156 prop/sec 0.509243 prop/ca
+c 130000 confls 11736 constrs 903 vars
+c 131000 confls 12736 constrs 903 vars
+c 132000 confls 13736 constrs 903 vars
+c 133000 confls 14736 constrs 903 vars
+c 134000 confls 15736 constrs 903 vars
+c 135000 confls 16736 constrs 903 vars
+c 136000 confls 17736 constrs 903 vars
+c 137000 confls 18736 constrs 903 vars
+c INPROCESSING 9.65318 proptime 241599 prop/sec 0.584052 prop/ca
+c 138000 confls 12670 constrs 903 vars
+c 139000 confls 13670 constrs 903 vars
+c 140000 confls 14670 constrs 903 vars
+c 141000 confls 15670 constrs 903 vars
+c 142000 confls 16670 constrs 903 vars
+c 143000 confls 17670 constrs 903 vars
+c 144000 confls 18670 constrs 903 vars
+c INPROCESSING 16.249 proptime 194128 prop/sec 0.749862 prop/ca
+c 145000 confls 15313 constrs 903 vars
+c 146000 confls 16313 constrs 903 vars
+c 147000 confls 17313 constrs 903 vars
+c 148000 confls 18313 constrs 903 vars
+c 149000 confls 19313 constrs 903 vars
+c 150000 confls 20313 constrs 903 vars
+c 151000 confls 21313 constrs 903 vars
+c 152000 confls 22313 constrs 903 vars
+c INPROCESSING 8.8329 proptime 249989 prop/sec 0.534071 prop/ca
+c 153000 confls 12094 constrs 903 vars
+c 154000 confls 13094 constrs 903 vars
+c 155000 confls 14094 constrs 903 vars
+c 156000 confls 15094 constrs 903 vars
+c 157000 confls 16094 constrs 903 vars
+c 158000 confls 17094 constrs 903 vars
+c 159000 confls 18094 constrs 903 vars
+c 160000 confls 19094 constrs 903 vars
+c INPROCESSING 16.2238 proptime 195925 prop/sec 0.746688 prop/ca
+c 161000 confls 16154 constrs 903 vars
+c 162000 confls 17154 constrs 903 vars
+c 163000 confls 18154 constrs 903 vars
+c 164000 confls 19154 constrs 903 vars
+c 165000 confls 20154 constrs 903 vars
+c 166000 confls 21154 constrs 903 vars
+c 167000 confls 22154 constrs 903 vars
+c INPROCESSING 8.22565 proptime 269262 prop/sec 0.525343 prop/ca
+c 168000 confls 11744 constrs 903 vars
+c 169000 confls 12744 constrs 903 vars
+c 170000 confls 13744 constrs 903 vars
+c 171000 confls 14744 constrs 903 vars
+c 172000 confls 15744 constrs 903 vars
+c     bounds 21 >= 0 @ 636.264, 172846
+c 173000 confls 16746 constrs 903 vars
+c 174000 confls 17746 constrs 903 vars
+c 175000 confls 18746 constrs 903 vars
+c INPROCESSING 2.03387 proptime 257334 prop/sec 0.607287 prop/ca
+c 176000 confls 12468 constrs 902 vars
+c 177000 confls 13468 constrs 902 vars
+c 178000 confls 14468 constrs 902 vars
+c 179000 confls 15468 constrs 902 vars
+c 180000 confls 16468 constrs 902 vars
+c 181000 confls 17468 constrs 902 vars
+c 182000 confls 18468 constrs 902 vars
+c 183000 confls 19468 constrs 902 vars
+c INPROCESSING 6.17348 proptime 298630 prop/sec 0.552508 prop/ca
+c 184000 confls 15310 constrs 901 vars
+c 185000 confls 16310 constrs 901 vars
+c 186000 confls 17310 constrs 901 vars
+c 187000 confls 18310 constrs 901 vars
+c 188000 confls 19310 constrs 901 vars
+c 189000 confls 20310 constrs 901 vars
+c 190000 confls 21310 constrs 901 vars
+c 191000 confls 22310 constrs 901 vars
+c INPROCESSING 9.83791 proptime 241981 prop/sec 0.574574 prop/ca
+c 192000 confls 13337 constrs 901 vars
+c 193000 confls 14337 constrs 901 vars
+c 194000 confls 15337 constrs 901 vars
+c 195000 confls 16337 constrs 901 vars
+c 196000 confls 17337 constrs 901 vars
+c 197000 confls 18337 constrs 901 vars
+c 198000 confls 19337 constrs 900 vars
+c 199000 confls 20337 constrs 900 vars
+c INPROCESSING 16.8258 proptime 187067 prop/sec 0.774762 prop/ca
+c 200000 confls 16593 constrs 900 vars
+c 201000 confls 17593 constrs 900 vars
+c 202000 confls 18593 constrs 900 vars
+c 203000 confls 19593 constrs 900 vars
+c 204000 confls 20593 constrs 900 vars
+c 205000 confls 21593 constrs 900 vars
+c 206000 confls 22593 constrs 900 vars
+c INPROCESSING 9.63526 proptime 239917 prop/sec 0.558537 prop/ca
+c 207000 confls 12427 constrs 900 vars
+c     bounds 20 >= 0 @ 757.378, 207429
+c 208000 confls 13429 constrs 900 vars
+c 209000 confls 14429 constrs 900 vars
+c     bounds 19 >= 0 @ 764.868, 209559
+c 210000 confls 15431 constrs 900 vars
+c 211000 confls 16431 constrs 897 vars
+c 212000 confls 17431 constrs 897 vars
+c 213000 confls 18431 constrs 897 vars
+c 214000 confls 19431 constrs 897 vars
+c INPROCESSING 11.2612 proptime 199136 prop/sec 0.732329 prop/ca
+c 215000 confls 14859 constrs 897 vars
+c 216000 confls 15859 constrs 897 vars
+c 217000 confls 16859 constrs 897 vars
+c 218000 confls 17859 constrs 897 vars
+c 219000 confls 18859 constrs 897 vars
+c     bounds 18 >= 0 @ 808.863, 219250
+c 220000 confls 19861 constrs 897 vars
+c 221000 confls 20861 constrs 897 vars
+c 222000 confls 21861 constrs 897 vars
+c INPROCESSING 3.0965 proptime 328338 prop/sec 0.509599 prop/ca
+c 223000 confls 13491 constrs 897 vars
+c 224000 confls 14491 constrs 897 vars
+c 225000 confls 15491 constrs 897 vars
+c 226000 confls 16491 constrs 897 vars
+c 227000 confls 17491 constrs 897 vars
+c 228000 confls 18491 constrs 896 vars
+c 229000 confls 19491 constrs 893 vars
+c 230000 confls 20491 constrs 893 vars
+c INPROCESSING 18.5423 proptime 175913 prop/sec 0.917912 prop/ca
+c 231000 confls 15363 constrs 893 vars
+c 232000 confls 16363 constrs 893 vars
+c 233000 confls 17363 constrs 893 vars
+c 234000 confls 18363 constrs 893 vars
+c 235000 confls 19363 constrs 893 vars
+c 236000 confls 20363 constrs 893 vars
+c 237000 confls 21363 constrs 893 vars
+c 238000 confls 22363 constrs 893 vars
+c INPROCESSING 9.59996 proptime 264741 prop/sec 0.537636 prop/ca
+c 239000 confls 14517 constrs 893 vars
+c 240000 confls 15517 constrs 892 vars
+c 241000 confls 16517 constrs 892 vars
+c 242000 confls 17517 constrs 892 vars
+c 243000 confls 18517 constrs 892 vars
+c 244000 confls 19517 constrs 892 vars
+c 245000 confls 20517 constrs 892 vars
+c 246000 confls 21517 constrs 892 vars
+c INPROCESSING 21.4587 proptime 159894 prop/sec 0.977988 prop/ca
+c 247000 confls 17243 constrs 892 vars
+c 248000 confls 18243 constrs 892 vars
+c 249000 confls 19243 constrs 892 vars
+c 250000 confls 20243 constrs 892 vars
+c 251000 confls 21243 constrs 892 vars
+c 252000 confls 22243 constrs 892 vars
+c 253000 confls 23243 constrs 892 vars
+c 254000 confls 24243 constrs 892 vars
+c INPROCESSING 9.73401 proptime 261581 prop/sec 0.522442 prop/ca
+c 255000 confls 14540 constrs 892 vars
+c 256000 confls 15540 constrs 892 vars
+c 257000 confls 16540 constrs 892 vars
+c     bounds 17 >= 0 @ 973.106, 257999
+c 258000 confls 17568 constrs 840 vars
+c 259000 confls 18568 constrs 840 vars
+c     bounds 16 >= 0 @ 973.961, 259632
+c 260000 confls 19570 constrs 840 vars
+c     bounds 15 >= 0 @ 975.601, 260245
+c     bounds 14 >= 0 @ 975.623, 260255
+c 261000 confls 20574 constrs 840 vars
+c 262000 confls 21574 constrs 840 vars
+c INPROCESSING 2.90706 proptime 316829 prop/sec 0.497693 prop/ca
+c     bounds 13 >= 0 @ 986.72, 262921
+c     bounds 12 >= 0 @ 986.723, 262921
+c 263000 confls 11148 constrs 840 vars
+c 264000 confls 12148 constrs 840 vars
+c     bounds 11 >= 0 @ 993.247, 264596
+c 265000 confls 13150 constrs 840 vars
+c     bounds 10 >= 0 @ 995.011, 265054
+c 266000 confls 14180 constrs 784 vars
+c 267000 confls 15180 constrs 784 vars
+c 268000 confls 16180 constrs 782 vars
+c 269000 confls 17180 constrs 780 vars
+c 270000 confls 18180 constrs 778 vars
+c INPROCESSING 3.03515 proptime 389846 prop/sec 0.442735 prop/ca
+c 271000 confls 11258 constrs 778 vars
+c 272000 confls 12258 constrs 778 vars
+c 273000 confls 13258 constrs 778 vars
+c 274000 confls 14258 constrs 778 vars
+c 275000 confls 15258 constrs 778 vars
+c 276000 confls 16258 constrs 778 vars
+c 277000 confls 17258 constrs 778 vars
+c 278000 confls 18258 constrs 778 vars
+c INPROCESSING 8.19195 proptime 352472 prop/sec 0.475864 prop/ca
+c 279000 confls 11110 constrs 778 vars
+c 280000 confls 12110 constrs 778 vars
+c 281000 confls 13110 constrs 778 vars
+c 282000 confls 14110 constrs 778 vars
+c 283000 confls 15110 constrs 778 vars
+c 284000 confls 16110 constrs 778 vars
+c 285000 confls 17110 constrs 775 vars
+c 286000 confls 18110 constrs 773 vars
+c INPROCESSING 7.15465 proptime 384413 prop/sec 0.438944 prop/ca
+c 287000 confls 11969 constrs 772 vars
+c 288000 confls 12969 constrs 772 vars
+c 289000 confls 13969 constrs 772 vars
+c     bounds 9 >= 0 @ 1064.29, 289894
+c 290000 confls 14971 constrs 772 vars
+c 291000 confls 15971 constrs 772 vars
+c 292000 confls 16971 constrs 772 vars
+c 293000 confls 17971 constrs 772 vars
+c 294000 confls 18971 constrs 771 vars
+c INPROCESSING 4.89319 proptime 356569 prop/sec 0.458929 prop/ca
+c 295000 confls 11620 constrs 771 vars
+c 296000 confls 12620 constrs 771 vars
+c     bounds 8 >= 0 @ 1086.46, 296531
+c 297000 confls 13622 constrs 768 vars
+c 298000 confls 14622 constrs 768 vars
+c 299000 confls 15622 constrs 768 vars
+c 300000 confls 16622 constrs 768 vars
+c 301000 confls 17622 constrs 767 vars
+c 302000 confls 18622 constrs 766 vars
+c INPROCESSING 5.6913 proptime 326542 prop/sec 0.502722 prop/ca
+c 303000 confls 11920 constrs 765 vars
+c 304000 confls 12920 constrs 762 vars
+c 305000 confls 13920 constrs 762 vars
+c 306000 confls 14920 constrs 762 vars
+c 307000 confls 15920 constrs 762 vars
+c 308000 confls 16920 constrs 762 vars
+c 309000 confls 17920 constrs 761 vars
+c 310000 confls 18920 constrs 761 vars
+c INPROCESSING 8.99094 proptime 385529 prop/sec 0.478524 prop/ca
+c 311000 confls 13645 constrs 761 vars
+c 312000 confls 14645 constrs 761 vars
+c     bounds 7 >= 0 @ 1136.52, 312042
+c 313000 confls 15647 constrs 756 vars
+c 314000 confls 16647 constrs 755 vars
+c     bounds 6 >= 0 @ 1145.25, 314848
+c 315000 confls 17649 constrs 753 vars
+c 316000 confls 18649 constrs 749 vars
+c 317000 confls 19649 constrs 747 vars
+c 318000 confls 20649 constrs 746 vars
+c 319000 confls 21649 constrs 745 vars
+c INPROCESSING 4.0816 proptime 322901 prop/sec 0.54072 prop/ca
+c 320000 confls 13163 constrs 743 vars
+c 321000 confls 14163 constrs 743 vars
+c 322000 confls 15163 constrs 743 vars
+c 323000 confls 16163 constrs 743 vars
+c 324000 confls 17163 constrs 743 vars
+c 325000 confls 18163 constrs 743 vars
+c 326000 confls 19163 constrs 743 vars
+c 327000 confls 20163 constrs 742 vars
+c INPROCESSING 2.65463 proptime 118698 prop/sec 2.9189 prop/ca
+c 328000 confls 18783 constrs 741 vars
+c 329000 confls 19783 constrs 741 vars
+c 330000 confls 20783 constrs 741 vars
+c 331000 confls 21783 constrs 741 vars
+c 332000 confls 22783 constrs 741 vars
+c 333000 confls 23783 constrs 741 vars
+c 334000 confls 24783 constrs 741 vars
+c 335000 confls 25783 constrs 741 vars
+c INPROCESSING 2.02293 proptime 229455 prop/sec 0.746702 prop/ca
+c 336000 confls 13084 constrs 740 vars
+c 337000 confls 14084 constrs 740 vars
+c 338000 confls 15084 constrs 737 vars
+c 339000 confls 16084 constrs 737 vars
+c 340000 confls 17084 constrs 737 vars
+c 341000 confls 18084 constrs 737 vars
+c 342000 confls 19084 constrs 737 vars
+c 343000 confls 20084 constrs 737 vars
+c INPROCESSING 1.82134 proptime 300956 prop/sec 0.86395 prop/ca
+c 344000 confls 13122 constrs 732 vars
+c 345000 confls 14122 constrs 730 vars
+c 346000 confls 15122 constrs 729 vars
+c 347000 confls 16122 constrs 728 vars
+c 348000 confls 17122 constrs 726 vars
+c 349000 confls 18122 constrs 723 vars
+c 350000 confls 19122 constrs 721 vars
+c 351000 confls 20122 constrs 715 vars
+c INPROCESSING 7.09027 proptime 272285 prop/sec 0.709134 prop/ca
+c 352000 confls 12508 constrs 713 vars
+c 353000 confls 13508 constrs 713 vars
+c 354000 confls 14508 constrs 713 vars
+c 355000 confls 15508 constrs 712 vars
+c 356000 confls 16508 constrs 710 vars
+c 357000 confls 17508 constrs 710 vars
+c 358000 confls 18508 constrs 710 vars
+c 359000 confls 19508 constrs 710 vars
+c 360000 confls 20508 constrs 710 vars
+c INPROCESSING 1.74181 proptime 330884 prop/sec 0.967535 prop/ca
+c 361000 confls 15213 constrs 704 vars
+c 362000 confls 16213 constrs 699 vars
+c 363000 confls 17213 constrs 697 vars
+c 364000 confls 18213 constrs 697 vars
+c 365000 confls 19213 constrs 691 vars
+c 366000 confls 20213 constrs 677 vars
+c 367000 confls 21213 constrs 673 vars
+c 368000 confls 22213 constrs 670 vars
+c INPROCESSING 2.89189 proptime 397368 prop/sec 0.696452 prop/ca
+c 369000 confls 14753 constrs 667 vars
+c 370000 confls 15753 constrs 667 vars
+c 371000 confls 16753 constrs 667 vars
+c 372000 confls 17753 constrs 667 vars
+c 373000 confls 18753 constrs 667 vars
+c 374000 confls 19753 constrs 667 vars
+c 375000 confls 20753 constrs 666 vars
+c 376000 confls 21753 constrs 665 vars
+c INPROCESSING 2.08337 proptime 364518 prop/sec 0.897408 prop/ca
+c 377000 confls 17128 constrs 665 vars
+c 378000 confls 18128 constrs 665 vars
+c 379000 confls 19128 constrs 665 vars
+c 380000 confls 20128 constrs 665 vars
+c 381000 confls 21128 constrs 665 vars
+c 382000 confls 22128 constrs 665 vars
+c 383000 confls 23128 constrs 665 vars
+c 384000 confls 24128 constrs 665 vars
+c INPROCESSING 3.19297 proptime 233464 prop/sec 1.26536 prop/ca
+c 385000 confls 14161 constrs 665 vars
+c 386000 confls 15161 constrs 665 vars
+c 387000 confls 16161 constrs 665 vars
+c 388000 confls 17161 constrs 665 vars
+c 389000 confls 18161 constrs 665 vars
+c 390000 confls 19161 constrs 665 vars
+c 391000 confls 20161 constrs 665 vars
+c 392000 confls 21161 constrs 665 vars
+c 393000 confls 22161 constrs 665 vars
+c INPROCESSING 2.47512 proptime 279647 prop/sec 1.36053 prop/ca
+c 394000 confls 15126 constrs 665 vars
+c 395000 confls 16126 constrs 665 vars
+c 396000 confls 17126 constrs 665 vars
+c 397000 confls 18126 constrs 665 vars
+c 398000 confls 19126 constrs 665 vars
+c 399000 confls 20126 constrs 665 vars
+c 400000 confls 21126 constrs 665 vars
+c 401000 confls 22126 constrs 665 vars
+c INPROCESSING 1.87106 proptime 327810 prop/sec 1.36529 prop/ca
+c 402000 confls 15977 constrs 665 vars
+c 403000 confls 16977 constrs 665 vars
+c 404000 confls 17986 constrs 665 vars
+c     bounds 5 >= 0 @ 1228.35, 404070
+c 405000 confls 18988 constrs 658 vars
+c 406000 confls 19989 constrs 651 vars
+c 407000 confls 20989 constrs 647 vars
+c 408000 confls 21989 constrs 645 vars
+c 409000 confls 22989 constrs 645 vars
+c INPROCESSING 2.47414 proptime 229963 prop/sec 1.34845 prop/ca
+c     bounds 5 >= 1 @ 1233.22, 409807
+c     bounds 5 >= 2 @ 1233.32, 409934
+c 410000 confls 15270 constrs 565 vars
+c 411000 confls 16270 constrs 565 vars
+c 412000 confls 17270 constrs 565 vars
+c 413000 confls 18270 constrs 564 vars
+c     bounds 5 >= 3 @ 1235.22, 413308
+c 414000 confls 19273 constrs 564 vars
+c 415000 confls 20273 constrs 564 vars
+c 416000 confls 21273 constrs 564 vars
+c 417000 confls 22273 constrs 564 vars
+c 418000 confls 23273 constrs 564 vars
+c INPROCESSING 1.58578 proptime 258044 prop/sec 1.28227 prop/ca
+c 419000 confls 14006 constrs 560 vars
+c 420000 confls 15006 constrs 560 vars
+c 421000 confls 16006 constrs 560 vars
+c 422000 confls 17006 constrs 560 vars
+c 423000 confls 18006 constrs 560 vars
+c 424000 confls 19006 constrs 560 vars
+c 425000 confls 20006 constrs 560 vars
+c 426000 confls 21006 constrs 560 vars
+c INPROCESSING 2.08847 proptime 331691 prop/sec 1.21565 prop/ca
+c 427000 confls 12701 constrs 560 vars
+c 428000 confls 13701 constrs 560 vars
+c 429000 confls 14701 constrs 560 vars
+c 430000 confls 15701 constrs 559 vars
+c 431000 confls 16701 constrs 559 vars
+c 432000 confls 17701 constrs 559 vars
+c 433000 confls 18701 constrs 559 vars
+c 434000 confls 19701 constrs 559 vars
+c INPROCESSING 2.74531 proptime 254347 prop/sec 1.46965 prop/ca
+c 435000 confls 12023 constrs 557 vars
+c 436000 confls 13023 constrs 557 vars
+c 437000 confls 14023 constrs 557 vars
+c 438000 confls 15023 constrs 557 vars
+c 439000 confls 16023 constrs 557 vars
+c 440000 confls 17023 constrs 557 vars
+c 441000 confls 18023 constrs 557 vars
+c 442000 confls 19023 constrs 557 vars
+c 443000 confls 20024 constrs 557 vars
+c INPROCESSING 2.35608 proptime 297921 prop/sec 1.36492 prop/ca
+c 444000 confls 12205 constrs 557 vars
+c 445000 confls 13205 constrs 557 vars
+c 446000 confls 14205 constrs 557 vars
+c 447000 confls 15205 constrs 557 vars
+c 448000 confls 16205 constrs 557 vars
+c 449000 confls 17205 constrs 557 vars
+c 450000 confls 18205 constrs 557 vars
+c 451000 confls 19205 constrs 557 vars
+c INPROCESSING 2.69759 proptime 263607 prop/sec 1.37696 prop/ca
+c 452000 confls 11896 constrs 557 vars
+c 453000 confls 12896 constrs 557 vars
+c 454000 confls 13896 constrs 557 vars
+c 455000 confls 14896 constrs 557 vars
+c 456000 confls 15896 constrs 557 vars
+c 457000 confls 16896 constrs 557 vars
+c 458000 confls 17896 constrs 557 vars
+c 459000 confls 18896 constrs 557 vars
+c 460000 confls 19896 constrs 557 vars
+c INPROCESSING 2.47452 proptime 288660 prop/sec 1.48337 prop/ca
+c 461000 confls 12377 constrs 557 vars
+c 462000 confls 13377 constrs 557 vars
+c 463000 confls 14377 constrs 557 vars
+c 464000 confls 15377 constrs 557 vars
+c 465000 confls 16377 constrs 557 vars
+c 466000 confls 17377 constrs 557 vars
+c 467000 confls 18377 constrs 557 vars
+c 468000 confls 19377 constrs 557 vars
+c INPROCESSING 2.88526 proptime 250184 prop/sec 1.47808 prop/ca
+c 469000 confls 12139 constrs 554 vars
+c 470000 confls 13139 constrs 554 vars
+c 471000 confls 14139 constrs 554 vars
+c 472000 confls 15139 constrs 554 vars
+c 473000 confls 16139 constrs 554 vars
+c 474000 confls 17139 constrs 554 vars
+c 475000 confls 18139 constrs 554 vars
+c 476000 confls 19139 constrs 554 vars
+c INPROCESSING 2.45424 proptime 275667 prop/sec 1.45658 prop/ca
+c 477000 confls 11427 constrs 554 vars
+c 478000 confls 12427 constrs 554 vars
+c 479000 confls 13427 constrs 554 vars
+c 480000 confls 14427 constrs 554 vars
+c 481000 confls 15427 constrs 554 vars
+c 482000 confls 16427 constrs 554 vars
+c 483000 confls 17427 constrs 554 vars
+c 484000 confls 18427 constrs 554 vars
+c 485000 confls 19427 constrs 554 vars
+c INPROCESSING 2.90705 proptime 246634 prop/sec 1.50801 prop/ca
+c 486000 confls 12637 constrs 554 vars
+c 487000 confls 13637 constrs 554 vars
+c 488000 confls 14637 constrs 554 vars
+c 489000 confls 15637 constrs 554 vars
+c 490000 confls 16637 constrs 554 vars
+c 491000 confls 17637 constrs 554 vars
+c 492000 confls 18637 constrs 554 vars
+c 493000 confls 19637 constrs 554 vars
+c INPROCESSING 2.46146 proptime 294577 prop/sec 1.51867 prop/ca
+c 494000 confls 12478 constrs 554 vars
+c 495000 confls 13478 constrs 554 vars
+c 496000 confls 14478 constrs 554 vars
+c 497000 confls 15478 constrs 554 vars
+c 498000 confls 16478 constrs 554 vars
+c 499000 confls 17478 constrs 554 vars
+c 500000 confls 18478 constrs 554 vars
+c 501000 confls 19478 constrs 554 vars
+c 502000 confls 20478 constrs 554 vars
+c INPROCESSING 2.90309 proptime 240310 prop/sec 1.44472 prop/ca
+c 503000 confls 12723 constrs 554 vars
+c 504000 confls 13723 constrs 554 vars
+c 505000 confls 14723 constrs 554 vars
+c 506000 confls 15723 constrs 554 vars
+c 507000 confls 16723 constrs 554 vars
+c 508000 confls 17723 constrs 554 vars
+c 509000 confls 18723 constrs 554 vars
+c 510000 confls 19723 constrs 554 vars
+c INPROCESSING 2.49633 proptime 278321 prop/sec 1.58197 prop/ca
+c 511000 confls 12085 constrs 554 vars
+c 512000 confls 13085 constrs 554 vars
+c 513000 confls 14085 constrs 554 vars
+c 514000 confls 15085 constrs 554 vars
+c 515000 confls 16085 constrs 554 vars
+c 516000 confls 17085 constrs 554 vars
+c 517000 confls 18085 constrs 554 vars
+c 518000 confls 19085 constrs 554 vars
+c 519000 confls 20085 constrs 554 vars
+c INPROCESSING 2.54906 proptime 277131 prop/sec 1.55495 prop/ca
+c 520000 confls 12468 constrs 551 vars
+c 521000 confls 13468 constrs 551 vars
+c 522000 confls 14468 constrs 551 vars
+c 523000 confls 15468 constrs 551 vars
+c 524000 confls 16468 constrs 551 vars
+c 525000 confls 17468 constrs 551 vars
+c 526000 confls 18468 constrs 551 vars
+c 527000 confls 19468 constrs 551 vars
+c INPROCESSING 2.36209 proptime 303547 prop/sec 1.59659 prop/ca
+c 528000 confls 11875 constrs 550 vars
+c 529000 confls 12875 constrs 550 vars
+c 530000 confls 13875 constrs 550 vars
+c     bounds 5 >= 4 @ 1303.21, 530063
+c 531000 confls 14878 constrs 550 vars
+c 532000 confls 15878 constrs 550 vars
+c 533000 confls 16878 constrs 550 vars
+c 534000 confls 17878 constrs 550 vars
+c 535000 confls 18878 constrs 550 vars
+c 536000 confls 19878 constrs 550 vars
+c INPROCESSING 2.17147 proptime 275278 prop/sec 1.58502 prop/ca
+c 537000 confls 12005 constrs 550 vars
+c 538000 confls 13005 constrs 550 vars
+c 539000 confls 14005 constrs 550 vars
+c 540000 confls 15005 constrs 550 vars
+c 541000 confls 16005 constrs 550 vars
+c 542000 confls 17005 constrs 550 vars
+c 543000 confls 18005 constrs 550 vars
+c 544000 confls 19005 constrs 550 vars
+c INPROCESSING 2.26204 proptime 270191 prop/sec 1.73747 prop/ca
+c 545000 confls 13026 constrs 548 vars
+c 546000 confls 14026 constrs 548 vars
+c 547000 confls 15026 constrs 548 vars
+c 548000 confls 16026 constrs 548 vars
+c 549000 confls 17026 constrs 548 vars
+c 550000 confls 18026 constrs 548 vars
+c 551000 confls 19026 constrs 548 vars
+c 552000 confls 20026 constrs 548 vars
+c 553000 confls 21026 constrs 548 vars
+c INPROCESSING 3.14815 proptime 247850 prop/sec 1.76103 prop/ca
+c 554000 confls 12382 constrs 548 vars
+c 555000 confls 13382 constrs 548 vars
+c 556000 confls 14382 constrs 548 vars
+c 557000 confls 15382 constrs 548 vars
+c 558000 confls 16382 constrs 548 vars
+c 559000 confls 17382 constrs 548 vars
+c 560000 confls 18382 constrs 548 vars
+c 561000 confls 19382 constrs 548 vars
+c 562000 confls 20382 constrs 548 vars
+c INPROCESSING 2.38083 proptime 278048 prop/sec 1.58344 prop/ca
+c 563000 confls 13282 constrs 548 vars
+c 564000 confls 14282 constrs 548 vars
+c 565000 confls 15282 constrs 548 vars
+c 566000 confls 16282 constrs 548 vars
+c 567000 confls 17282 constrs 548 vars
+c 568000 confls 18282 constrs 548 vars
+c 569000 confls 19282 constrs 548 vars
+c 570000 confls 20282 constrs 548 vars
+c INPROCESSING 2.41573 proptime 294643 prop/sec 1.94946 prop/ca
+c 571000 confls 13257 constrs 548 vars
+c 572000 confls 14257 constrs 548 vars
+c 573000 confls 15257 constrs 548 vars
+c 574000 confls 16257 constrs 548 vars
+c 575000 confls 17257 constrs 548 vars
+c 576000 confls 18257 constrs 548 vars
+c 577000 confls 19257 constrs 548 vars
+c 578000 confls 20257 constrs 548 vars
+c 579000 confls 21257 constrs 548 vars
+c INPROCESSING 3.30262 proptime 232612 prop/sec 1.80146 prop/ca
+c 580000 confls 13136 constrs 548 vars
+c 581000 confls 14136 constrs 548 vars
+c 582000 confls 15136 constrs 548 vars
+c 583000 confls 16136 constrs 548 vars
+c 584000 confls 17136 constrs 548 vars
+c 585000 confls 18136 constrs 548 vars
+c 586000 confls 19136 constrs 548 vars
+c 587000 confls 20136 constrs 547 vars
+c INPROCESSING 2.69031 proptime 265946 prop/sec 1.82393 prop/ca
+c 588000 confls 12535 constrs 547 vars
+c 589000 confls 13535 constrs 547 vars
+c 590000 confls 14535 constrs 547 vars
+c 591000 confls 15535 constrs 547 vars
+c 592000 confls 16535 constrs 547 vars
+c 593000 confls 17535 constrs 547 vars
+c 594000 confls 18535 constrs 547 vars
+c 595000 confls 19535 constrs 547 vars
+c 596000 confls 20535 constrs 547 vars
+c INPROCESSING 3.47716 proptime 222055 prop/sec 1.85674 prop/ca
+c 597000 confls 12571 constrs 547 vars
+c 598000 confls 13571 constrs 547 vars
+c 599000 confls 14571 constrs 547 vars
+c 600000 confls 15571 constrs 547 vars
+c 601000 confls 16571 constrs 547 vars
+c 602000 confls 17571 constrs 547 vars
+c 603000 confls 18571 constrs 547 vars
+c 604000 confls 19571 constrs 547 vars
+c 605000 confls 20571 constrs 547 vars
+c INPROCESSING 2.66667 proptime 273187 prop/sec 1.60108 prop/ca
+c 606000 confls 12880 constrs 547 vars
+c 607000 confls 13880 constrs 547 vars
+c 608000 confls 14880 constrs 547 vars
+c 609000 confls 15880 constrs 547 vars
+c 610000 confls 16880 constrs 547 vars
+c 611000 confls 17880 constrs 547 vars
+c 612000 confls 18880 constrs 547 vars
+c 613000 confls 19880 constrs 547 vars
+c INPROCESSING 3.26117 proptime 221479 prop/sec 1.73671 prop/ca
+c 614000 confls 12409 constrs 547 vars
+c 615000 confls 13409 constrs 547 vars
+c 616000 confls 14409 constrs 547 vars
+c 617000 confls 15409 constrs 547 vars
+c 618000 confls 16409 constrs 547 vars
+c 619000 confls 17409 constrs 547 vars
+c 620000 confls 18409 constrs 547 vars
+c 621000 confls 19409 constrs 547 vars
+c 622000 confls 20409 constrs 547 vars
+c INPROCESSING 3.16247 proptime 245425 prop/sec 1.99043 prop/ca
+c 623000 confls 12763 constrs 547 vars
+c 624000 confls 13763 constrs 547 vars
+c 625000 confls 14763 constrs 547 vars
+c 626000 confls 15763 constrs 547 vars
+c 627000 confls 16763 constrs 547 vars
+c 628000 confls 17763 constrs 547 vars
+c 629000 confls 18763 constrs 547 vars
+c 630000 confls 19763 constrs 547 vars
+c INPROCESSING 3.53434 proptime 248708 prop/sec 2.13431 prop/ca
+c 631000 confls 12281 constrs 547 vars
+c 632000 confls 13281 constrs 547 vars
+c 633000 confls 14281 constrs 547 vars
+c 634000 confls 15281 constrs 547 vars
+c 635000 confls 16281 constrs 547 vars
+c 636000 confls 17281 constrs 547 vars
+c 637000 confls 18281 constrs 547 vars
+c 638000 confls 19281 constrs 547 vars
+c 639000 confls 20281 constrs 547 vars
+c INPROCESSING 2.96923 proptime 249683 prop/sec 1.92202 prop/ca
+c 640000 confls 12829 constrs 547 vars
+c 641000 confls 13829 constrs 547 vars
+c 642000 confls 14829 constrs 547 vars
+c 643000 confls 15829 constrs 547 vars
+c 644000 confls 16829 constrs 547 vars
+c 645000 confls 17829 constrs 547 vars
+c 646000 confls 18829 constrs 547 vars
+c 647000 confls 19829 constrs 547 vars
+c 648000 confls 20829 constrs 547 vars
+c INPROCESSING 3.46216 proptime 248995 prop/sec 1.73444 prop/ca
+c 649000 confls 13084 constrs 547 vars
+c 650000 confls 14084 constrs 547 vars
+c 651000 confls 15084 constrs 547 vars
+c 652000 confls 16084 constrs 547 vars
+c 653000 confls 17084 constrs 547 vars
+c 654000 confls 18084 constrs 547 vars
+c 655000 confls 19084 constrs 547 vars
+c 656000 confls 20084 constrs 547 vars
+c INPROCESSING 2.38956 proptime 302421 prop/sec 1.84117 prop/ca
+c 657000 confls 12941 constrs 547 vars
+c 658000 confls 13941 constrs 547 vars
+c 659000 confls 14941 constrs 547 vars
+c 660000 confls 15941 constrs 547 vars
+c 661000 confls 16941 constrs 547 vars
+c 662000 confls 17941 constrs 547 vars
+c 663000 confls 18941 constrs 547 vars
+c 664000 confls 19941 constrs 547 vars
+c 665000 confls 20941 constrs 547 vars
+c INPROCESSING 2.44959 proptime 302298 prop/sec 1.9189 prop/ca
+c 666000 confls 12684 constrs 547 vars
+c 667000 confls 13684 constrs 547 vars
+c 668000 confls 14684 constrs 547 vars
+c 669000 confls 15684 constrs 547 vars
+c 670000 confls 16684 constrs 547 vars
+c 671000 confls 17684 constrs 547 vars
+c 672000 confls 18684 constrs 547 vars
+c 673000 confls 19684 constrs 547 vars
+c 674000 confls 20684 constrs 547 vars
+c INPROCESSING 3.57943 proptime 226260 prop/sec 1.87836 prop/ca
+c 675000 confls 12795 constrs 547 vars
+c 676000 confls 13795 constrs 547 vars
+c 677000 confls 14795 constrs 547 vars
+c 678000 confls 15795 constrs 547 vars
+c 679000 confls 16795 constrs 547 vars
+c 680000 confls 17795 constrs 547 vars
+c 681000 confls 18795 constrs 547 vars
+c 682000 confls 19795 constrs 547 vars
+c INPROCESSING 2.32766 proptime 279819 prop/sec 1.89142 prop/ca
+c 683000 confls 13169 constrs 547 vars
+c 684000 confls 14169 constrs 547 vars
+c 685000 confls 15169 constrs 547 vars
+c 686000 confls 16169 constrs 547 vars
+c 687000 confls 17169 constrs 547 vars
+c 688000 confls 18169 constrs 547 vars
+c 689000 confls 19169 constrs 547 vars
+c 690000 confls 20169 constrs 547 vars
+c 691000 confls 21169 constrs 547 vars
+c INPROCESSING 3.57092 proptime 233686 prop/sec 1.9314 prop/ca
+c 692000 confls 12597 constrs 547 vars
+c 693000 confls 13597 constrs 547 vars
+c 694000 confls 14600 constrs 547 vars
+c 695000 confls 15600 constrs 547 vars
+c 696000 confls 16600 constrs 547 vars
+c 697000 confls 17601 constrs 547 vars
+c 698000 confls 18601 constrs 547 vars
+c 699000 confls 19601 constrs 547 vars
+c 700000 confls 20601 constrs 547 vars
+c INPROCESSING 3.39675 proptime 224958 prop/sec 2.00636 prop/ca
+c 701000 confls 13111 constrs 547 vars
+c 702000 confls 14111 constrs 547 vars
+c 703000 confls 15111 constrs 547 vars
+c 704000 confls 16111 constrs 547 vars
+c 705000 confls 17111 constrs 547 vars
+c 706000 confls 18111 constrs 547 vars
+c 707000 confls 19111 constrs 547 vars
+c 708000 confls 20111 constrs 547 vars
+c 709000 confls 21111 constrs 547 vars
+c INPROCESSING 3.73276 proptime 205699 prop/sec 1.82914 prop/ca
+c 710000 confls 12922 constrs 547 vars
+c 711000 confls 13922 constrs 547 vars
+c 712000 confls 14922 constrs 547 vars
+c 713000 confls 15922 constrs 547 vars
+c 714000 confls 16922 constrs 547 vars
+c 715000 confls 17922 constrs 547 vars
+c 716000 confls 18922 constrs 547 vars
+c 717000 confls 19922 constrs 547 vars
+c INPROCESSING 3.01526 proptime 224105 prop/sec 1.87271 prop/ca
+c 718000 confls 12473 constrs 547 vars
+c 719000 confls 13473 constrs 547 vars
+c 720000 confls 14473 constrs 547 vars
+c 721000 confls 15473 constrs 547 vars
+c 722000 confls 16473 constrs 547 vars
+c 723000 confls 17473 constrs 547 vars
+c 724000 confls 18473 constrs 547 vars
+c 725000 confls 19473 constrs 547 vars
+c 726000 confls 20473 constrs 547 vars
+c INPROCESSING 3.50979 proptime 222041 prop/sec 1.75935 prop/ca
+c 727000 confls 12477 constrs 547 vars
+c 728000 confls 13477 constrs 547 vars
+c 729000 confls 14477 constrs 547 vars
+c 730000 confls 15477 constrs 547 vars
+c 731000 confls 16477 constrs 547 vars
+c 732000 confls 17477 constrs 547 vars
+c 733000 confls 18477 constrs 547 vars
+c 734000 confls 19477 constrs 547 vars
+c 735000 confls 20477 constrs 547 vars
+c INPROCESSING 3.13501 proptime 246819 prop/sec 1.86137 prop/ca
+c 736000 confls 12919 constrs 547 vars
+c 737000 confls 13919 constrs 547 vars
+c 738000 confls 14919 constrs 547 vars
+c 739000 confls 15919 constrs 547 vars
+c 740000 confls 16919 constrs 547 vars
+c 741000 confls 17919 constrs 547 vars
+c 742000 confls 18919 constrs 547 vars
+c 743000 confls 19919 constrs 547 vars
+c 744000 confls 20919 constrs 547 vars
+c INPROCESSING 3.6439 proptime 236792 prop/sec 2.13874 prop/ca
+c 745000 confls 12954 constrs 547 vars
+c 746000 confls 13954 constrs 547 vars
+c 747000 confls 14954 constrs 547 vars
+c 748000 confls 15954 constrs 547 vars
+c 749000 confls 16954 constrs 547 vars
+c 750000 confls 17954 constrs 547 vars
+c 751000 confls 18954 constrs 547 vars
+c 752000 confls 19954 constrs 547 vars
+c INPROCESSING 2.37086 proptime 294001 prop/sec 1.69478 prop/ca
+c 753000 confls 12418 constrs 547 vars
+c 754000 confls 13418 constrs 547 vars
+c 755000 confls 14418 constrs 547 vars
+c 756000 confls 15418 constrs 547 vars
+c 757000 confls 16418 constrs 547 vars
+c 758000 confls 17418 constrs 547 vars
+c 759000 confls 18418 constrs 547 vars
+c 760000 confls 19418 constrs 547 vars
+c 761000 confls 20418 constrs 547 vars
+c INPROCESSING 3.12808 proptime 245792 prop/sec 1.85197 prop/ca
+c 762000 confls 12734 constrs 547 vars
+c 763000 confls 13734 constrs 547 vars
+c 764000 confls 14734 constrs 547 vars
+c 765000 confls 15734 constrs 547 vars
+c 766000 confls 16734 constrs 547 vars
+c 767000 confls 17734 constrs 547 vars
+c 768000 confls 18734 constrs 547 vars
+c 769000 confls 19734 constrs 547 vars
+c 770000 confls 20734 constrs 547 vars
+c INPROCESSING 3.64612 proptime 228651 prop/sec 1.91069 prop/ca
+c 771000 confls 13046 constrs 547 vars
+c 772000 confls 14046 constrs 547 vars
+c 773000 confls 15046 constrs 547 vars
+c 774000 confls 16046 constrs 547 vars
+c 775000 confls 17046 constrs 547 vars
+c 776000 confls 18046 constrs 547 vars
+c 777000 confls 19046 constrs 547 vars
+c 778000 confls 20046 constrs 547 vars
+c 779000 confls 21046 constrs 547 vars
+c INPROCESSING 3.33051 proptime 228709 prop/sec 1.86067 prop/ca
+c 780000 confls 13370 constrs 547 vars
+c 781000 confls 14370 constrs 547 vars
+c 782000 confls 15370 constrs 547 vars
+c 783000 confls 16370 constrs 547 vars
+c 784000 confls 17370 constrs 547 vars
+c 785000 confls 18370 constrs 547 vars
+c 786000 confls 19370 constrs 547 vars
+c 787000 confls 20370 constrs 547 vars
+c 788000 confls 21370 constrs 547 vars
+c INPROCESSING 3.81075 proptime 214376 prop/sec 1.92276 prop/ca
+c 789000 confls 13095 constrs 547 vars
+c 790000 confls 14095 constrs 547 vars
+c 791000 confls 15095 constrs 547 vars
+c 792000 confls 16095 constrs 547 vars
+c 793000 confls 17095 constrs 547 vars
+c 794000 confls 18095 constrs 547 vars
+c 795000 confls 19095 constrs 547 vars
+c 796000 confls 20095 constrs 547 vars
+c INPROCESSING 3.16571 proptime 239746 prop/sec 2.01165 prop/ca
+c 797000 confls 12452 constrs 547 vars
+c 798000 confls 13452 constrs 547 vars
+c 799000 confls 14452 constrs 547 vars
+c 800000 confls 15452 constrs 547 vars
+c 801000 confls 16452 constrs 547 vars
+c 802000 confls 17452 constrs 547 vars
+c 803000 confls 18452 constrs 547 vars
+c 804000 confls 19452 constrs 547 vars
+c 805000 confls 20452 constrs 547 vars
+c INPROCESSING 3.7144 proptime 221870 prop/sec 1.96103 prop/ca
+c 806000 confls 12836 constrs 547 vars
+c 807000 confls 13836 constrs 547 vars
+c 808000 confls 14836 constrs 547 vars
+c 809000 confls 15836 constrs 547 vars
+c 810000 confls 16836 constrs 547 vars
+c 811000 confls 17836 constrs 547 vars
+c 812000 confls 18836 constrs 547 vars
+c 813000 confls 19836 constrs 547 vars
+c 814000 confls 20836 constrs 547 vars
+c INPROCESSING 3.03028 proptime 250270 prop/sec 2.12474 prop/ca
+c 815000 confls 13380 constrs 547 vars
+c 816000 confls 14380 constrs 547 vars
+c 817000 confls 15380 constrs 547 vars
+c 818000 confls 16380 constrs 547 vars
+c 819000 confls 17380 constrs 547 vars
+c 820000 confls 18380 constrs 547 vars
+c 821000 confls 19380 constrs 547 vars
+c 822000 confls 20380 constrs 547 vars
+c 823000 confls 21380 constrs 547 vars
+c INPROCESSING 4.24516 proptime 195157 prop/sec 2.05815 prop/ca
+c 824000 confls 13284 constrs 547 vars
+c 825000 confls 14284 constrs 547 vars
+c 826000 confls 15284 constrs 547 vars
+c 827000 confls 16284 constrs 547 vars
+c 828000 confls 17284 constrs 547 vars
+c 829000 confls 18284 constrs 547 vars
+c 830000 confls 19284 constrs 547 vars
+c 831000 confls 20284 constrs 547 vars
+c 832000 confls 21284 constrs 547 vars
+c INPROCESSING 2.89483 proptime 268239 prop/sec 2.08655 prop/ca
+c 833000 confls 13808 constrs 547 vars
+c 834000 confls 14808 constrs 547 vars
+c 835000 confls 15808 constrs 547 vars
+c 836000 confls 16808 constrs 547 vars
+c 837000 confls 17808 constrs 547 vars
+c 838000 confls 18808 constrs 547 vars
+c 839000 confls 19808 constrs 547 vars
+c 840000 confls 20808 constrs 547 vars
+c 841000 confls 21808 constrs 547 vars
+c INPROCESSING 3.69582 proptime 236204 prop/sec 2.18394 prop/ca
+c 842000 confls 13410 constrs 547 vars
+c 843000 confls 14410 constrs 547 vars
+c 844000 confls 15410 constrs 547 vars
+c 845000 confls 16410 constrs 547 vars
+c 846000 confls 17410 constrs 547 vars
+c 847000 confls 18410 constrs 547 vars
+c 848000 confls 19410 constrs 547 vars
+c 849000 confls 20410 constrs 547 vars
+c INPROCESSING 3.28279 proptime 250155 prop/sec 1.88756 prop/ca
+c 850000 confls 12284 constrs 547 vars
+c 851000 confls 13284 constrs 547 vars
+c 852000 confls 14284 constrs 547 vars
+c 853000 confls 15284 constrs 547 vars
+c 854000 confls 16284 constrs 547 vars
+c 855000 confls 17284 constrs 547 vars
+c 856000 confls 18284 constrs 547 vars
+c 857000 confls 19284 constrs 547 vars
+c 858000 confls 20284 constrs 547 vars
+c INPROCESSING 3.22301 proptime 263810 prop/sec 1.802 prop/ca
+c 859000 confls 12604 constrs 547 vars
+c 860000 confls 13604 constrs 547 vars
+c 861000 confls 14604 constrs 547 vars
+c 862000 confls 15604 constrs 547 vars
+c 863000 confls 16604 constrs 547 vars
+c 864000 confls 17604 constrs 547 vars
+c 865000 confls 18604 constrs 547 vars
+c 866000 confls 19604 constrs 547 vars
+c 867000 confls 20604 constrs 547 vars
+c INPROCESSING 3.05352 proptime 244029 prop/sec 1.80131 prop/ca
+c 868000 confls 12856 constrs 547 vars
+c 869000 confls 13856 constrs 547 vars
+c 870000 confls 14856 constrs 547 vars
+c 871000 confls 15856 constrs 547 vars
+c 872000 confls 16856 constrs 547 vars
+c 873000 confls 17856 constrs 547 vars
+c 874000 confls 18856 constrs 547 vars
+c 875000 confls 19856 constrs 547 vars
+c 876000 confls 20856 constrs 547 vars
+c INPROCESSING 2.97505 proptime 244747 prop/sec 1.81635 prop/ca
+c 877000 confls 13367 constrs 546 vars
+c 878000 confls 14367 constrs 546 vars
+c 879000 confls 15367 constrs 546 vars
+c 880000 confls 16367 constrs 546 vars
+c 881000 confls 17367 constrs 546 vars
+c 882000 confls 18367 constrs 546 vars
+c 883000 confls 19367 constrs 546 vars
+c 884000 confls 20367 constrs 546 vars
+c 885000 confls 21367 constrs 546 vars
+c INPROCESSING 3.66333 proptime 231618 prop/sec 1.83735 prop/ca
+c 886000 confls 13122 constrs 546 vars
+c 887000 confls 14122 constrs 546 vars
+c 888000 confls 15122 constrs 546 vars
+c 889000 confls 16122 constrs 546 vars
+c 890000 confls 17122 constrs 546 vars
+c 891000 confls 18122 constrs 546 vars
+c 892000 confls 19122 constrs 546 vars
+c 893000 confls 20122 constrs 546 vars
+c 894000 confls 21122 constrs 546 vars
+c INPROCESSING 3.52601 proptime 211716 prop/sec 1.91181 prop/ca
+c 895000 confls 13029 constrs 546 vars
+c 896000 confls 14029 constrs 546 vars
+c 897000 confls 15029 constrs 546 vars
+c 898000 confls 16029 constrs 546 vars
+c 899000 confls 17029 constrs 546 vars
+c 900000 confls 18029 constrs 546 vars
+c 901000 confls 19029 constrs 546 vars
+c 902000 confls 20029 constrs 546 vars
+c 903000 confls 21029 constrs 546 vars
+c INPROCESSING 3.80317 proptime 211969 prop/sec 1.92452 prop/ca
+c 904000 confls 13079 constrs 546 vars
+c 905000 confls 14079 constrs 546 vars
+c 906000 confls 15079 constrs 546 vars
+c 907000 confls 16079 constrs 546 vars
+c 908000 confls 17079 constrs 546 vars
+c 909000 confls 18079 constrs 546 vars
+c 910000 confls 19079 constrs 546 vars
+c 911000 confls 20079 constrs 546 vars
+c 912000 confls 21079 constrs 546 vars
+c INPROCESSING 3.29836 proptime 229066 prop/sec 1.93445 prop/ca
+c 913000 confls 13433 constrs 545 vars
+c 914000 confls 14433 constrs 545 vars
+c 915000 confls 15433 constrs 545 vars
+c 916000 confls 16433 constrs 545 vars
+c 917000 confls 17433 constrs 545 vars
+c 918000 confls 18433 constrs 545 vars
+c 919000 confls 19433 constrs 545 vars
+c 920000 confls 20433 constrs 545 vars
+c 921000 confls 21433 constrs 545 vars
+c INPROCESSING 3.73973 proptime 223584 prop/sec 2.04022 prop/ca
+c 922000 confls 13145 constrs 545 vars
+c 923000 confls 14145 constrs 545 vars
+c 924000 confls 15145 constrs 545 vars
+c 925000 confls 16145 constrs 545 vars
+c 926000 confls 17145 constrs 545 vars
+c 927000 confls 18145 constrs 545 vars
+c 928000 confls 19145 constrs 545 vars
+c 929000 confls 20145 constrs 545 vars
+c INPROCESSING 3.38214 proptime 236509 prop/sec 1.91883 prop/ca
+c 930000 confls 12635 constrs 545 vars
+c 931000 confls 13635 constrs 545 vars
+c 932000 confls 14635 constrs 545 vars
+c 933000 confls 15635 constrs 545 vars
+c 934000 confls 16635 constrs 545 vars
+c 935000 confls 17635 constrs 545 vars
+c 936000 confls 18635 constrs 545 vars
+c 937000 confls 19635 constrs 545 vars
+c 938000 confls 20635 constrs 545 vars
+c INPROCESSING 3.47505 proptime 215110 prop/sec 1.95801 prop/ca
+c 939000 confls 12565 constrs 545 vars
+c 940000 confls 13565 constrs 545 vars
+c 941000 confls 14565 constrs 545 vars
+c 942000 confls 15565 constrs 545 vars
+c 943000 confls 16565 constrs 545 vars
+c 944000 confls 17565 constrs 545 vars
+c 945000 confls 18565 constrs 545 vars
+c 946000 confls 19565 constrs 545 vars
+c 947000 confls 20565 constrs 543 vars
+c INPROCESSING 3.03524 proptime 240855 prop/sec 1.91216 prop/ca
+c 948000 confls 12371 constrs 543 vars
+c 949000 confls 13371 constrs 543 vars
+c 950000 confls 14371 constrs 543 vars
+c 951000 confls 15371 constrs 543 vars
+c 952000 confls 16371 constrs 543 vars
+c 953000 confls 17371 constrs 543 vars
+c 954000 confls 18371 constrs 543 vars
+c 955000 confls 19371 constrs 543 vars
+c 956000 confls 20371 constrs 543 vars
+c INPROCESSING 3.65068 proptime 212004 prop/sec 1.94015 prop/ca
+c 957000 confls 12538 constrs 543 vars
+c 958000 confls 13538 constrs 543 vars
+c 959000 confls 14538 constrs 543 vars
+c 960000 confls 15538 constrs 543 vars
+c 961000 confls 16538 constrs 543 vars
+c 962000 confls 17538 constrs 543 vars
+c 963000 confls 18538 constrs 543 vars
+c 964000 confls 19538 constrs 543 vars
+c 965000 confls 20538 constrs 543 vars
+c INPROCESSING 3.38002 proptime 239966 prop/sec 2.21435 prop/ca
+c 966000 confls 12679 constrs 543 vars
+c 967000 confls 13679 constrs 543 vars
+c 968000 confls 14679 constrs 543 vars
+c 969000 confls 15679 constrs 543 vars
+c 970000 confls 16679 constrs 543 vars
+c 971000 confls 17679 constrs 543 vars
+c 972000 confls 18679 constrs 543 vars
+c 973000 confls 19679 constrs 543 vars
+c 974000 confls 20679 constrs 543 vars
+c INPROCESSING 3.60729 proptime 225207 prop/sec 1.78542 prop/ca
+c 975000 confls 12299 constrs 543 vars
+c 976000 confls 13299 constrs 543 vars
+c 977000 confls 14299 constrs 543 vars
+c 978000 confls 15299 constrs 543 vars
+c 979000 confls 16299 constrs 543 vars
+c 980000 confls 17299 constrs 543 vars
+c 981000 confls 18299 constrs 543 vars
+c 982000 confls 19299 constrs 543 vars
+c 983000 confls 20299 constrs 543 vars
+c INPROCESSING 2.65204 proptime 233992 prop/sec 1.89343 prop/ca
+c 984000 confls 12741 constrs 543 vars
+c 985000 confls 13741 constrs 543 vars
+c 986000 confls 14741 constrs 543 vars
+c 987000 confls 15741 constrs 543 vars
+c 988000 confls 16741 constrs 543 vars
+c 989000 confls 17741 constrs 543 vars
+c 990000 confls 18741 constrs 543 vars
+c 991000 confls 19741 constrs 543 vars
+c 992000 confls 20741 constrs 543 vars
+c INPROCESSING 3.03971 proptime 254190 prop/sec 1.86276 prop/ca
+c 993000 confls 12595 constrs 543 vars
+c 994000 confls 13595 constrs 543 vars
+c 995000 confls 14595 constrs 543 vars
+c 996000 confls 15595 constrs 543 vars
+c 997000 confls 16595 constrs 543 vars
+c 998000 confls 17595 constrs 543 vars
+c 999000 confls 18595 constrs 543 vars
+c 1000000 confls 19595 constrs 543 vars
+c 1001000 confls 20595 constrs 543 vars
+c INPROCESSING 3.38799 proptime 224919 prop/sec 2.00523 prop/ca
+c 1002000 confls 12694 constrs 543 vars
+c 1003000 confls 13694 constrs 543 vars
+c 1004000 confls 14694 constrs 543 vars
+c 1005000 confls 15694 constrs 543 vars
+c 1006000 confls 16694 constrs 543 vars
+c 1007000 confls 17694 constrs 543 vars
+c 1008000 confls 18694 constrs 543 vars
+c 1009000 confls 19694 constrs 543 vars
+c 1010000 confls 20694 constrs 543 vars
+c INPROCESSING 3.16495 proptime 243032 prop/sec 1.82362 prop/ca
+c 1011000 confls 12679 constrs 543 vars
+c 1012000 confls 13679 constrs 543 vars
+c 1013000 confls 14679 constrs 543 vars
+c 1014000 confls 15679 constrs 543 vars
+c 1015000 confls 16679 constrs 543 vars
+c 1016000 confls 17679 constrs 543 vars
+c 1017000 confls 18679 constrs 543 vars
+c 1018000 confls 19679 constrs 543 vars
+c 1019000 confls 20679 constrs 543 vars
+c INPROCESSING 3.90026 proptime 215352 prop/sec 1.83601 prop/ca
+c 1020000 confls 12763 constrs 543 vars
+c 1021000 confls 13763 constrs 543 vars
+c 1022000 confls 14763 constrs 543 vars
+c 1023000 confls 15763 constrs 543 vars
+c 1024000 confls 16763 constrs 543 vars
+c 1025000 confls 17763 constrs 543 vars
+c 1026000 confls 18763 constrs 543 vars
+c 1027000 confls 19763 constrs 543 vars
+c 1028000 confls 20763 constrs 543 vars
+c INPROCESSING 3.05846 proptime 259814 prop/sec 2.02933 prop/ca
+c 1029000 confls 12910 constrs 543 vars
+c 1030000 confls 13910 constrs 543 vars
+c 1031000 confls 14910 constrs 543 vars
+c 1032000 confls 15910 constrs 543 vars
+c 1033000 confls 16910 constrs 543 vars
+c 1034000 confls 17910 constrs 543 vars
+c 1035000 confls 18910 constrs 543 vars
+c 1036000 confls 19910 constrs 543 vars
+c 1037000 confls 20910 constrs 543 vars
+c INPROCESSING 3.75666 proptime 208729 prop/sec 1.99607 prop/ca
+c 1038000 confls 12894 constrs 542 vars
+c 1039000 confls 13894 constrs 542 vars
+c 1040000 confls 14894 constrs 542 vars
+c 1041000 confls 15894 constrs 542 vars
+c 1042000 confls 16894 constrs 542 vars
+c 1043000 confls 17894 constrs 542 vars
+c 1044000 confls 18894 constrs 542 vars
+c 1045000 confls 19894 constrs 542 vars
+c 1046000 confls 20894 constrs 542 vars
+c INPROCESSING 3.53968 proptime 214353 prop/sec 1.80722 prop/ca
+c 1047000 confls 12844 constrs 542 vars
+c 1048000 confls 13844 constrs 542 vars
+c 1049000 confls 14844 constrs 542 vars
+c 1050000 confls 15844 constrs 542 vars
+c 1051000 confls 16844 constrs 542 vars
+c 1052000 confls 17844 constrs 542 vars
+c 1053000 confls 18844 constrs 542 vars
+c 1054000 confls 19844 constrs 542 vars
+c 1055000 confls 20844 constrs 542 vars
+c INPROCESSING 3.70558 proptime 240006 prop/sec 2.16133 prop/ca
+c 1056000 confls 12882 constrs 542 vars
+c 1057000 confls 13882 constrs 542 vars
+c 1058000 confls 14882 constrs 542 vars
+c 1059000 confls 15882 constrs 542 vars
+c 1060000 confls 16882 constrs 542 vars
+c 1061000 confls 17882 constrs 542 vars
+c 1062000 confls 18882 constrs 542 vars
+c 1063000 confls 19882 constrs 542 vars
+c 1064000 confls 20882 constrs 542 vars
+c INPROCESSING 4.16651 proptime 186047 prop/sec 1.98924 prop/ca
+c 1065000 confls 12895 constrs 542 vars
+c 1066000 confls 13895 constrs 542 vars
+c 1067000 confls 14895 constrs 542 vars
+c 1068000 confls 15895 constrs 542 vars
+c 1069000 confls 16895 constrs 542 vars
+c 1070000 confls 17895 constrs 542 vars
+c 1071000 confls 18895 constrs 542 vars
+c 1072000 confls 19895 constrs 542 vars
+c 1073000 confls 20895 constrs 542 vars
+c INPROCESSING 4.00562 proptime 209837 prop/sec 2.08417 prop/ca
+c 1074000 confls 12788 constrs 542 vars
+c 1075000 confls 13788 constrs 542 vars
+c 1076000 confls 14788 constrs 542 vars
+c 1077000 confls 15788 constrs 542 vars
+c 1078000 confls 16788 constrs 542 vars
+c 1079000 confls 17788 constrs 542 vars
+c 1080000 confls 18788 constrs 542 vars
+c 1081000 confls 19788 constrs 542 vars
+c 1082000 confls 20788 constrs 542 vars
+c INPROCESSING 3.60245 proptime 215022 prop/sec 1.94395 prop/ca
+c 1083000 confls 12547 constrs 542 vars
+c 1084000 confls 13547 constrs 542 vars
+c 1085000 confls 14547 constrs 542 vars
+c 1086000 confls 15547 constrs 542 vars
+c 1087000 confls 16547 constrs 542 vars
+c 1088000 confls 17547 constrs 542 vars
+c 1089000 confls 18547 constrs 542 vars
+c 1090000 confls 19547 constrs 542 vars
+c 1091000 confls 20547 constrs 542 vars
+c INPROCESSING 3.44673 proptime 201545 prop/sec 2.15703 prop/ca
+c 1092000 confls 12810 constrs 542 vars
+c 1093000 confls 13810 constrs 542 vars
+c 1094000 confls 14810 constrs 542 vars
+c 1095000 confls 15810 constrs 542 vars
+c 1096000 confls 16810 constrs 542 vars
+c 1097000 confls 17810 constrs 542 vars
+c 1098000 confls 18810 constrs 542 vars
+c 1099000 confls 19810 constrs 542 vars
+c 1100000 confls 20810 constrs 542 vars
+c INPROCESSING 3.95614 proptime 213205 prop/sec 2.13219 prop/ca
+c 1101000 confls 12747 constrs 542 vars
+c 1102000 confls 13747 constrs 542 vars
+c 1103000 confls 14747 constrs 542 vars
+c 1104000 confls 15747 constrs 542 vars
+c 1105000 confls 16747 constrs 542 vars
+c 1106000 confls 17747 constrs 542 vars
+c 1107000 confls 18747 constrs 542 vars
+c 1108000 confls 19747 constrs 542 vars
+c 1109000 confls 20747 constrs 542 vars
+c INPROCESSING 4.09186 proptime 203265 prop/sec 1.96178 prop/ca
+c 1110000 confls 12572 constrs 542 vars
+c 1111000 confls 13572 constrs 542 vars
+c 1112000 confls 14572 constrs 542 vars
+c 1113000 confls 15572 constrs 542 vars
+c 1114000 confls 16572 constrs 542 vars
+c 1115000 confls 17572 constrs 542 vars
+c 1116000 confls 18572 constrs 542 vars
+c 1117000 confls 19572 constrs 542 vars
+c 1118000 confls 20572 constrs 542 vars
+c INPROCESSING 3.67066 proptime 215815 prop/sec 2.01439 prop/ca
+c 1119000 confls 12588 constrs 542 vars
+c 1120000 confls 13590 constrs 542 vars
+c 1121000 confls 14590 constrs 542 vars
+c 1122000 confls 15590 constrs 542 vars
+c 1123000 confls 16590 constrs 542 vars
+c 1124000 confls 17590 constrs 542 vars
+c 1125000 confls 18590 constrs 542 vars
+c 1126000 confls 19590 constrs 542 vars
+c 1127000 confls 20590 constrs 542 vars
+c INPROCESSING 4.19459 proptime 178716 prop/sec 2.26867 prop/ca
+c 1128000 confls 12507 constrs 542 vars
+c 1129000 confls 13507 constrs 542 vars
+c 1130000 confls 14507 constrs 542 vars
+c 1131000 confls 15507 constrs 542 vars
+c 1132000 confls 16507 constrs 542 vars
+c 1133000 confls 17507 constrs 542 vars
+c 1134000 confls 18507 constrs 542 vars
+c 1135000 confls 19507 constrs 542 vars
+c 1136000 confls 20507 constrs 542 vars
+c 1137000 confls 21507 constrs 542 vars
+c INPROCESSING 3.84316 proptime 195092 prop/sec 2.02728 prop/ca
+c 1138000 confls 13586 constrs 542 vars
+c 1139000 confls 14586 constrs 542 vars
+c 1140000 confls 15586 constrs 542 vars
+c 1141000 confls 16586 constrs 542 vars
+c 1142000 confls 17586 constrs 542 vars
+c 1143000 confls 18586 constrs 542 vars
+c 1144000 confls 19587 constrs 542 vars
+c 1145000 confls 20587 constrs 542 vars
+c 1146000 confls 21587 constrs 542 vars
+c INPROCESSING 3.98052 proptime 214237 prop/sec 2.13599 prop/ca
+c 1147000 confls 13437 constrs 542 vars
+c 1148000 confls 14437 constrs 542 vars
+c 1149000 confls 15437 constrs 542 vars
+c 1150000 confls 16437 constrs 542 vars
+c 1151000 confls 17437 constrs 542 vars
+c 1152000 confls 18437 constrs 542 vars
+c 1153000 confls 19437 constrs 542 vars
+c 1154000 confls 20437 constrs 542 vars
+c 1155000 confls 21437 constrs 542 vars
+c INPROCESSING 4.0615 proptime 212103 prop/sec 2.20857 prop/ca
+c 1156000 confls 13600 constrs 542 vars
+c 1157000 confls 14600 constrs 542 vars
+c 1158000 confls 15600 constrs 542 vars
+c 1159000 confls 16600 constrs 542 vars
+c 1160000 confls 17600 constrs 542 vars
+c 1161000 confls 18600 constrs 542 vars
+c 1162000 confls 19600 constrs 542 vars
+c 1163000 confls 20600 constrs 542 vars
+c 1164000 confls 21600 constrs 542 vars
+c INPROCESSING 3.69897 proptime 226870 prop/sec 2.17274 prop/ca
+c 1165000 confls 13538 constrs 542 vars
+c 1166000 confls 14538 constrs 542 vars
+c 1167000 confls 15538 constrs 541 vars
+c 1168000 confls 16538 constrs 541 vars
+c 1169000 confls 17538 constrs 541 vars
+c 1170000 confls 18538 constrs 541 vars
+c 1171000 confls 19538 constrs 541 vars
+c 1172000 confls 20538 constrs 541 vars
+c 1173000 confls 21538 constrs 541 vars
+c INPROCESSING 3.86299 proptime 217491 prop/sec 2.15613 prop/ca
+c 1174000 confls 13269 constrs 541 vars
+c 1175000 confls 14269 constrs 541 vars
+c 1176000 confls 15269 constrs 541 vars
+c 1177000 confls 16269 constrs 541 vars
+c 1178000 confls 17269 constrs 541 vars
+c 1179000 confls 18269 constrs 541 vars
+c 1180000 confls 19269 constrs 541 vars
+c 1181000 confls 20270 constrs 541 vars
+c 1182000 confls 21270 constrs 541 vars
+c INPROCESSING 3.8901 proptime 210472 prop/sec 2.03264 prop/ca
+c 1183000 confls 13702 constrs 541 vars
+c 1184000 confls 14702 constrs 541 vars
+c 1185000 confls 15702 constrs 541 vars
+c 1186000 confls 16702 constrs 541 vars
+c 1187000 confls 17702 constrs 541 vars
+c 1188000 confls 18702 constrs 541 vars
+c 1189000 confls 19702 constrs 541 vars
+c 1190000 confls 20702 constrs 541 vars
+c 1191000 confls 21703 constrs 541 vars
+c INPROCESSING 3.84858 proptime 214270 prop/sec 2.18998 prop/ca
+c 1192000 confls 13552 constrs 541 vars
+c 1193000 confls 14552 constrs 541 vars
+c 1194000 confls 15552 constrs 541 vars
+c 1195000 confls 16552 constrs 541 vars
+c 1196000 confls 17552 constrs 541 vars
+c 1197000 confls 18552 constrs 541 vars
+c 1198000 confls 19552 constrs 541 vars
+c 1199000 confls 20552 constrs 541 vars
+c 1200000 confls 21552 constrs 541 vars
+c INPROCESSING 3.68612 proptime 221081 prop/sec 2.21417 prop/ca
+c 1201000 confls 13368 constrs 541 vars
+c 1202000 confls 14368 constrs 541 vars
+c 1203000 confls 15369 constrs 541 vars
+c 1204000 confls 16369 constrs 541 vars
+c 1205000 confls 17369 constrs 541 vars
+c 1206000 confls 18369 constrs 540 vars
+c 1207000 confls 19369 constrs 540 vars
+c 1208000 confls 20369 constrs 539 vars
+c 1209000 confls 21369 constrs 539 vars
+c INPROCESSING 3.98621 proptime 209657 prop/sec 2.29978 prop/ca
+c 1210000 confls 12795 constrs 537 vars
+c 1211000 confls 13795 constrs 537 vars
+c 1212000 confls 14795 constrs 537 vars
+c 1213000 confls 15797 constrs 537 vars
+c 1214000 confls 16797 constrs 537 vars
+c 1215000 confls 17804 constrs 537 vars
+c 1216000 confls 18804 constrs 537 vars
+c 1217000 confls 19804 constrs 537 vars
+c 1218000 confls 20808 constrs 537 vars
+c INPROCESSING 3.6336 proptime 225915 prop/sec 2.25022 prop/ca
+c 1219000 confls 13073 constrs 537 vars
+c 1220000 confls 14073 constrs 537 vars
+c 1221000 confls 15073 constrs 537 vars
+c 1222000 confls 16073 constrs 537 vars
+c 1223000 confls 17073 constrs 537 vars
+c 1224000 confls 18073 constrs 537 vars
+c 1225000 confls 19073 constrs 537 vars
+c 1226000 confls 20073 constrs 537 vars
+c 1227000 confls 21073 constrs 537 vars
+c 1228000 confls 22073 constrs 537 vars
+c INPROCESSING 3.63112 proptime 218432 prop/sec 2.20299 prop/ca
+c 1229000 confls 13929 constrs 537 vars
+c 1230000 confls 14929 constrs 537 vars
+c 1231000 confls 15929 constrs 537 vars
+c 1232000 confls 16929 constrs 537 vars
+c 1233000 confls 17929 constrs 537 vars
+c 1234000 confls 18929 constrs 537 vars
+c 1235000 confls 19929 constrs 537 vars
+c 1236000 confls 20929 constrs 537 vars
+c 1237000 confls 21929 constrs 537 vars
+c INPROCESSING 4.20502 proptime 215065 prop/sec 2.23824 prop/ca
+c 1238000 confls 14021 constrs 537 vars
+c 1239000 confls 15021 constrs 537 vars
+c 1240000 confls 16021 constrs 537 vars
+c 1241000 confls 17021 constrs 537 vars
+c 1242000 confls 18021 constrs 537 vars
+c 1243000 confls 19021 constrs 537 vars
+c 1244000 confls 20021 constrs 537 vars
+c 1245000 confls 21021 constrs 537 vars
+c 1246000 confls 22021 constrs 537 vars
+c INPROCESSING 4.25105 proptime 210790 prop/sec 2.47178 prop/ca
+c 1247000 confls 13982 constrs 537 vars
+c 1248000 confls 14982 constrs 537 vars
+c 1249000 confls 15982 constrs 537 vars
+c 1250000 confls 16982 constrs 537 vars
+c 1251000 confls 17982 constrs 537 vars
+c 1252000 confls 18982 constrs 537 vars
+c 1253000 confls 19982 constrs 537 vars
+c 1254000 confls 20982 constrs 537 vars
+c 1255000 confls 21982 constrs 537 vars
+c INPROCESSING 4.27732 proptime 198002 prop/sec 2.44449 prop/ca
+c 1256000 confls 13832 constrs 537 vars
+c 1257000 confls 14832 constrs 537 vars
+c 1258000 confls 15832 constrs 537 vars
+c 1259000 confls 16832 constrs 537 vars
+c 1260000 confls 17832 constrs 537 vars
+c 1261000 confls 18833 constrs 537 vars
+c 1262000 confls 19833 constrs 537 vars
+c 1263000 confls 20833 constrs 537 vars
+c 1264000 confls 21834 constrs 537 vars
+c INPROCESSING 3.61032 proptime 224236 prop/sec 2.52233 prop/ca
+c 1265000 confls 14052 constrs 535 vars
+c 1266000 confls 15052 constrs 535 vars
+c 1267000 confls 16052 constrs 535 vars
+c 1268000 confls 17052 constrs 535 vars
+c 1269000 confls 18053 constrs 535 vars
+c 1270000 confls 19053 constrs 535 vars
+c 1271000 confls 20053 constrs 533 vars
+c 1272000 confls 21053 constrs 533 vars
+c 1273000 confls 22053 constrs 533 vars
+c INPROCESSING 3.36143 proptime 248349 prop/sec 2.43194 prop/ca
+c 1274000 confls 13143 constrs 533 vars
+c 1275000 confls 14143 constrs 533 vars
+c 1276000 confls 15143 constrs 533 vars
+c 1277000 confls 16143 constrs 533 vars
+c 1278000 confls 17143 constrs 533 vars
+c 1279000 confls 18143 constrs 533 vars
+c 1280000 confls 19143 constrs 533 vars
+c 1281000 confls 20143 constrs 533 vars
+c 1282000 confls 21143 constrs 533 vars
+c INPROCESSING 3.83615 proptime 211793 prop/sec 2.37823 prop/ca
+c 1283000 confls 12959 constrs 533 vars
+c 1284000 confls 13959 constrs 533 vars
+c 1285000 confls 14959 constrs 533 vars
+c 1286000 confls 15959 constrs 533 vars
+c 1287000 confls 16959 constrs 533 vars
+c 1288000 confls 17959 constrs 533 vars
+c 1289000 confls 18959 constrs 533 vars
+c 1290000 confls 19959 constrs 533 vars
+c 1291000 confls 20959 constrs 533 vars
+c 1292000 confls 21959 constrs 533 vars
+c INPROCESSING 3.98078 proptime 220138 prop/sec 2.54542 prop/ca
+c 1293000 confls 13907 constrs 533 vars
+c 1294000 confls 14907 constrs 533 vars
+c 1295000 confls 15907 constrs 533 vars
+c 1296000 confls 16907 constrs 533 vars
+c 1297000 confls 17907 constrs 533 vars
+c 1298000 confls 18907 constrs 533 vars
+c 1299000 confls 19907 constrs 533 vars
+c 1300000 confls 20907 constrs 533 vars
+c 1301000 confls 21907 constrs 533 vars
+c INPROCESSING 3.7124 proptime 226983 prop/sec 2.45586 prop/ca
+c 1302000 confls 13925 constrs 533 vars
+c 1303000 confls 14925 constrs 533 vars
+c 1304000 confls 15925 constrs 533 vars
+c 1305000 confls 16925 constrs 533 vars
+c 1306000 confls 17925 constrs 533 vars
+c 1307000 confls 18925 constrs 533 vars
+c 1308000 confls 19925 constrs 533 vars
+c 1309000 confls 20925 constrs 533 vars
+c 1310000 confls 21925 constrs 533 vars
+c INPROCESSING 4.09895 proptime 210036 prop/sec 2.60043 prop/ca
+c 1311000 confls 13809 constrs 533 vars
+c 1312000 confls 14809 constrs 533 vars
+c 1313000 confls 15809 constrs 533 vars
+c 1314000 confls 16809 constrs 533 vars
+c 1315000 confls 17811 constrs 533 vars
+c 1316000 confls 18812 constrs 533 vars
+c 1317000 confls 19812 constrs 533 vars
+c 1318000 confls 20812 constrs 533 vars
+c 1319000 confls 21812 constrs 533 vars
+c INPROCESSING 3.86507 proptime 204501 prop/sec 2.23324 prop/ca
+c 1320000 confls 14203 constrs 531 vars
+c 1321000 confls 15203 constrs 529 vars
+c 1322000 confls 16203 constrs 529 vars
+c 1323000 confls 17203 constrs 529 vars
+c 1324000 confls 18203 constrs 529 vars
+c 1325000 confls 19203 constrs 529 vars
+c 1326000 confls 20203 constrs 529 vars
+c 1327000 confls 21203 constrs 529 vars
+c 1328000 confls 22203 constrs 529 vars
+c INPROCESSING 3.93443 proptime 212503 prop/sec 2.46194 prop/ca
+c 1329000 confls 14605 constrs 528 vars
+c 1330000 confls 15605 constrs 526 vars
+c 1331000 confls 16606 constrs 526 vars
+c 1332000 confls 17606 constrs 526 vars
+c 1333000 confls 18607 constrs 526 vars
+c 1334000 confls 19607 constrs 526 vars
+c 1335000 confls 20609 constrs 526 vars
+c 1336000 confls 21609 constrs 526 vars
+c 1337000 confls 22609 constrs 526 vars
+c INPROCESSING 4.29658 proptime 196645 prop/sec 2.4815 prop/ca
+c 1338000 confls 14212 constrs 523 vars
+c 1339000 confls 15212 constrs 523 vars
+c 1340000 confls 16212 constrs 523 vars
+c 1341000 confls 17212 constrs 523 vars
+c 1342000 confls 18219 constrs 523 vars
+c 1343000 confls 19221 constrs 523 vars
+c 1344000 confls 20228 constrs 523 vars
+c 1345000 confls 21241 constrs 523 vars
+c 1346000 confls 22241 constrs 523 vars
+c 1347000 confls 23243 constrs 523 vars
+c INPROCESSING 3.75486 proptime 220513 prop/sec 2.81667 prop/ca
+c 1348000 confls 15840 constrs 518 vars
+c 1349000 confls 16840 constrs 518 vars
+c 1350000 confls 17841 constrs 518 vars
+c 1351000 confls 18841 constrs 518 vars
+c 1352000 confls 19842 constrs 506 vars
+c cpu time 1837.45
+c parse time 0.140483
+c solve time 1837.31
+c solve time det 4578.41
+c optimization time 3.40864
+c top-down time 926.126
+c top-down time det 2289.03
+c bottom-up solve time 907.772
+c bottom-up solve time det 2288.91
+c conflict analysis time 892.217
+c learned minimize time 76.0768
+c propagation time 870.77
+c constraint cleanup time 8.98345
+c inprocessing time 42.6951
+c garbage collection time 0.42344
+c constraint learning time 64.4404
+c time spent in activity heuristic 14.7442
+c at-most-one detection time 42.6845
+c at-most-one detection time det 64.225
+c time spent in lift degree optimization 0
+c number of lifted degrees 0
+c cores 4
+c solutions 464
+c propagations 247512992
+c decisions 3449992
+c conflicts 1352538
+c restarts 2557
+c inprocessing phases 161
+c original variables 1975
+c auxiliary variables 4
+c input clauses 1564
+c input cardinalities 882
+c input general constraints 15050
+c input length average 155.905
+c input degree average 99471.8
+c input strength average 0.381562
+c learned clauses 1438055
+c learned cardinalities 8570
+c learned general constraints 438859
+c learned length average 92.5303
+c learned degree average 2.05181e+06
+c learned strength average 0.0940504
+c learned LBD average 27.9937
+c unit literals derived 1867
+c pure literals 0
+c constraints satisfied at root 55377
+c constraints simplified during database reduction 155964
+c small coef constraints 453909
+c large coef constraints 0
+c arbitrary coef constraints 0
+c probing calls 818820
+c probing inprocessing time 0.61068
+c unit lits due to probing 109
+c equalities due to probing 683
+c implications added due to probing 22019
+c max implications in memory due to probing 83211
+c detected at-most-ones 6528
+c units derived during at-most-one detection 156
+c resolve steps 162890230
+c self-subsumptions 61030018
+c gcd simplifications 752845
+c detected cardinalities 17
+c weakened non-implied 46560105
+c weakened non-implying 0
+c number of multiply-weakens on reason 1332485
+c number of multiply-weakens on conflict 4831182
+c number of direct multiply-weakens 59880
+c number of indirect multiply-weakens 6009466
+c clausal propagations 56135063
+c cardinality propagations 4630485
+c watched propagations 184976318
+c counting propagations 0
+c watch lookups 6076120634
+c watch backjump lookups 3350285678
+c watch checks 104130184644
+c propagation checks 23333071345
+c blocking literal success 2752702194
+c blocking literal fails   3534568687
+c literal additions 6793805812
+c saturation steps 20375975460
+c unknown literals rounded up 0
+c trail pops 252313812
+c formula constraints 15834
+c dominance breaking constraints 719
+c learned constraints 1477085
+c bound constraints 935
+c core-guided constraints 8
+c reduced constraints 360636
+c encountered formula constraints 116230203
+c encountered dominance breaking constraints 8439
+c encountered learned constraints 41807289
+c encountered bound constraints 3713925
+c encountered core-guided constraints 5781
+c encountered reduced constraints 396592
+c encountered detected at-most-ones 54561
+c encountered detected equalities 1453
+c encountered detected implications 671987
+c CG unit cores 3
+c CG non-clausal cores 0
+c best upper bound 5
+c best lower bound 5
+o 5
+s OPTIMUM FOUND
+v 2 5 8 10 12 14 15 16 17 18 19 20 21 23 28 30 33 34 53 55 56 57 58 84 112 113 127 129 131 141 150 152 160 162 170 180 181 182 205 207 208 209 210 230 231 232 234 235 236 237 238 239 259 262 263 264 265 266 267 268 290 291 292 293 294 295 296 297 308 318 319 322 323 324 325 326 336 337 345 346 351 352 353 354 366 373 374 375 379 380 381 382 383 402 403 405 406 407 408 409 410 421 430 431 432 433 434 435 437 438 439 440 450 459 460 461 462 465 466 467 468 470 477 488 489 494 495 496 497 498 506 522 523 524 525 551 552 553 554 578 580 581 582 588 594 597 606 608 609 610 616 617 618 624 626 627 628 631 633 635 637 638 639 646 651 653 654 657 665 666 667 672 673 675 684 686 688 690 691 694 695 696 702 722 723 724 726 728 729 731 732 756 758 759 782 783 784 789 795 800 801 802 806 807 808 810 811 812 814 816 817 819 820 825 827 828 832 836 839 840 841 842 845 847 848 851 853 854 855 857 862 863 864 866 868 870 873 874 875 877 878 879 881 883 884 885 886 888 889 890 891 892 893 894 900 902 903 904 905 906 908 914 921 923 924 925 926 927 929 931 932 933 934 935 936 937 938 941 945 949 953 954 955 956 958 959 961 963 965 967 969 971 972 975 976 977 980 984 989 990 992 993 998 1000 1001 1003 1006 1007 1013 1015 1017 1018 1019 1020 1021 1022 1027 1030 1031 1034 1035 1036 1039 1040 1042 1044 1045 1049 1050 1052 1053 1055 1057 1058 1059 1060 1061 1062 1063 1065 1066 1069 1070 1071 1074 1078 1083 1084 1085 1087 1089 1091 1092 1093 1094 1095 1096 1097 1098 1099 1100 1103 1106 1107 1108 1110 1111 1112 1114 1115 1117 1118 1124 1126 1127 1128 1129 1130 1131 1132 1134 1135 1136 1138 1139 1140 1142 1143 1144 1146 1147 1148 1149 1151 1153 1155 1156 1157 1159 1160 1162 1164 1166 1167 1170 1171 1173 1174 1175 1176 1177 1178 1180 1183 1184 1187 1189 1190 1193 1195 1198 1201 1206 1208 1215 1216 1217 1221 1222 1223 1226 1227 1231 1235 1238 1239 1241 1243 1244 1246 1247 1249 1251 1253 1255 1256 1260 1266 1267 1268 1269 1271 1272 1276 1279 1280 1281 1282 1283 1287 1289 1291 1292

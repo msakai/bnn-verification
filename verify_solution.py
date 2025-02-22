@@ -27,7 +27,7 @@ def read_binary_solution_maxsat(fname: Union[Path, str]) -> Optional[np.ndarray]
                         sol[i] = (line[i] == "1")
                     break
                 else:
-                    for s in line[2:].split():
+                    for s in line.split():
                         l = int(s)
                         if abs(l) <= 28*28:
                             sol[abs(l) - 1] = (l > 0)

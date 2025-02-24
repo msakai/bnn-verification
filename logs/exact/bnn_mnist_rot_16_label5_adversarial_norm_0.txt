@@ -1,0 +1,230 @@
+c Exact - branch main commit 8dac976
+c Reading input file, expected format is wbo
+c #vars 2061 #constraints 1867
+c PRESOLVE
+c     bounds 466 >= 0 @ 0.380356, 597
+c     bounds 466 >= 1 @ 0.392133, 598
+c 1000 confls 3681 constrs 2049 vars
+c     bounds 466 >= 2 @ 5.48473, 1419
+c     bounds 465 >= 2 @ 5.49019, 1419
+c     bounds 464 >= 2 @ 5.49178, 1419
+c     bounds 463 >= 2 @ 5.49336, 1419
+c     bounds 462 >= 2 @ 5.4951, 1419
+c     bounds 461 >= 2 @ 5.49665, 1419
+c     bounds 460 >= 2 @ 5.49818, 1419
+c     bounds 459 >= 2 @ 5.49972, 1419
+c     bounds 458 >= 2 @ 5.50124, 1419
+c     bounds 457 >= 2 @ 5.50277, 1419
+c     bounds 456 >= 2 @ 5.50429, 1419
+c     bounds 455 >= 2 @ 5.50587, 1419
+c     bounds 454 >= 2 @ 5.50748, 1419
+c     bounds 453 >= 2 @ 5.50911, 1419
+c     bounds 452 >= 2 @ 5.51069, 1419
+c     bounds 451 >= 2 @ 5.51225, 1419
+c     bounds 450 >= 2 @ 5.51386, 1419
+c     bounds 449 >= 2 @ 5.51541, 1419
+c     bounds 448 >= 2 @ 5.51696, 1419
+c     bounds 447 >= 2 @ 5.52398, 1420
+c     bounds 446 >= 2 @ 5.52557, 1420
+c     bounds 445 >= 2 @ 5.53228, 1421
+c     bounds 444 >= 2 @ 5.53385, 1421
+c     bounds 442 >= 2 @ 5.54604, 1423
+c     bounds 441 >= 2 @ 5.54772, 1423
+c     bounds 440 >= 2 @ 5.54939, 1423
+c     bounds 439 >= 2 @ 5.55101, 1423
+c     bounds 438 >= 2 @ 5.55273, 1423
+c     bounds 437 >= 2 @ 5.55438, 1423
+c     bounds 436 >= 2 @ 5.556, 1423
+c     bounds 435 >= 2 @ 5.55765, 1423
+c     bounds 434 >= 2 @ 5.55922, 1423
+c     bounds 433 >= 2 @ 5.56083, 1423
+c     bounds 432 >= 2 @ 5.56242, 1423
+c     bounds 431 >= 2 @ 5.56401, 1423
+c     bounds 430 >= 2 @ 5.56565, 1423
+c     bounds 429 >= 2 @ 5.56727, 1423
+c     bounds 428 >= 2 @ 5.56903, 1423
+c     bounds 427 >= 2 @ 5.57065, 1423
+c     bounds 426 >= 2 @ 5.57225, 1423
+c     bounds 425 >= 2 @ 5.57388, 1423
+c     bounds 424 >= 2 @ 5.57552, 1423
+c     bounds 423 >= 2 @ 5.57716, 1423
+c     bounds 422 >= 2 @ 5.58553, 1424
+c     bounds 421 >= 2 @ 5.59378, 1425
+c     bounds 420 >= 2 @ 5.60198, 1426
+c     bounds 419 >= 2 @ 5.61008, 1427
+c     bounds 418 >= 2 @ 5.64043, 1435
+c     bounds 417 >= 2 @ 5.65013, 1437
+c     bounds 416 >= 2 @ 5.65175, 1437
+c     bounds 415 >= 2 @ 5.65342, 1437
+c     bounds 414 >= 2 @ 5.65514, 1437
+c     bounds 412 >= 2 @ 5.67209, 1439
+c     bounds 410 >= 2 @ 5.68912, 1441
+c     bounds 408 >= 2 @ 7.28059, 1815
+c     bounds 407 >= 2 @ 7.43631, 1857
+c     bounds 406 >= 2 @ 7.46556, 1865
+c     bounds 405 >= 2 @ 7.91594, 1964
+c     bounds 404 >= 2 @ 7.9183, 1965
+c 2000 confls 4742 constrs 2049 vars
+c INPROCESSING 0.026891 proptime 560410 prop/sec 0.210469 prop/ca
+c     bounds 403 >= 2 @ 8.1607, 2010
+c     bounds 402 >= 2 @ 9.67865, 2338
+c     bounds 401 >= 2 @ 9.72566, 2429
+c     bounds 399 >= 2 @ 10.5242, 2760
+c     bounds 398 >= 2 @ 10.526, 2760
+c     bounds 397 >= 2 @ 10.5276, 2760
+c     bounds 396 >= 2 @ 10.5368, 2761
+c     bounds 395 >= 2 @ 10.5385, 2761
+c     bounds 394 >= 2 @ 10.5402, 2761
+c     bounds 393 >= 2 @ 10.5418, 2761
+c     bounds 392 >= 2 @ 10.5434, 2761
+c     bounds 391 >= 2 @ 10.545, 2761
+c     bounds 390 >= 2 @ 10.6228, 2830
+c     bounds 389 >= 2 @ 10.6244, 2830
+c     bounds 388 >= 2 @ 10.6608, 2844
+c     bounds 387 >= 2 @ 10.6656, 2845
+c     bounds 386 >= 2 @ 10.6672, 2845
+c 3000 confls 4860 constrs 2049 vars
+c     bounds 385 >= 2 @ 10.9183, 3388
+c     bounds 384 >= 2 @ 10.9208, 3388
+c     bounds 383 >= 2 @ 10.9226, 3388
+c     bounds 382 >= 2 @ 10.9243, 3388
+c     bounds 381 >= 2 @ 10.926, 3388
+c     bounds 380 >= 2 @ 10.9657, 3489
+c     bounds 379 >= 2 @ 10.9675, 3491
+c     bounds 378 >= 2 @ 11.053, 3513
+c     bounds 377 >= 2 @ 11.055, 3513
+c     bounds 376 >= 2 @ 11.0568, 3513
+c     bounds 375 >= 2 @ 11.0585, 3513
+c     bounds 374 >= 2 @ 11.0602, 3513
+c     bounds 373 >= 2 @ 11.0618, 3513
+c     bounds 372 >= 2 @ 11.0635, 3513
+c     bounds 371 >= 2 @ 11.0653, 3513
+c     bounds 370 >= 2 @ 11.067, 3513
+c     bounds 369 >= 2 @ 11.0686, 3513
+c     bounds 368 >= 2 @ 11.0704, 3513
+c     bounds 367 >= 2 @ 11.072, 3513
+c     bounds 366 >= 2 @ 11.0737, 3513
+c     bounds 365 >= 2 @ 11.0753, 3513
+c     bounds 364 >= 2 @ 11.077, 3513
+c     bounds 363 >= 2 @ 11.086, 3514
+c     bounds 362 >= 2 @ 11.1043, 3517
+c     bounds 361 >= 2 @ 11.1624, 3547
+c     bounds 360 >= 2 @ 11.1647, 3548
+c     bounds 359 >= 2 @ 11.1665, 3548
+c     bounds 358 >= 2 @ 11.3834, 3596
+c     bounds 357 >= 2 @ 11.414, 3604
+c     bounds 356 >= 2 @ 11.4171, 3605
+c     bounds 355 >= 2 @ 11.4188, 3605
+c     bounds 354 >= 2 @ 11.4204, 3605
+c     bounds 353 >= 2 @ 11.4486, 3612
+c     bounds 352 >= 2 @ 11.4518, 3613
+c     bounds 351 >= 2 @ 11.4609, 3614
+c     bounds 350 >= 2 @ 11.4624, 3614
+c     bounds 348 >= 2 @ 11.6579, 3664
+c     bounds 347 >= 2 @ 12.7397, 3847
+c Conflicting input constraint
+c     bounds 2 >= 2 @ 13.5778, 3987
+c cpu time 13.5778
+c parse time 0.07628
+c solve time 13.5015
+c solve time det 89.8886
+c optimization time 0.0153383
+c top-down time 7.54389
+c top-down time det 43.7883
+c bottom-up solve time 5.94227
+c bottom-up solve time det 45.8784
+c conflict analysis time 10.0697
+c learned minimize time 1.02166
+c propagation time 3.1929
+c constraint cleanup time 0.0297598
+c inprocessing time 0.0261397
+c garbage collection time 0.00264208
+c constraint learning time 0.183136
+c time spent in activity heuristic 0.0875992
+c at-most-one detection time 0.0247976
+c at-most-one detection time det 0.0888735
+c time spent in lift degree optimization 0
+c number of lifted degrees 0
+c cores 2
+c solutions 115
+c propagations 2090195
+c decisions 243638
+c conflicts 3987
+c restarts 19
+c inprocessing phases 1
+c original variables 2061
+c auxiliary variables 2
+c input clauses 1596
+c input cardinalities 121
+c input general constraints 1482
+c input length average 251.251
+c input degree average 124.783
+c input strength average 0.423953
+c learned clauses 4593
+c learned cardinalities 4
+c learned general constraints 939
+c learned length average 287.077
+c learned degree average 5060.81
+c learned strength average 0.206902
+c learned LBD average 35.8488
+c unit literals derived 14
+c pure literals 0
+c constraints satisfied at root 842
+c constraints simplified during database reduction 1947
+c small coef constraints 2421
+c large coef constraints 0
+c arbitrary coef constraints 0
+c probing calls 14430
+c probing inprocessing time 0.000159959
+c unit lits due to probing 0
+c equalities due to probing 772
+c implications added due to probing 0
+c max implications in memory due to probing 1570
+c detected at-most-ones 4
+c units derived during at-most-one detection 0
+c resolve steps 1120611
+c self-subsumptions 230955
+c gcd simplifications 3018
+c detected cardinalities 0
+c weakened non-implied 218210
+c weakened non-implying 0
+c number of multiply-weakens on reason 3958
+c number of multiply-weakens on conflict 6707
+c number of direct multiply-weakens 171
+c number of indirect multiply-weakens 10215
+c clausal propagations 590726
+c cardinality propagations 74416
+c watched propagations 1393820
+c counting propagations 0
+c watch lookups 30539959
+c watch backjump lookups 22172050
+c watch checks 1017603146
+c propagation checks 51682695
+c blocking literal success 2459617
+c blocking literal fails   6020904
+c literal additions 158205588
+c saturation steps 468289791
+c unknown literals rounded up 0
+c trail pops 2337806
+c formula constraints 2269
+c dominance breaking constraints 808
+c learned constraints 3988
+c bound constraints 118
+c core-guided constraints 4
+c reduced constraints 0
+c encountered formula constraints 1085310
+c encountered dominance breaking constraints 8
+c encountered learned constraints 32954
+c encountered bound constraints 1383
+c encountered core-guided constraints 956
+c encountered reduced constraints 0
+c encountered detected at-most-ones 0
+c encountered detected equalities 0
+c encountered detected implications 0
+c CG unit cores 1
+c CG non-clausal cores 0
+c best upper bound 2
+c best lower bound 2
+o 2
+s OPTIMUM FOUND
+v 2 82 89 97 116 117 118 119 120 122 144 145 146 147 148 149 150 151 152 153 172 173 174 175 176 177 178 179 180 181 182 183 184 185 203 204 205 206 207 208 209 210 211 212 213 214 220 238 239 240 241 242 243 244 269 270 271 272 298 299 300 326 327 354 355 382 383 384 398 410 411 412 432 439 440 442 458 459 460 461 462 463 464 465 466 467 468 486 487 488 489 490 491 492 493 494 495 514 515 521 542 543 570 571 572 599 600 601 627 628 629 630 631 639 643 656 657 658 659 660 661 663 664 685 686 687 688 689 690 691 692 699 700 713 714 715 716 717 718 719 720 743 744 745 746 747 748 752 789 795 798 799 800 801 803 804 805 806 807 808 809 811 813 817 819 820 821 823 825 828 829 830 831 833 835 837 838 839 842 846 847 850 852 855 857 861 862 864 865 868 872 880 882 883 885 893 894 895 896 897 899 902 905 906 910 912 913 914 915 916 918 921 922 927 929 931 933 939 941 944 946 947 948 951 952 953 955 956 960 961 965 966 967 970 972 973 974 976 980 983 984 985 990 991 993 996 998 1000 1001 1003 1004 1005 1007 1008 1009 1012 1014 1015 1018 1020 1022 1025 1026 1027 1028 1031 1032 1035 1036 1037 1039 1047 1050 1052 1054 1055 1062 1065 1066 1067 1068 1070 1074 1077 1080 1081 1082 1087 1090 1091 1093 1098 1099 1100 1103 1105 1106 1108 1109 1110 1113 1115 1116 1118 1119 1120 1121 1122 1124 1125 1126 1132 1133 1138 1139 1140 1142 1143 1144 1147 1148 1151 1153 1155 1156 1159 1160 1161 1162 1163 1168 1170 1171 1172 1173 1174 1177 1178 1179 1181 1186 1188 1190 1194 1195 1196 1197 1198 1201 1205 1208 1209 1210 1211 1212 1213 1214 1217 1218 1219 1221 1224 1225 1230 1231 1235 1236 1239 1244 1245 1246 1247 1248 1251 1254 1259 1260 1261 1263 1264 1266 1268 1269 1272 1273 1274 1277 1279 1283 1284 1286

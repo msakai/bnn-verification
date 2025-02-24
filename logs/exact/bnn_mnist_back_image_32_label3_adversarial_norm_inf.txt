@@ -1,0 +1,128 @@
+c Exact - branch main commit 8dac976
+c Reading input file, expected format is wbo
+c #vars 1589 #constraints 2170
+c PRESOLVE
+c 1000 confls 3354 constrs 1586 vars
+c 2000 confls 4354 constrs 1586 vars
+c INPROCESSING 0.101971 proptime 1.34266e+06 prop/sec 0.823977 prop/ca
+c 3000 confls 5331 constrs 1586 vars
+c 4000 confls 6331 constrs 1586 vars
+c     bounds - >= 2 @ 1.49363, 4476
+c 5000 confls 7334 constrs 1587 vars
+c 6000 confls 8334 constrs 1587 vars
+c INPROCESSING 0.0814013 proptime 1.0878e+06 prop/sec 1.40445 prop/ca
+c 7000 confls 8481 constrs 1585 vars
+c 8000 confls 9481 constrs 1585 vars
+c 9000 confls 10481 constrs 1585 vars
+c 10000 confls 11481 constrs 1585 vars
+c 11000 confls 12481 constrs 1585 vars
+c 12000 confls 13481 constrs 1585 vars
+c INPROCESSING 0.772306 proptime 570426 prop/sec 0.688636 prop/ca
+c 13000 confls 11380 constrs 1585 vars
+c 14000 confls 12380 constrs 1585 vars
+c Conflicting input constraint
+c     bounds 2 >= 2 @ 6.36651, 14305
+c cpu time 6.36652
+c parse time 0.0749601
+c solve time 6.29153
+c solve time det 25.9216
+c optimization time 0.0224839
+c top-down time 2.97371
+c top-down time det 14.2796
+c bottom-up solve time 3.29534
+c bottom-up solve time det 11.3994
+c conflict analysis time 3.89866
+c learned minimize time 1.70499
+c propagation time 1.96553
+c constraint cleanup time 0.031487
+c inprocessing time 0.494329
+c garbage collection time 0.00306537
+c constraint learning time 0.352741
+c time spent in activity heuristic 0.148479
+c at-most-one detection time 0.493369
+c at-most-one detection time det 1.85942
+c time spent in lift degree optimization 0
+c number of lifted degrees 0
+c cores 1
+c solutions 1
+c propagations 5512622
+c decisions 61736
+c conflicts 14305
+c restarts 60
+c inprocessing phases 3
+c original variables 1589
+c auxiliary variables 1
+c input clauses 1267
+c input cardinalities 3
+c input general constraints 1089
+c input length average 169.714
+c input degree average 84.8266
+c input strength average 0.423664
+c learned clauses 9201
+c learned cardinalities 2
+c learned general constraints 7515
+c learned length average 247.05
+c learned degree average 541776
+c learned strength average 0.0461853
+c learned LBD average 47.628
+c unit literals derived 5
+c pure literals 0
+c constraints satisfied at root 40
+c constraints simplified during database reduction 5
+c small coef constraints 8604
+c large coef constraints 0
+c arbitrary coef constraints 0
+c probing calls 7532
+c probing inprocessing time 0.000372667
+c unit lits due to probing 0
+c equalities due to probing 1
+c implications added due to probing 0
+c max implications in memory due to probing 6121
+c detected at-most-ones 2
+c units derived during at-most-one detection 4
+c resolve steps 769716
+c self-subsumptions 435149
+c gcd simplifications 7689
+c detected cardinalities 0
+c weakened non-implied 645093
+c weakened non-implying 0
+c number of multiply-weakens on reason 13981
+c number of multiply-weakens on conflict 14159
+c number of direct multiply-weakens 1055
+c number of indirect multiply-weakens 24998
+c clausal propagations 4443117
+c cardinality propagations 6448
+c watched propagations 995077
+c counting propagations 0
+c watch lookups 34798716
+c watch backjump lookups 20161631
+c watch checks 516392472
+c propagation checks 67182616
+c blocking literal success 15223041
+c blocking literal fails   18082134
+c literal additions 45285982
+c saturation steps 110040368
+c unknown literals rounded up 0
+c trail pops 5588660
+c formula constraints 2172
+c dominance breaking constraints 184
+c learned constraints 14308
+c bound constraints 1
+c core-guided constraints 2
+c reduced constraints 2406
+c encountered formula constraints 679794
+c encountered dominance breaking constraints 181
+c encountered learned constraints 89693
+c encountered bound constraints 1
+c encountered core-guided constraints 0
+c encountered reduced constraints 47
+c encountered detected at-most-ones 0
+c encountered detected equalities 0
+c encountered detected implications 0
+c CG unit cores 1
+c CG non-clausal cores 0
+c best upper bound 2
+c best lower bound 2
+o 2
+s OPTIMUM FOUND
+v 2 4 6 9 10 21 22 23 31 34 36 37 38 46 50 51 52 53 57 60 61 64 67 68 73 79 81 82 89 90 92 93 94 96 98 100 108 109 110 113 114 115 116 117 118 120 121 122 124 125 126 127 128 136 137 138 139 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 158 165 167 169 191 192 193 194 195 196 197 198 200 204 205 219 220 223 224 225 226 227 228 229 232 233 234 248 252 255 256 259 260 261 276 277 279 282 287 288 296 297 299 300 301 304 305 308 309 315 316 320 322 330 332 333 337 338 343 348 350 351 352 353 354 358 360 362 364 368 370 371 373 379 380 387 388 391 392 393 396 398 399 405 406 407 414 415 416 417 419 420 423 426 427 431 432 433 434 435 441 442 443 451 452 455 456 457 458 459 460 461 462 463 464 468 469 470 478 480 491 492 494 495 496 497 503 505 506 519 520 521 522 523 524 533 534 548 549 550 551 559 560 587 590 592 610 614 617 625 635 638 639 642 643 644 648 666 668 670 672 674 675 676 678 679 683 688 690 691 692 695 696 697 698 702 707 708 714 722 726 728 730 733 734 736 740 742 743 747 749 754 760 762 763 764 766 767 768 771 773 774 780 781 793 795 798 799 800 801 807 813 817 821 822 823 824 831 834 835 836 840 849 851 852 854 855 856 858 860 861 862 863 866 867 868 869 870 871 873 875 877 879 880 883 885 887 889 892 893 895 898 900 901 903 904 906 909 911 913 915 916 919 920 922 923 925 927 929 930 931 933 934 938 939 940 941 944 946 947 948 950 951 953 954 956 957 958 960 961 962 963 967 968 969 970 974 975 981 982 984 985 990 991 992 995 996 999 1003 1004 1005 1007 1009 1010 1012 1016 1017 1020 1021 1025 1026 1027 1031 1032 1035 1036 1037 1039 1040 1043 1046 1048 1049 1050 1055 1058 1060 1062 1063 1064 1065 1066 1069 1071 1074 1075 1078 1084 1087 1088 1094 1095 1096 1098 1102 1105 1111 1113 1114 1116 1117 1120 1124 1125 1127 1128 1129 1132 1134 1135 1136 1137 1138 1140 1144 1145 1147 1148 1150 1152 1153 1156 1158 1159 1161 1163 1164 1165 1166 1167 1170 1171 1176 1185 1186 1187 1188 1192 1195 1196 1197 1200 1201 1206 1207 1208 1209 1210 1211 1212 1213 1215 1218 1219 1220 1225 1226 1231 1242 1243 1245 1248 1250 1252 1254 1256 1258 1260 1264 1268 1271 1274 1277 1278 1280 1281 1282 1286 1288 1290 1293 1294 1295

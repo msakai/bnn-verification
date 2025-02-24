@@ -1,0 +1,323 @@
+c Exact - branch main commit 8dac976
+c Reading input file, expected format is wbo
+c #vars 2077 #constraints 1875
+c PRESOLVE
+c     bounds 492 >= 0 @ 0.227587, 595
+c     bounds 492 >= 1 @ 0.239078, 596
+c 1000 confls 3701 constrs 2077 vars
+c     bounds 492 >= 2 @ 5.52603, 1396
+c     bounds 491 >= 2 @ 5.53231, 1396
+c     bounds 490 >= 2 @ 5.53397, 1396
+c     bounds 489 >= 2 @ 5.53555, 1396
+c     bounds 488 >= 2 @ 5.53709, 1396
+c     bounds 487 >= 2 @ 5.53862, 1396
+c     bounds 486 >= 2 @ 5.54033, 1396
+c     bounds 485 >= 2 @ 5.54194, 1396
+c     bounds 484 >= 2 @ 5.54347, 1396
+c     bounds 483 >= 2 @ 5.54511, 1396
+c     bounds 482 >= 2 @ 5.54674, 1396
+c     bounds 481 >= 2 @ 5.54838, 1396
+c     bounds 480 >= 2 @ 5.55002, 1396
+c     bounds 479 >= 2 @ 5.55163, 1396
+c     bounds 478 >= 2 @ 5.55342, 1396
+c     bounds 477 >= 2 @ 5.55515, 1396
+c     bounds 476 >= 2 @ 5.55682, 1396
+c     bounds 475 >= 2 @ 5.55849, 1396
+c     bounds 474 >= 2 @ 5.56018, 1396
+c     bounds 473 >= 2 @ 5.56188, 1396
+c     bounds 472 >= 2 @ 5.56358, 1396
+c     bounds 471 >= 2 @ 5.56523, 1396
+c     bounds 470 >= 2 @ 5.56693, 1396
+c     bounds 469 >= 2 @ 5.56863, 1396
+c     bounds 468 >= 2 @ 5.57023, 1396
+c     bounds 467 >= 2 @ 5.57182, 1396
+c     bounds 466 >= 2 @ 5.57351, 1396
+c     bounds 465 >= 2 @ 5.57515, 1396
+c     bounds 464 >= 2 @ 5.57686, 1396
+c     bounds 463 >= 2 @ 5.57856, 1396
+c     bounds 462 >= 2 @ 5.58023, 1396
+c     bounds 461 >= 2 @ 5.58197, 1396
+c     bounds 460 >= 2 @ 5.58367, 1396
+c     bounds 459 >= 2 @ 5.58534, 1396
+c     bounds 458 >= 2 @ 5.58702, 1396
+c     bounds 457 >= 2 @ 5.5887, 1396
+c     bounds 456 >= 2 @ 5.59044, 1396
+c     bounds 455 >= 2 @ 5.59211, 1396
+c     bounds 454 >= 2 @ 5.59389, 1396
+c     bounds 453 >= 2 @ 5.59557, 1396
+c     bounds 452 >= 2 @ 5.59731, 1396
+c     bounds 451 >= 2 @ 5.59903, 1396
+c     bounds 450 >= 2 @ 5.60077, 1396
+c     bounds 449 >= 2 @ 5.60247, 1396
+c     bounds 448 >= 2 @ 5.60415, 1396
+c     bounds 447 >= 2 @ 5.60584, 1396
+c     bounds 446 >= 2 @ 5.60756, 1396
+c     bounds 445 >= 2 @ 5.6093, 1396
+c     bounds 444 >= 2 @ 5.61104, 1396
+c     bounds 443 >= 2 @ 5.6128, 1396
+c     bounds 442 >= 2 @ 5.6145, 1396
+c     bounds 441 >= 2 @ 5.61619, 1396
+c     bounds 440 >= 2 @ 5.61786, 1396
+c     bounds 439 >= 2 @ 5.61954, 1396
+c     bounds 438 >= 2 @ 5.62117, 1396
+c     bounds 437 >= 2 @ 5.62285, 1396
+c     bounds 436 >= 2 @ 5.6245, 1396
+c     bounds 435 >= 2 @ 5.62616, 1396
+c     bounds 434 >= 2 @ 5.62784, 1396
+c     bounds 433 >= 2 @ 5.62946, 1396
+c     bounds 432 >= 2 @ 5.63109, 1396
+c     bounds 431 >= 2 @ 5.63276, 1396
+c     bounds 430 >= 2 @ 5.63441, 1396
+c     bounds 429 >= 2 @ 5.63613, 1396
+c     bounds 428 >= 2 @ 5.63778, 1396
+c     bounds 427 >= 2 @ 5.63937, 1396
+c     bounds 426 >= 2 @ 5.64103, 1396
+c     bounds 425 >= 2 @ 5.64271, 1396
+c     bounds 424 >= 2 @ 5.64438, 1396
+c     bounds 423 >= 2 @ 5.64608, 1396
+c     bounds 422 >= 2 @ 5.64773, 1396
+c     bounds 421 >= 2 @ 5.64943, 1396
+c     bounds 420 >= 2 @ 5.65112, 1396
+c     bounds 419 >= 2 @ 5.65287, 1396
+c     bounds 418 >= 2 @ 5.6546, 1396
+c     bounds 417 >= 2 @ 5.65634, 1396
+c     bounds 416 >= 2 @ 5.65796, 1396
+c     bounds 415 >= 2 @ 5.65971, 1396
+c     bounds 414 >= 2 @ 5.66149, 1396
+c     bounds 413 >= 2 @ 5.6633, 1396
+c     bounds 412 >= 2 @ 5.66499, 1396
+c     bounds 411 >= 2 @ 5.6666, 1396
+c     bounds 410 >= 2 @ 5.66819, 1396
+c     bounds 409 >= 2 @ 5.66981, 1396
+c     bounds 408 >= 2 @ 5.67138, 1396
+c     bounds 407 >= 2 @ 5.67299, 1396
+c     bounds 406 >= 2 @ 5.67463, 1396
+c     bounds 405 >= 2 @ 5.6763, 1396
+c     bounds 404 >= 2 @ 5.67797, 1396
+c     bounds 403 >= 2 @ 5.67956, 1396
+c     bounds 402 >= 2 @ 5.68128, 1396
+c     bounds 401 >= 2 @ 5.68296, 1396
+c     bounds 400 >= 2 @ 5.68467, 1396
+c     bounds 399 >= 2 @ 5.68627, 1396
+c     bounds 398 >= 2 @ 5.6879, 1396
+c     bounds 397 >= 2 @ 5.68959, 1396
+c     bounds 396 >= 2 @ 5.69123, 1396
+c     bounds 395 >= 2 @ 5.69298, 1396
+c     bounds 394 >= 2 @ 5.69473, 1396
+c     bounds 393 >= 2 @ 5.69643, 1396
+c     bounds 392 >= 2 @ 5.69817, 1396
+c     bounds 391 >= 2 @ 5.69986, 1396
+c     bounds 390 >= 2 @ 5.70158, 1396
+c     bounds 389 >= 2 @ 5.70337, 1396
+c     bounds 388 >= 2 @ 5.70511, 1396
+c     bounds 387 >= 2 @ 5.7068, 1396
+c     bounds 386 >= 2 @ 5.70841, 1396
+c     bounds 385 >= 2 @ 5.71007, 1396
+c     bounds 384 >= 2 @ 5.71175, 1396
+c     bounds 383 >= 2 @ 5.71347, 1396
+c     bounds 382 >= 2 @ 5.71516, 1396
+c     bounds 381 >= 2 @ 5.71682, 1396
+c     bounds 380 >= 2 @ 5.71865, 1396
+c     bounds 379 >= 2 @ 5.72036, 1396
+c     bounds 378 >= 2 @ 5.72201, 1396
+c     bounds 377 >= 2 @ 5.72369, 1396
+c     bounds 376 >= 2 @ 5.72537, 1396
+c     bounds 375 >= 2 @ 5.72703, 1396
+c     bounds 374 >= 2 @ 5.72872, 1396
+c     bounds 373 >= 2 @ 5.73042, 1396
+c     bounds 372 >= 2 @ 5.73211, 1396
+c     bounds 371 >= 2 @ 5.73374, 1396
+c     bounds 370 >= 2 @ 5.73535, 1396
+c     bounds 369 >= 2 @ 5.73707, 1396
+c     bounds 368 >= 2 @ 5.73882, 1396
+c     bounds 367 >= 2 @ 5.74057, 1396
+c     bounds 366 >= 2 @ 5.74236, 1396
+c     bounds 365 >= 2 @ 5.7441, 1396
+c     bounds 364 >= 2 @ 5.74585, 1396
+c     bounds 363 >= 2 @ 5.74758, 1396
+c     bounds 362 >= 2 @ 5.74928, 1396
+c     bounds 361 >= 2 @ 5.75098, 1396
+c     bounds 360 >= 2 @ 5.75275, 1396
+c     bounds 359 >= 2 @ 5.75442, 1396
+c     bounds 358 >= 2 @ 5.75616, 1396
+c     bounds 357 >= 2 @ 5.7579, 1396
+c     bounds 356 >= 2 @ 5.75955, 1396
+c     bounds 355 >= 2 @ 5.7612, 1396
+c     bounds 354 >= 2 @ 5.76285, 1396
+c     bounds 353 >= 2 @ 5.76445, 1396
+c     bounds 352 >= 2 @ 5.76608, 1396
+c     bounds 351 >= 2 @ 5.76768, 1396
+c     bounds 350 >= 2 @ 5.76937, 1396
+c     bounds 349 >= 2 @ 5.77105, 1396
+c     bounds 348 >= 2 @ 5.77273, 1396
+c     bounds 347 >= 2 @ 5.77441, 1396
+c     bounds 346 >= 2 @ 5.77608, 1396
+c     bounds 345 >= 2 @ 5.77776, 1396
+c     bounds 344 >= 2 @ 5.77944, 1396
+c     bounds 343 >= 2 @ 5.78108, 1396
+c     bounds 342 >= 2 @ 5.78273, 1396
+c     bounds 341 >= 2 @ 5.78443, 1396
+c     bounds 340 >= 2 @ 5.78609, 1396
+c     bounds 339 >= 2 @ 5.78786, 1396
+c     bounds 338 >= 2 @ 5.78959, 1396
+c     bounds 337 >= 2 @ 5.7914, 1396
+c     bounds 336 >= 2 @ 5.79312, 1396
+c     bounds 335 >= 2 @ 5.79482, 1396
+c     bounds 334 >= 2 @ 5.79658, 1396
+c     bounds 333 >= 2 @ 5.7983, 1396
+c     bounds 332 >= 2 @ 5.80002, 1396
+c     bounds 331 >= 2 @ 5.80184, 1396
+c     bounds 330 >= 2 @ 5.80353, 1396
+c     bounds 329 >= 2 @ 5.80529, 1396
+c     bounds 328 >= 2 @ 5.80703, 1396
+c     bounds 327 >= 2 @ 5.80878, 1396
+c     bounds 326 >= 2 @ 5.81774, 1397
+c     bounds 325 >= 2 @ 5.81936, 1397
+c     bounds 324 >= 2 @ 5.82831, 1398
+c     bounds 323 >= 2 @ 5.83704, 1399
+c     bounds 322 >= 2 @ 5.83867, 1399
+c     bounds 321 >= 2 @ 5.8475, 1400
+c     bounds 320 >= 2 @ 5.8911, 1410
+c     bounds 319 >= 2 @ 5.89343, 1411
+c     bounds 318 >= 2 @ 5.90212, 1412
+c     bounds 317 >= 2 @ 5.94719, 1424
+c     bounds 316 >= 2 @ 5.9607, 1429
+c     bounds 315 >= 2 @ 5.99938, 1457
+c     bounds 314 >= 2 @ 6.00098, 1457
+c     bounds 313 >= 2 @ 6.00993, 1458
+c     bounds 312 >= 2 @ 6.01146, 1458
+c     bounds 311 >= 2 @ 6.03172, 1464
+c     bounds 310 >= 2 @ 6.03322, 1464
+c     bounds 309 >= 2 @ 6.05188, 1467
+c     bounds 308 >= 2 @ 6.05485, 1468
+c     bounds 307 >= 2 @ 6.05633, 1468
+c     bounds 306 >= 2 @ 6.05786, 1468
+c     bounds 305 >= 2 @ 6.05942, 1468
+c     bounds 304 >= 2 @ 6.06099, 1468
+c     bounds 303 >= 2 @ 6.0626, 1468
+c     bounds 301 >= 2 @ 6.07913, 1470
+c     bounds 300 >= 2 @ 6.08825, 1471
+c     bounds 299 >= 2 @ 6.08977, 1471
+c     bounds 297 >= 2 @ 6.11372, 1479
+c     bounds 296 >= 2 @ 6.12273, 1480
+c     bounds 295 >= 2 @ 6.12414, 1480
+c     bounds 294 >= 2 @ 6.14188, 1483
+c     bounds 293 >= 2 @ 6.24564, 1743
+c     bounds 291 >= 2 @ 6.25266, 1747
+c     bounds 290 >= 2 @ 6.2711, 1750
+c     bounds 288 >= 2 @ 6.29744, 1755
+c     bounds 287 >= 2 @ 6.46814, 1791
+c     bounds 285 >= 2 @ 6.52437, 1813
+c     bounds 284 >= 2 @ 6.57384, 1825
+c 2000 confls 4907 constrs 2077 vars
+c INPROCESSING 0.251975 proptime 453768 prop/sec 0.28601 prop/ca
+c     bounds 283 >= 2 @ 8.37993, 2093
+c     bounds 282 >= 2 @ 10.7451, 2452
+c     bounds 281 >= 2 @ 12.5772, 2721
+c 3000 confls 4900 constrs 2077 vars
+c Conflicting input constraint
+c     bounds 2 >= 2 @ 14.8333, 3058
+c cpu time 14.8333
+c parse time 0.0721417
+c solve time 14.7611
+c solve time det 105.096
+c optimization time 0.0165376
+c top-down time 7.19023
+c top-down time det 49.0114
+c bottom-up solve time 7.55434
+c bottom-up solve time det 55.823
+c conflict analysis time 10.9287
+c learned minimize time 0.396349
+c propagation time 3.64627
+c constraint cleanup time 0.0152768
+c inprocessing time 0.0231567
+c garbage collection time 0.00255938
+c constraint learning time 0.136255
+c time spent in activity heuristic 0.0735787
+c at-most-one detection time 0.0220552
+c at-most-one detection time det 0.0828615
+c time spent in lift degree optimization 0
+c number of lifted degrees 0
+c cores 2
+c solutions 208
+c propagations 2079034
+c decisions 345268
+c conflicts 3058
+c restarts 14
+c inprocessing phases 1
+c original variables 2077
+c auxiliary variables 2
+c input clauses 1608
+c input cardinalities 214
+c input general constraints 1090
+c input length average 195.55
+c input degree average 97.9093
+c input strength average 0.438327
+c learned clauses 3856
+c learned cardinalities 3
+c learned general constraints 772
+c learned length average 256.831
+c learned degree average 741.624
+c learned strength average 0.22271
+c learned LBD average 33.509
+c unit literals derived 2
+c pure literals 0
+c constraints satisfied at root 807
+c constraints simplified during database reduction 1572
+c small coef constraints 1862
+c large coef constraints 0
+c arbitrary coef constraints 0
+c probing calls 14634
+c probing inprocessing time 0.000120834
+c unit lits due to probing 0
+c equalities due to probing 784
+c implications added due to probing 0
+c max implications in memory due to probing 1594
+c detected at-most-ones 3
+c units derived during at-most-one detection 0
+c resolve steps 1082029
+c self-subsumptions 130463
+c gcd simplifications 2389
+c detected cardinalities 0
+c weakened non-implied 158917
+c weakened non-implying 0
+c number of multiply-weakens on reason 3342
+c number of multiply-weakens on conflict 5415
+c number of direct multiply-weakens 65
+c number of indirect multiply-weakens 8311
+c clausal propagations 620809
+c cardinality propagations 129079
+c watched propagations 1306084
+c counting propagations 0
+c watch lookups 25754234
+c watch backjump lookups 17042850
+c watch checks 1201602126
+c propagation checks 49593738
+c blocking literal success 1130929
+c blocking literal fails   8307199
+c literal additions 189500790
+c saturation steps 553988232
+c unknown literals rounded up 0
+c trail pops 2427358
+c formula constraints 1877
+c dominance breaking constraints 820
+c learned constraints 3060
+c bound constraints 211
+c core-guided constraints 4
+c reduced constraints 0
+c encountered formula constraints 1004369
+c encountered dominance breaking constraints 0
+c encountered learned constraints 75891
+c encountered bound constraints 1038
+c encountered core-guided constraints 731
+c encountered reduced constraints 0
+c encountered detected at-most-ones 0
+c encountered detected equalities 0
+c encountered detected implications 0
+c CG unit cores 1
+c CG non-clausal cores 0
+c best upper bound 2
+c best lower bound 2
+o 2
+s OPTIMUM FOUND
+v 2 3 4 6 9 10 21 22 23 31 34 36 37 38 46 50 51 52 53 57 60 61 64 67 68 73 79 81 82 89 92 93 94 96 98 100 108 109 110 113 114 115 116 117 118 120 121 122 124 125 126 127 128 136 137 138 139 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 158 165 167 169 191 192 193 194 195 196 197 198 200 201 204 205 219 220 223 224 225 226 227 229 232 233 234 248 252 255 256 259 260 261 276 277 279 282 287 288 296 297 298 299 300 304 305 308 309 315 316 320 322 330 332 333 337 338 343 348 350 351 352 353 358 360 362 364 368 370 371 373 379 380 387 388 391 392 393 396 398 399 405 406 407 414 415 417 419 420 423 426 427 431 432 433 434 435 441 442 443 451 452 455 456 457 459 460 461 462 463 464 468 469 470 478 480 491 492 494 495 496 497 503 505 506 519 520 521 522 523 524 533 534 548 549 550 551 559 560 587 590 592 610 614 617 625 635 638 639 642 643 644 648 651 666 668 670 672 674 675 676 678 679 683 688 690 695 696 697 698 702 707 708 714 722 726 728 730 733 734 736 740 742 743 747 749 754 760 762 763 764 766 767 768 771 773 774 780 781 793 795 798 799 800 801 807 813 821 822 823 824 827 830 834 835 836 840 849 851 852 854 856 858 860 861 862 863 866 867 868 869 870 871 875 877 879 880 882 883 885 887 889 895 898 900 901 902 903 904 906 909 911 913 915 919 920 922 923 925 927 929 930 931 933 934 938 939 940 941 944 946 947 948 950 953 954 957 958 960 961 962 963 967 968 969 970 974 975 978 981 982 984 985 990 991 992 996 999 1003 1004 1005 1009 1010 1012 1013 1016 1019 1020 1021 1022 1025 1026 1027 1031 1032 1035 1036 1037 1039 1040 1041 1043 1046 1048 1049 1050 1055 1058 1060 1063 1064 1065 1066 1069 1071 1074 1075 1078 1087 1088 1090 1092 1094 1095 1096 1098 1102 1105 1111 1113 1114 1116 1117 1120 1122 1124 1125 1126 1128 1129 1131 1132 1134 1135 1136 1137 1138 1139 1140 1142 1144 1145 1146 1147 1148 1150 1152 1153 1156 1158 1161 1163 1164 1165 1166 1167 1168 1170 1174 1176 1183 1185 1186 1187 1188 1192 1194 1195 1196 1197 1200 1201 1206 1207 1208 1210 1211 1212 1215 1218 1219 1220 1222 1225 1226 1228 1231 1242 1243 1245 1248 1250 1253 1254 1256 1258 1260 1261 1264 1271 1274 1277 1278 1280 1282 1286 1288 1290 1293

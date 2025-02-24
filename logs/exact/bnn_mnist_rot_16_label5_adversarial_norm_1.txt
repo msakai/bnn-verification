@@ -1,0 +1,497 @@
+c Exact - branch main commit 8dac976
+c Reading input file, expected format is wbo
+c #vars 2061 #constraints 1867
+c PRESOLVE
+c     bounds 18297 >= 0 @ 0.379846, 597
+c     bounds 8210 >= 0 @ 0.385373, 599
+c     bounds 8209 >= 0 @ 0.391448, 604
+c     bounds 8143 >= 0 @ 0.393091, 604
+c     bounds 8138 >= 0 @ 0.394875, 605
+c     bounds 8105 >= 0 @ 0.406805, 619
+c     bounds 8102 >= 0 @ 0.408996, 619
+c     bounds 8100 >= 0 @ 0.410909, 619
+c     bounds 8099 >= 0 @ 0.412761, 619
+c     bounds 8098 >= 0 @ 0.414468, 619
+c     bounds 8097 >= 0 @ 0.416216, 619
+c     bounds 8096 >= 0 @ 0.417973, 619
+c     bounds 8095 >= 0 @ 0.419704, 619
+c     bounds 8094 >= 0 @ 0.421308, 619
+c     bounds 8093 >= 0 @ 0.422949, 619
+c     bounds 8092 >= 0 @ 0.425022, 619
+c     bounds 8090 >= 0 @ 0.426872, 619
+c     bounds 8089 >= 0 @ 0.428549, 619
+c     bounds 8087 >= 0 @ 0.430419, 619
+c     bounds 8086 >= 0 @ 0.432114, 619
+c     bounds 8082 >= 0 @ 0.434105, 619
+c     bounds 8081 >= 0 @ 0.436028, 619
+c     bounds 8080 >= 0 @ 0.437757, 619
+c     bounds 8079 >= 0 @ 0.439447, 619
+c     bounds 8078 >= 0 @ 0.441133, 619
+c     bounds 8077 >= 0 @ 0.442769, 619
+c     bounds 8076 >= 0 @ 0.444374, 619
+c     bounds 8074 >= 0 @ 0.446299, 619
+c     bounds 8072 >= 0 @ 0.448095, 619
+c     bounds 8060 >= 0 @ 0.450224, 619
+c     bounds 8028 >= 0 @ 0.452271, 619
+c     bounds 8024 >= 0 @ 0.454359, 619
+c     bounds 8023 >= 0 @ 0.455927, 619
+c     bounds 7957 >= 0 @ 0.458227, 619
+c     bounds 7952 >= 0 @ 0.460519, 619
+c     bounds 7944 >= 0 @ 0.462599, 619
+c     bounds 7941 >= 0 @ 0.464723, 619
+c     bounds 7939 >= 0 @ 0.466665, 619
+c     bounds 7937 >= 0 @ 0.468527, 619
+c     bounds 7936 >= 0 @ 0.470296, 619
+c     bounds 7934 >= 0 @ 0.472203, 619
+c     bounds 7933 >= 0 @ 0.47402, 619
+c     bounds 7932 >= 0 @ 0.475727, 619
+c     bounds 7931 >= 0 @ 0.477403, 619
+c     bounds 7930 >= 0 @ 0.479085, 619
+c     bounds 7929 >= 0 @ 0.480815, 619
+c     bounds 7928 >= 0 @ 0.482568, 619
+c     bounds 7922 >= 0 @ 0.484787, 619
+c     bounds 7916 >= 0 @ 0.486644, 619
+c     bounds 7914 >= 0 @ 0.488794, 619
+c     bounds 7913 >= 0 @ 0.490546, 619
+c     bounds 7912 >= 0 @ 0.49233, 619
+c     bounds 7910 >= 0 @ 0.49939, 620
+c     bounds 7898 >= 0 @ 0.501755, 620
+c     bounds 7886 >= 0 @ 0.503666, 620
+c     bounds 7811 >= 0 @ 0.505872, 620
+c     bounds 7808 >= 0 @ 0.508142, 620
+c     bounds 7798 >= 0 @ 0.510395, 620
+c     bounds 7790 >= 0 @ 0.512427, 620
+c     bounds 7789 >= 0 @ 0.514888, 621
+c     bounds 7788 >= 0 @ 0.52332, 648
+c     bounds 7787 >= 0 @ 0.531185, 655
+c     bounds 7786 >= 0 @ 0.533494, 655
+c     bounds 7785 >= 0 @ 0.53515, 655
+c     bounds 7784 >= 0 @ 0.536891, 655
+c     bounds 7783 >= 0 @ 0.538584, 655
+c     bounds 7782 >= 0 @ 0.540556, 655
+c     bounds 7781 >= 0 @ 0.542266, 655
+c     bounds 7780 >= 0 @ 0.544053, 655
+c     bounds 7779 >= 0 @ 0.545806, 655
+c     bounds 7778 >= 0 @ 0.547489, 655
+c     bounds 7777 >= 0 @ 0.549203, 655
+c     bounds 7776 >= 0 @ 0.551066, 655
+c     bounds 7775 >= 0 @ 0.552682, 655
+c     bounds 7774 >= 0 @ 0.554584, 655
+c     bounds 7773 >= 0 @ 0.556188, 655
+c     bounds 7770 >= 0 @ 0.558606, 657
+c     bounds 7769 >= 0 @ 0.561594, 661
+c     bounds 7767 >= 0 @ 0.564506, 661
+c     bounds 7763 >= 0 @ 0.566468, 661
+c     bounds 7762 >= 0 @ 0.568128, 661
+c     bounds 7758 >= 0 @ 0.570169, 661
+c     bounds 7754 >= 0 @ 0.572065, 661
+c     bounds 7753 >= 0 @ 0.573695, 661
+c     bounds 7718 >= 0 @ 0.57568, 661
+c     bounds 7717 >= 0 @ 0.577834, 661
+c     bounds 7716 >= 0 @ 0.57941, 661
+c     bounds 7697 >= 0 @ 0.58139, 661
+c     bounds 7693 >= 0 @ 0.593867, 695
+c     bounds 7691 >= 0 @ 0.60105, 702
+c     bounds 7677 >= 0 @ 0.602753, 702
+c     bounds 7640 >= 0 @ 0.604534, 703
+c     bounds 7639 >= 0 @ 0.611985, 704
+c     bounds 7626 >= 0 @ 0.62158, 705
+c     bounds 7606 >= 0 @ 0.623487, 705
+c     bounds 7550 >= 0 @ 0.625706, 705
+c     bounds 7545 >= 0 @ 0.627953, 705
+c     bounds 7542 >= 0 @ 0.629935, 705
+c     bounds 7539 >= 0 @ 0.63197, 705
+c     bounds 7537 >= 0 @ 0.634102, 705
+c     bounds 7536 >= 0 @ 0.635714, 705
+c     bounds 7511 >= 0 @ 0.637568, 705
+c     bounds 7507 >= 0 @ 0.639804, 705
+c     bounds 7504 >= 0 @ 0.663557, 718
+c     bounds 7501 >= 0 @ 0.668232, 720
+c     bounds 7437 >= 0 @ 0.68295, 724
+c     bounds 7417 >= 0 @ 0.68718, 727
+c     bounds 7336 >= 0 @ 0.691021, 728
+c     bounds 7335 >= 0 @ 0.693116, 728
+c     bounds 7334 >= 0 @ 0.694794, 728
+c     bounds 7330 >= 0 @ 0.69702, 728
+c     bounds 7329 >= 0 @ 0.699023, 728
+c     bounds 7328 >= 0 @ 0.700756, 728
+c     bounds 7327 >= 0 @ 0.702513, 728
+c     bounds 7322 >= 0 @ 0.704834, 728
+c     bounds 7308 >= 0 @ 0.707127, 728
+c     bounds 7288 >= 0 @ 0.709305, 728
+c     bounds 7270 >= 0 @ 0.711446, 728
+c     bounds 7245 >= 0 @ 0.713683, 728
+c     bounds 7244 >= 0 @ 0.715588, 728
+c     bounds 7236 >= 0 @ 0.717889, 728
+c     bounds 7212 >= 0 @ 0.720173, 728
+c     bounds 7195 >= 0 @ 0.722268, 728
+c     bounds 7176 >= 0 @ 0.724328, 728
+c     bounds 7159 >= 0 @ 0.726357, 728
+c     bounds 7156 >= 0 @ 0.728644, 728
+c     bounds 7153 >= 0 @ 0.730611, 728
+c     bounds 7151 >= 0 @ 0.732677, 728
+c     bounds 7147 >= 0 @ 0.734823, 728
+c     bounds 7132 >= 0 @ 0.73706, 728
+c     bounds 7109 >= 0 @ 0.742674, 728
+c     bounds 7036 >= 0 @ 0.749246, 728
+c     bounds 7024 >= 0 @ 0.756191, 728
+c     bounds 6983 >= 0 @ 0.763732, 728
+c     bounds 6982 >= 0 @ 0.770728, 728
+c     bounds 6960 >= 0 @ 0.773242, 728
+c     bounds 6901 >= 0 @ 0.776782, 728
+c     bounds 6865 >= 0 @ 0.782038, 728
+c     bounds 6854 >= 0 @ 0.785538, 728
+c     bounds 6847 >= 0 @ 0.787745, 728
+c     bounds 6844 >= 0 @ 0.789967, 728
+c     bounds 6840 >= 0 @ 0.792005, 728
+c     bounds 6834 >= 0 @ 0.794064, 728
+c     bounds 6824 >= 0 @ 0.796199, 728
+c     bounds 6773 >= 0 @ 0.798402, 728
+c     bounds 6740 >= 0 @ 0.800482, 728
+c     bounds 6701 >= 0 @ 0.802514, 728
+c     bounds 6691 >= 0 @ 0.804716, 728
+c     bounds 6677 >= 0 @ 0.806735, 728
+c     bounds 6663 >= 0 @ 0.80871, 728
+c     bounds 6658 >= 0 @ 0.810984, 728
+c     bounds 6654 >= 0 @ 0.813107, 728
+c     bounds 6641 >= 0 @ 0.815336, 728
+c     bounds 6630 >= 0 @ 0.817397, 728
+c     bounds 6625 >= 0 @ 0.81959, 728
+c     bounds 6621 >= 0 @ 0.821635, 728
+c     bounds 6599 >= 0 @ 0.8239, 728
+c     bounds 6525 >= 0 @ 0.826087, 728
+c     bounds 6466 >= 0 @ 0.828149, 728
+c     bounds 6394 >= 0 @ 0.830202, 728
+c     bounds 6380 >= 0 @ 0.83242, 728
+c     bounds 6331 >= 0 @ 0.834595, 728
+c     bounds 6296 >= 0 @ 0.836657, 728
+c     bounds 6288 >= 0 @ 0.838919, 728
+c     bounds 6284 >= 0 @ 0.841087, 728
+c     bounds 6282 >= 0 @ 0.843168, 728
+c     bounds 6277 >= 0 @ 0.845443, 728
+c     bounds 6267 >= 0 @ 0.847649, 728
+c     bounds 6246 >= 0 @ 0.84983, 728
+c     bounds 6198 >= 0 @ 0.851799, 728
+c     bounds 6159 >= 0 @ 0.85396, 728
+c     bounds 6113 >= 0 @ 0.856, 728
+c     bounds 6046 >= 0 @ 0.858032, 728
+c     bounds 5962 >= 0 @ 0.860099, 728
+c     bounds 5961 >= 0 @ 0.861852, 728
+c     bounds 5933 >= 0 @ 0.864044, 728
+c     bounds 5858 >= 0 @ 0.86596, 728
+c     bounds 5849 >= 0 @ 0.8682, 728
+c     bounds 5788 >= 0 @ 0.870245, 728
+c     bounds 5783 >= 0 @ 0.872513, 728
+c     bounds 5769 >= 0 @ 0.874741, 728
+c     bounds 5762 >= 0 @ 0.876915, 728
+c     bounds 5760 >= 0 @ 0.879035, 728
+c     bounds 5757 >= 0 @ 0.88116, 728
+c     bounds 5748 >= 0 @ 0.883257, 728
+c     bounds 5728 >= 0 @ 0.885497, 728
+c     bounds 5671 >= 0 @ 0.887591, 728
+c     bounds 5634 >= 0 @ 0.889631, 728
+c     bounds 5565 >= 0 @ 0.891714, 728
+c     bounds 5517 >= 0 @ 0.893751, 728
+c     bounds 5489 >= 0 @ 0.895857, 728
+c     bounds 5440 >= 0 @ 0.897909, 728
+c     bounds 5424 >= 0 @ 0.900016, 728
+c     bounds 5423 >= 0 @ 0.901873, 728
+c     bounds 5418 >= 0 @ 0.904057, 728
+c     bounds 5415 >= 0 @ 0.906142, 728
+c     bounds 5402 >= 0 @ 0.908377, 728
+c     bounds 5394 >= 0 @ 0.910462, 728
+c     bounds 5390 >= 0 @ 0.912597, 728
+c     bounds 5366 >= 0 @ 0.914877, 728
+c     bounds 5341 >= 0 @ 0.916862, 728
+c     bounds 5290 >= 0 @ 0.91895, 728
+c     bounds 5247 >= 0 @ 0.920922, 728
+c     bounds 5203 >= 0 @ 0.922898, 728
+c     bounds 5202 >= 0 @ 0.924617, 728
+c     bounds 5128 >= 0 @ 0.926744, 728
+c     bounds 5044 >= 0 @ 0.928667, 728
+c     bounds 5043 >= 0 @ 0.930363, 728
+c     bounds 5012 >= 0 @ 0.932507, 728
+c     bounds 4982 >= 0 @ 0.934466, 728
+c     bounds 4973 >= 0 @ 0.936687, 728
+c     bounds 4962 >= 0 @ 0.938795, 728
+c     bounds 4957 >= 0 @ 0.941001, 728
+c     bounds 4954 >= 0 @ 0.943062, 728
+c     bounds 4941 >= 0 @ 0.945367, 728
+c     bounds 4924 >= 0 @ 0.947365, 728
+c     bounds 4892 >= 0 @ 0.949413, 728
+c     bounds 4810 >= 0 @ 0.951463, 728
+c     bounds 4742 >= 0 @ 0.953427, 728
+c     bounds 4682 >= 0 @ 0.955498, 728
+c     bounds 4643 >= 0 @ 0.957584, 728
+c     bounds 4602 >= 0 @ 0.959608, 728
+c     bounds 4566 >= 0 @ 0.961692, 728
+c     bounds 4533 >= 0 @ 0.963742, 728
+c     bounds 4447 >= 0 @ 0.965781, 728
+c     bounds 4391 >= 0 @ 0.967804, 728
+c     bounds 4383 >= 0 @ 0.970097, 728
+c     bounds 4319 >= 0 @ 0.972338, 728
+c     bounds 4316 >= 0 @ 0.974597, 728
+c     bounds 4313 >= 0 @ 0.976552, 728
+c     bounds 4300 >= 0 @ 0.978805, 728
+c     bounds 4278 >= 0 @ 0.980839, 728
+c     bounds 4271 >= 0 @ 0.983056, 728
+c     bounds 4211 >= 0 @ 0.985252, 728
+c     bounds 4142 >= 0 @ 0.987233, 728
+c     bounds 4063 >= 0 @ 0.989228, 728
+c     bounds 3987 >= 0 @ 0.991224, 728
+c     bounds 3924 >= 0 @ 0.993326, 728
+c     bounds 3919 >= 0 @ 0.995655, 728
+c     bounds 3913 >= 0 @ 0.997669, 728
+c     bounds 3894 >= 0 @ 0.99982, 728
+c     bounds 3885 >= 0 @ 1.00199, 728
+c     bounds 3881 >= 0 @ 1.00412, 728
+c     bounds 3867 >= 0 @ 1.00631, 728
+c     bounds 3850 >= 0 @ 1.00831, 728
+c     bounds 3846 >= 0 @ 1.01053, 728
+c     bounds 3781 >= 0 @ 1.01285, 728
+c     bounds 3776 >= 0 @ 1.01513, 728
+c     bounds 3775 >= 0 @ 1.01684, 728
+c     bounds 3716 >= 0 @ 1.01909, 728
+c     bounds 3642 >= 0 @ 1.02108, 728
+c     bounds 3576 >= 0 @ 1.02308, 728
+c     bounds 3513 >= 0 @ 1.02512, 728
+c     bounds 3512 >= 0 @ 1.02684, 728
+c     bounds 3458 >= 0 @ 1.02893, 728
+c     bounds 3417 >= 0 @ 1.03085, 728
+c     bounds 3411 >= 0 @ 1.03314, 728
+c     bounds 3406 >= 0 @ 1.03514, 728
+c     bounds 3398 >= 0 @ 1.03725, 728
+c     bounds 3395 >= 0 @ 1.03937, 728
+c     bounds 3387 >= 0 @ 1.0416, 728
+c     bounds 3375 >= 0 @ 1.04372, 728
+c     bounds 3374 >= 0 @ 1.04539, 728
+c     bounds 3331 >= 0 @ 1.04752, 728
+c     bounds 3284 >= 0 @ 1.04935, 728
+c     bounds 3229 >= 0 @ 1.05138, 728
+c     bounds 3197 >= 0 @ 1.05334, 728
+c     bounds 3121 >= 0 @ 1.05545, 728
+c     bounds 3041 >= 0 @ 1.05739, 728
+c     bounds 2967 >= 0 @ 1.05936, 728
+c     bounds 2901 >= 0 @ 1.06138, 728
+c     bounds 2822 >= 0 @ 1.06338, 728
+c     bounds 2771 >= 0 @ 1.06543, 728
+c     bounds 2720 >= 0 @ 1.06739, 728
+c     bounds 2707 >= 0 @ 1.06954, 728
+c     bounds 2703 >= 0 @ 1.07174, 728
+c     bounds 2695 >= 0 @ 1.0739, 728
+c     bounds 2678 >= 0 @ 1.07605, 728
+c     bounds 2667 >= 0 @ 1.0781, 728
+c     bounds 2618 >= 0 @ 1.08024, 728
+c     bounds 2551 >= 0 @ 1.08226, 728
+c     bounds 2490 >= 0 @ 1.08425, 728
+c     bounds 2480 >= 0 @ 1.08646, 728
+c     bounds 2428 >= 0 @ 1.08858, 728
+c     bounds 2363 >= 0 @ 1.09054, 728
+c     bounds 2291 >= 0 @ 1.0925, 728
+c     bounds 2219 >= 0 @ 1.0945, 728
+c     bounds 2162 >= 0 @ 1.09656, 728
+c     bounds 2080 >= 0 @ 1.09859, 728
+c     bounds 2036 >= 0 @ 1.10065, 728
+c     bounds 2009 >= 0 @ 1.10267, 728
+c     bounds 1997 >= 0 @ 1.10484, 728
+c     bounds 1981 >= 0 @ 1.10687, 728
+c     bounds 1978 >= 0 @ 1.10905, 728
+c     bounds 1971 >= 0 @ 1.11123, 728
+c     bounds 1953 >= 0 @ 1.11335, 728
+c     bounds 1936 >= 0 @ 1.11523, 728
+c     bounds 1903 >= 0 @ 1.11725, 728
+c     bounds 1898 >= 0 @ 1.11945, 728
+c     bounds 1883 >= 0 @ 1.12158, 728
+c     bounds 1816 >= 0 @ 1.12363, 728
+c     bounds 1738 >= 0 @ 1.12555, 728
+c     bounds 1687 >= 0 @ 1.1276, 728
+c     bounds 1678 >= 0 @ 1.12978, 728
+c     bounds 1605 >= 0 @ 1.13195, 728
+c     bounds 1589 >= 0 @ 1.13407, 728
+c     bounds 1585 >= 0 @ 1.13623, 728
+c     bounds 1571 >= 0 @ 1.13834, 728
+c     bounds 1523 >= 0 @ 1.14041, 728
+c     bounds 1496 >= 0 @ 1.14247, 728
+c     bounds 1462 >= 0 @ 1.14441, 728
+c     bounds 1384 >= 0 @ 1.14639, 728
+c     bounds 1308 >= 0 @ 1.14834, 728
+c     bounds 1261 >= 0 @ 1.15043, 728
+c     bounds 1240 >= 0 @ 1.15252, 728
+c     bounds 1236 >= 0 @ 1.15477, 728
+c     bounds 1227 >= 0 @ 1.1569, 728
+c     bounds 1220 >= 0 @ 1.15896, 728
+c     bounds 1218 >= 0 @ 1.16113, 728
+c     bounds 1215 >= 0 @ 1.16317, 728
+c     bounds 1211 >= 0 @ 1.1652, 728
+c     bounds 1195 >= 0 @ 1.16738, 728
+c     bounds 1192 >= 0 @ 1.16959, 728
+c     bounds 1173 >= 0 @ 1.17178, 728
+c     bounds 1115 >= 0 @ 1.17383, 728
+c     bounds 1038 >= 0 @ 1.1758, 728
+c     bounds 959 >= 0 @ 1.17779, 728
+c     bounds 956 >= 0 @ 1.18004, 728
+c     bounds 952 >= 0 @ 1.18213, 728
+c     bounds 945 >= 0 @ 1.18421, 728
+c     bounds 918 >= 0 @ 1.18636, 728
+c     bounds 868 >= 0 @ 1.18838, 728
+c     bounds 851 >= 0 @ 1.19048, 728
+c     bounds 800 >= 0 @ 1.19255, 728
+c     bounds 796 >= 0 @ 1.19479, 728
+c     bounds 794 >= 0 @ 1.19683, 728
+c     bounds 791 >= 0 @ 1.19886, 728
+c     bounds 789 >= 0 @ 1.20092, 728
+c     bounds 784 >= 0 @ 1.20308, 728
+c     bounds 777 >= 0 @ 1.20512, 728
+c     bounds 729 >= 0 @ 1.20728, 728
+c     bounds 677 >= 0 @ 1.20926, 728
+c     bounds 652 >= 0 @ 1.21133, 728
+c     bounds 651 >= 0 @ 1.21314, 728
+c     bounds 644 >= 0 @ 1.21528, 728
+c     bounds 638 >= 0 @ 1.21727, 728
+c     bounds 615 >= 0 @ 1.21942, 728
+c     bounds 568 >= 0 @ 1.22141, 728
+c     bounds 559 >= 0 @ 1.22349, 728
+c     bounds 552 >= 0 @ 1.22559, 728
+c     bounds 494 >= 0 @ 1.22778, 728
+c     bounds 426 >= 0 @ 1.22974, 728
+c     bounds 422 >= 0 @ 1.23194, 728
+c     bounds 421 >= 0 @ 1.23378, 728
+c     bounds 420 >= 0 @ 1.2355, 728
+c     bounds 417 >= 0 @ 1.23763, 728
+c     bounds 412 >= 0 @ 1.23975, 728
+c     bounds 407 >= 0 @ 1.24163, 728
+c     bounds 398 >= 0 @ 1.24368, 728
+c     bounds 390 >= 0 @ 1.24566, 728
+c     bounds 386 >= 0 @ 1.24777, 728
+c     bounds 370 >= 0 @ 1.24997, 728
+c     bounds 368 >= 0 @ 1.25214, 728
+c     bounds 340 >= 0 @ 1.25437, 728
+c     bounds 337 >= 0 @ 1.25656, 728
+c     bounds 332 >= 0 @ 1.25865, 728
+c     bounds 330 >= 0 @ 1.26074, 728
+c     bounds 329 >= 0 @ 1.26247, 728
+c     bounds 327 >= 0 @ 1.26428, 728
+c     bounds 325 >= 0 @ 1.26621, 728
+c     bounds 322 >= 0 @ 1.26825, 728
+c     bounds 319 >= 0 @ 1.27018, 728
+c     bounds 315 >= 0 @ 1.27227, 728
+c     bounds 313 >= 0 @ 1.27435, 728
+c     bounds 307 >= 0 @ 1.27652, 728
+c     bounds 299 >= 0 @ 1.2786, 728
+c     bounds 271 >= 0 @ 1.28067, 728
+c     bounds 233 >= 0 @ 1.28275, 728
+c     bounds 231 >= 0 @ 1.28486, 728
+c     bounds 111 >= 0 @ 1.53642, 809
+c     bounds 109 >= 0 @ 1.70585, 879
+c     bounds 107 >= 0 @ 1.83948, 946
+c 1000 confls 4442 constrs 1854 vars
+c     bounds 105 >= 0 @ 1.92573, 1268
+c     bounds 104 >= 0 @ 1.93196, 1272
+c     bounds 103 >= 0 @ 1.93786, 1273
+c     bounds 102 >= 0 @ 1.94679, 1275
+c     bounds 101 >= 0 @ 1.96675, 1278
+c     bounds 2 >= 0 @ 2.01883, 1289
+c cpu time 2.28893
+c parse time 0.0759407
+c solve time 2.21296
+c solve time det 7.91829
+c optimization time 0.313677
+c top-down time 0.916264
+c top-down time det 4.13923
+c bottom-up solve time 0.983019
+c bottom-up solve time det 3.28881
+c conflict analysis time 0.787268
+c learned minimize time 0.19183
+c propagation time 1.26921
+c constraint cleanup time 0
+c inprocessing time 0.0117806
+c garbage collection time 0
+c constraint learning time 0.0846525
+c time spent in activity heuristic 0.0270515
+c at-most-one detection time 0.0104865
+c at-most-one detection time det 0.0318123
+c time spent in lift degree optimization 0
+c number of lifted degrees 0
+c cores 0
+c solutions 388
+c propagations 1018660
+c decisions 228231
+c conflicts 1373
+c restarts 8
+c inprocessing phases 0
+c original variables 2061
+c auxiliary variables 0
+c input clauses 1594
+c input cardinalities 2
+c input general constraints 1855
+c input length average 288.946
+c input degree average 5830.66
+c input strength average 0.527185
+c learned clauses 286
+c learned cardinalities 4
+c learned general constraints 1090
+c learned length average 458.323
+c learned degree average 1.3687e+06
+c learned strength average 0.196922
+c learned LBD average 56.779
+c unit literals derived 2061
+c pure literals 0
+c constraints satisfied at root 22
+c constraints simplified during database reduction 0
+c small coef constraints 2945
+c large coef constraints 0
+c arbitrary coef constraints 0
+c probing calls 7738
+c probing inprocessing time 0.0382828
+c unit lits due to probing 10
+c equalities due to probing 772
+c implications added due to probing 0
+c max implications in memory due to probing 3200
+c detected at-most-ones 2
+c units derived during at-most-one detection 0
+c resolve steps 125110
+c self-subsumptions 40047
+c gcd simplifications 521
+c detected cardinalities 0
+c weakened non-implied 252903
+c weakened non-implying 0
+c number of multiply-weakens on reason 917
+c number of multiply-weakens on conflict 1051
+c number of direct multiply-weakens 217
+c number of indirect multiply-weakens 1196
+c clausal propagations 432196
+c cardinality propagations 2126
+c watched propagations 558129
+c counting propagations 0
+c watch lookups 15169256
+c watch backjump lookups 9871848
+c watch checks 342068420
+c propagation checks 35153329
+c blocking literal success 2827079
+c blocking literal fails   4264394
+c literal additions 8542377
+c saturation steps 27450349
+c unknown literals rounded up 0
+c trail pops 1246209
+c formula constraints 1867
+c dominance breaking constraints 808
+c learned constraints 1378
+c bound constraints 776
+c core-guided constraints 0
+c reduced constraints 0
+c encountered formula constraints 116490
+c encountered dominance breaking constraints 0
+c encountered learned constraints 3277
+c encountered bound constraints 5343
+c encountered core-guided constraints 0
+c encountered reduced constraints 0
+c encountered detected at-most-ones 0
+c encountered detected equalities 0
+c encountered detected implications 0
+c CG unit cores 0
+c CG non-clausal cores 0
+c best upper bound 2
+c best lower bound 2
+o 2
+s OPTIMUM FOUND
+v 82 89 97 116 117 118 119 120 122 144 145 146 147 148 149 150 151 152 153 172 173 174 175 176 177 178 179 180 181 182 183 184 185 203 204 205 206 207 208 209 210 211 212 213 214 220 238 239 240 241 242 243 244 269 270 271 272 298 299 300 326 327 354 355 382 383 384 398 410 411 412 432 439 440 442 458 459 460 461 462 463 464 465 466 467 468 486 487 488 489 490 491 492 493 494 495 514 515 521 542 543 570 571 572 599 600 601 627 628 629 630 631 643 656 657 658 659 660 661 663 664 685 686 687 688 689 690 691 692 699 700 713 714 715 716 717 718 719 720 743 744 745 746 747 748 752 781 783 789 795 798 799 800 801 803 804 805 806 807 808 809 811 813 814 817 819 820 821 823 825 828 829 830 831 833 835 837 838 839 840 842 844 846 847 850 855 857 861 862 864 865 867 868 872 873 880 882 885 889 893 894 895 896 897 899 902 905 906 910 912 913 914 915 916 918 921 922 927 929 931 933 939 941 944 946 947 948 951 952 953 955 956 960 961 965 966 967 970 972 973 974 976 980 983 984 985 990 991 993 996 998 1000 1001 1004 1005 1007 1008 1009 1012 1014 1015 1018 1020 1022 1025 1026 1027 1028 1031 1032 1035 1036 1037 1039 1047 1050 1052 1054 1055 1062 1065 1066 1067 1068 1069 1070 1072 1074 1077 1081 1082 1090 1091 1092 1093 1098 1099 1100 1103 1105 1106 1108 1109 1110 1113 1115 1116 1118 1119 1120 1122 1124 1125 1126 1132 1133 1135 1138 1139 1140 1143 1144 1148 1151 1153 1155 1156 1159 1160 1161 1162 1163 1168 1170 1171 1172 1173 1174 1177 1178 1179 1181 1186 1188 1190 1194 1195 1196 1197 1198 1201 1205 1208 1209 1210 1211 1212 1213 1214 1217 1218 1219 1221 1224 1225 1230 1231 1233 1235 1236 1239 1244 1245 1246 1247 1248 1251 1254 1257 1259 1260 1261 1263 1264 1266 1268 1269 1272 1273 1274 1277 1279 1283 1284 1286 1287

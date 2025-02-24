@@ -1,0 +1,111 @@
+c Exact - branch main commit 8dac976
+c Reading input file, expected format is wbo
+c #vars 1623 #constraints 2200
+c PRESOLVE
+c     bounds 237 >= 0 @ 0.229513, 314
+c Conflicting input constraint
+c     bounds 1 >= 0 @ 0.233048, 314
+c cpu time 0.233058
+c parse time 0.0783577
+c solve time 0.154667
+c solve time det 0.793421
+c optimization time 0.0160245
+c top-down time 0.135187
+c top-down time det 0.544817
+c bottom-up solve time 0.00345471
+c bottom-up solve time det 0.00676487
+c conflict analysis time 0.0350684
+c learned minimize time 0.00113192
+c propagation time 0.0984861
+c constraint cleanup time 0
+c inprocessing time 0.0158289
+c garbage collection time 0
+c constraint learning time 0.0179182
+c time spent in activity heuristic 0.00594144
+c at-most-one detection time 0.0145745
+c at-most-one detection time det 0.10025
+c time spent in lift degree optimization 0
+c number of lifted degrees 0
+c cores 0
+c solutions 2
+c propagations 178187
+c decisions 3627
+c conflicts 314
+c restarts 2
+c inprocessing phases 0
+c original variables 1623
+c auxiliary variables 0
+c input clauses 1322
+c input cardinalities 1
+c input general constraints 1082
+c input length average 166.375
+c input degree average 83.1347
+c input strength average 0.427987
+c learned clauses 34
+c learned cardinalities 0
+c learned general constraints 282
+c learned length average 493.184
+c learned degree average 50099.6
+c learned strength average 0.148068
+c learned LBD average 56.7405
+c unit literals derived 19
+c pure literals 0
+c constraints satisfied at root 22
+c constraints simplified during database reduction 0
+c small coef constraints 1364
+c large coef constraints 0
+c arbitrary coef constraints 0
+c probing calls 311
+c probing inprocessing time 7.5666e-05
+c unit lits due to probing 4
+c equalities due to probing 2
+c implications added due to probing 0
+c max implications in memory due to probing 765
+c detected at-most-ones 0
+c units derived during at-most-one detection 2
+c resolve steps 3315
+c self-subsumptions 37
+c gcd simplifications 106
+c detected cardinalities 0
+c weakened non-implied 55056
+c weakened non-implying 0
+c number of multiply-weakens on reason 344
+c number of multiply-weakens on conflict 74
+c number of direct multiply-weakens 20
+c number of indirect multiply-weakens 37
+c clausal propagations 144937
+c cardinality propagations 0
+c watched propagations 30273
+c counting propagations 0
+c watch lookups 1639326
+c watch backjump lookups 1087013
+c watch checks 26052263
+c propagation checks 3328759
+c blocking literal success 251951
+c blocking literal fails   113566
+c literal additions 685332
+c saturation steps 2681131
+c unknown literals rounded up 0
+c trail pops 182111
+c formula constraints 2200
+c dominance breaking constraints 203
+c learned constraints 316
+c bound constraints 2
+c core-guided constraints 0
+c reduced constraints 0
+c encountered formula constraints 2458
+c encountered dominance breaking constraints 1
+c encountered learned constraints 855
+c encountered bound constraints 1
+c encountered core-guided constraints 0
+c encountered reduced constraints 0
+c encountered detected at-most-ones 0
+c encountered detected equalities 0
+c encountered detected implications 0
+c CG unit cores 0
+c CG non-clausal cores 0
+c best upper bound 1
+c best lower bound 1
+o 1
+s OPTIMUM FOUND
+v 1 4 82 84 89 97 116 117 118 119 120 122 141 144 145 146 147 148 149 150 151 152 153 169 172 173 174 175 176 177 178 179 180 181 182 183 184 185 203 204 205 206 207 208 209 210 211 212 213 214 220 238 239 240 241 242 243 244 269 270 271 272 298 299 300 315 326 327 354 355 382 383 384 398 410 411 412 432 439 440 442 458 459 460 461 462 463 464 465 466 467 468 486 487 488 489 490 491 492 493 494 495 514 515 521 541 542 543 570 571 572 599 600 601 627 628 629 630 631 643 649 656 657 658 659 660 661 663 664 672 674 675 685 686 687 688 689 690 691 692 697 698 699 700 705 713 714 715 716 717 718 719 720 727 731 733 743 744 745 746 747 748 752 753 756 761 763 764 777 781 783 784 792 795 799 800 801 803 804 805 807 809 811 813 817 819 820 821 823 825 829 830 831 833 835 837 838 839 840 842 844 846 847 849 850 855 857 861 862 864 865 867 868 872 873 875 880 882 883 885 888 894 895 896 899 902 905 906 910 912 913 915 916 918 922 931 933 941 944 946 947 948 951 952 953 955 956 957 960 961 963 965 966 967 970 972 975 980 984 985 990 991 992 993 995 996 998 1000 1001 1002 1004 1007 1008 1009 1015 1017 1018 1020 1022 1023 1025 1027 1028 1032 1033 1035 1036 1038 1039 1040 1043 1044 1047 1049 1050 1051 1052 1054 1055 1057 1059 1061 1062 1065 1066 1067 1068 1069 1070 1071 1074 1076 1077 1080 1083 1084 1085 1087 1090 1093 1095 1098 1099 1100 1103 1104 1105 1107 1108 1111 1115 1118 1119 1120 1122 1123 1124 1126 1129 1132 1133 1134 1135 1139 1140 1141 1142 1143 1145 1146 1148 1151 1153 1155 1156 1157 1159 1160 1161 1162 1163 1164 1169 1171 1173 1177 1179 1181 1183 1185 1187 1188 1189 1191 1192 1194 1196 1198 1200 1201 1202 1204 1207 1214 1216 1218 1219 1221 1224 1225 1227 1230 1231 1232 1233 1235 1236 1239 1244 1245 1246 1247 1248 1251 1252 1254 1256 1257 1258 1261 1264 1267 1269 1275 1276 1279 1282 1284 1286 1290

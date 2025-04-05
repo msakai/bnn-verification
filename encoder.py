@@ -407,14 +407,15 @@ class Encoder():
     def _wbo_hint(self) -> str:
         num_equal = sum(1 for _w, constr in self.constrs if isinstance(constr, PBExactly))
         num_soft = sum(1 for w, _constr in self.constrs if w is not None)
-        mincost = min(w for w, _constr in self.constrs if w is not None)
-        maxcost = max(w for w, _constr in self.constrs if w is not None)
+        mincost = min((w for w, _constr in self.constrs if w is not None), default=0)
+        maxcost = max((w for w, _constr in self.constrs if w is not None), default=0)
         sumcost = sum(w for w, _constr in self.constrs if w is not None)
         intsize = max(
-            [0] + [
+            (
                 1 + math.floor(math.log2(x)) if x > 0 else 0
                 for x in [sumcost] + [sum(abs(c) for c, _lit in constr.lhs) + abs(constr.rhs) for _, constr in self.constrs]
-            ]
+            ),
+            default=0,
         )
         return f"* #variable= {self.nvars} #constraint= {len(self.constrs)} #equal= {num_equal} intsize= {intsize} #soft= {num_soft} mincost= {mincost} maxcost= {maxcost} sumcost= {sumcost}\n"
 

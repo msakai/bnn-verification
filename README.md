@@ -15,7 +15,7 @@ to the [Max-SAT Evaluation
 ### Preparation
 
 ```console
-$ pip3 install -r requirements.txt
+$ uv sync
 ```
 
 ### (Optional) Training model
@@ -39,11 +39,11 @@ repository and should be used with caution.
 Run the following to generate the same data set submitted to Max-SAT Evaluation 2020: 
 
 ```console
-$ python3 generate_maxsat_instances.py --dataset mnist --model models/mnist.npz -o outdir \
+$ uv run generate_maxsat_instances.py --dataset mnist --model models/mnist.npz -o outdir \
 --format wcnf --card totalizer --norm inf --target adversarial --instances-per-class 2
-$ python3 generate_maxsat_instances.py --dataset mnist_rot --model models/mnist_rot.npz -o outdir \
+$ uv run generate_maxsat_instances.py --dataset mnist_rot --model models/mnist_rot.npz -o outdir \
 --format wcnf --card totalizer --norm inf --target adversarial --instances-per-class 2
-$ python3 generate_maxsat_instances.py --dataset mnist_back_image --model models/mnist_back_image.npz -o outdir \
+$ uv run generate_maxsat_instances.py --dataset mnist_back_image --model models/mnist_back_image.npz -o outdir \
 --format wcnf --card totalizer --norm inf --target adversarial --instances-per-class 2
 ```
 
@@ -54,11 +54,11 @@ You can also specify an individual sample by using `--instance-no` instead of `-
 You can use `generate_mip_instances.py` instead:
 
 ```console
-$ python3 generate_mip_instances.py --dataset mnist --model models/mnist.npz -o outdir \
+$ uv run generate_mip_instances.py --dataset mnist --model models/mnist.npz -o outdir \
 --norm inf --target adversarial --instances-per-class 2
-$ python3 generate_mip_instances.py --dataset mnist_rot --model models/mnist_rot.npz -o outdir \
+$ uv run generate_mip_instances.py --dataset mnist_rot --model models/mnist_rot.npz -o outdir \
 --norm inf --target adversarial --instances-per-class 2
-$ python3 generate_mip_instances.py --dataset mnist_back_image --model models/mnist_back_image.npz -o outdir \
+$ uv run generate_mip_instances.py --dataset mnist_back_image --model models/mnist_back_image.npz -o outdir \
 --norm inf --target adversarial --instances-per-class 2
 ```
 
@@ -67,7 +67,7 @@ $ python3 generate_mip_instances.py --dataset mnist_back_image --model models/mn
 Once the solver successfully solves a problem instance, you can check the solution as follows:
 
 ```console
-$ python3 verify_solution.py --dataset mnist --instance 7 \
+$ uv run verify_solution.py --dataset mnist --instance 7 \
   --output-image perturbated.png \
   --output-orig-image orig.png \
   --format maxsat \

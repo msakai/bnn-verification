@@ -2,7 +2,7 @@
 
 This dataset consists of pseudo boolean optimization(PBO) and weighted boolean optimization (WBO) instances designed to find minimal perturbation adversarial examples of BNNs (Binarized Neural Networks).
 
-The authors have previously submitted similar instances to the [Max-SAT Evaluation 2020](https://maxsat-evaluations.github.io/2020/) [1] and MIPLIB 2024; this dataset is their pseudo-boolean version. Detailed information including source code is available at <https://github.com/msakai/bnn-verification/>.
+The authors have previously submitted similar instances to the [Max-SAT Evaluation 2020](https://maxsat-evaluations.github.io/2020/) [1] and MIPLIB 2024; this dataset is their pseudo-boolean version for [Pseudo-Boolean Competition 2025](https://www.cril.univ-artois.fr/PB25/). Detailed information including source code is available at <https://github.com/msakai/bnn-verification/>.
 
 ## Problem Overview
 

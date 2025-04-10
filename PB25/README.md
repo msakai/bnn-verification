@@ -1,7 +1,6 @@
 # BNN Verification Instances for the PB25 submission
 
-This dataset consists of pseudo boolean optimization(PBO) and weighted boolean optimization (WBO) instances designed to find minimal perturbation adversarial examples of BNNs (Binarized Neural Networks).
-
+This dataset consists of pseudo boolean optimization (PBO) and weighted boolean optimization (WBO) instances designed to find minimal perturbation adversarial examples of BNNs (Binarized Neural Networks).
 The authors have previously submitted similar instances to the [Max-SAT Evaluation 2020](https://maxsat-evaluations.github.io/2020/) [1] and MIPLIB 2024; this dataset is their pseudo-boolean version for [Pseudo-Boolean Competition 2025](https://www.cril.univ-artois.fr/PB25/). Detailed information including source code is available at <https://github.com/msakai/bnn-verification/>.
 
 ## Problem Overview
@@ -21,8 +20,7 @@ f: {0,…,255}⁷⁸⁴ → {0,…,9}
 
 ## Target Neural Networks
 
-The network architecture is based on Binarized Neural Networks (BNNs) [2][3]. Through we don't explain details about BNN, our BNN consists of the following steps:
-
+The network architecture is based on Binarized Neural Networks (BNNs) [2][3]. Though we don't explain details about BNN, our BNN consists of the following steps:
 1. Each pixel xᵢ ∈ {0, …, 255} is binarized to zᵢ = binᵢ(xᵢ) ∈ {-1, +1} using learned threshold which varies depending on location i.
 2. A function g is applied to z = (zᵢ)ᵢ to produce logits = g(z) ∈ R¹⁰,
 3. Finally, the output y is given by y = argmaxⱼ logitsⱼ.

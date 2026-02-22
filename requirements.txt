@@ -1,4 +1,0 @@
-chainer >=5.0.0
-pillow
-numpy<2
-setuptools <74

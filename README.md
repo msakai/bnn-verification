@@ -3,7 +3,8 @@
 This repository contains the source code and related information for
 the binarized neural networks (BNNs) verification datasets submitted
 to the [Max-SAT Evaluation
-2020](https://maxsat-evaluations.github.io/2020/) and MIPLIB 2024.
+2020](https://maxsat-evaluations.github.io/2020/), MIPLIB 2024, and
+[Pseudo-Boolean Competition 2025](https://www.cril.univ-artois.fr/PB25/).
 
 * [Usage](#usage)
 * [Max-SAT evaluation 2020](#max-sat-evaluation-2020)
